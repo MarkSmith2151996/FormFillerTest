@@ -1,0 +1,58 @@
+{
+ "version": "A",
+ "form": "18-isi",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "form fields could not be mapped: the snapshot lists 61 inputs with empty labels (labels are separate text above each input, not linked), so no field can be filled without guessing",
+  "Credit Card Only option present (never chosen)",
+  "Uniform Sales & Use Tax Resale Certificate upload required (human-only)"
+ ],
+ "notes": "IS Docs Reseller/Credit Application. New toolkit gap A7: labels rendered as sibling text above unlabelled inputs are not linked, so every field label is empty (only NOTES text and field types come through). A did not guess positions; nothing typed. The brain had seen C's screenshots of this form earlier (same-brain bias), but A's run used only A's own snapshot.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2700,
+    "out_chars": 1230,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1300,
+    "out_chars": 80,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 4000,
+  "chars_out": 1310,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 370,
+  "token_est": 1518,
+  "tool_calls": 2,
+  "wall_ms": 16117
+ },
+ "started_at": "2026-09-24T17:55:07.522Z",
+ "ended_at": "2026-09-24T17:55:23.639Z"
+}

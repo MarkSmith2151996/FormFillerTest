@@ -1,0 +1,65 @@
+{
+ "version": "B",
+ "form": "22-meyer",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "PDF_APPLICATION",
+ "needs_human": [
+  "New Customer Application is a PDF (US / Canada-English / Canada-French) to fill offline and email to Meyer's customer-applications mailbox",
+  "state sales-tax exemption form must be attached (resale cert = NEEDS_HUMAN)",
+  "the application text includes a personal guarantee of payment instruments (approver)"
+ ],
+ "notes": "Meyer 'Customer Application & Terms' page. B's one read_page showed the PDF download links, 'Email completed forms to' mailto, tax-exemption attachment instructions and 'THIS APPLICATION IS NOT AN EXTENSION OF TRADE CREDIT'. The page has no online application form (only site search) and no terms-accept button, so nothing to fill. Echo shim: no-trim (no application form).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3700,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 5800,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 700,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 5800,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 4920,
+  "token_est": 1658,
+  "tool_calls": 1,
+  "wall_ms": 11481
+ },
+ "started_at": "2026-09-24T18:09:07.645Z",
+ "ended_at": "2026-09-24T18:09:19.126Z"
+}

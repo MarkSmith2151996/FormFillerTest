@@ -10,6 +10,9 @@
 //      role b=brain (the version's own call) h=harness (guard/injection/readback/evidence)
 //   started_at, ended_at (ISO), or t0/t1 (epoch ms from the page)
 //   mode (optional): results folder, default 'live'; 'live-rerun' = CS-588 re-runs with the ship-to profile
+//   env_blocked (optional): true when the site blocked the Steel browser (not a toolkit result)
+//   transport_failures (optional): {cause, fields} when a Custodian bug, not the toolkit, stopped fields
+//   restriction (optional): the supplier's who-we-sell-to text behind a NOT_A_FIT outcome (CS-588)
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -45,6 +48,7 @@ const res = {
   readback, guard: inp.guard || {}, screenshot: inp.screenshot || null, steel_session: inp.steel_session || null,
   ledger, started_at: inp.started_at, ended_at: inp.ended_at,
 };
+for (const k of ['env_blocked', 'transport_failures', 'restriction']) if (inp[k]) res[k] = inp[k];
 const dir = path.join(ROOT, 'results', inp.mode || 'live', inp.version);
 fs.mkdirSync(dir, { recursive: true });
 fs.writeFileSync(path.join(dir, `${inp.form}.json`), JSON.stringify(res, null, 1));

@@ -1,0 +1,67 @@
+{
+ "version": "C",
+ "form": "17-unfi",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "account type (approver decision): 'UNFI Truck Deliveries' needs a $1,500 minimum per delivered order and a site reachable by a 48-foot trailer; 'Flexible Delivery / eCommerce' fits the business model but routes to Everyday Supply Co. rather than a UNFI application; 'Wellness' is wellness-only",
+  "all later steps (Business Information, Finish Up) depend on that choice"
+ ],
+ "notes": "UNFI New Account Inquiry Form (Salesforce LWC), step 1 of 3: three account-type cards. One screenshot showed the whole step down to the footer links. C classified without clicking a card, per the form's hint (don't force-fill). Harness: partner.unfi.com clears window.name, so the injection code came in the URL fragment and was removed with history.replaceState before C's first call.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_142045.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 380,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2900,
+    "out_chars": 90,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 700,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 110,
+  "chars_out": 250,
+  "images": 1,
+  "img_tokens": 1534,
+  "tool_ms": 0,
+  "harness_chars": 4200,
+  "token_est": 1637,
+  "tool_calls": 1,
+  "wall_ms": 10491
+ },
+ "started_at": "2026-09-24T18:20:41.693Z",
+ "ended_at": "2026-09-24T18:20:52.184Z"
+}

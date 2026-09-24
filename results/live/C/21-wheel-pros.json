@@ -1,0 +1,119 @@
+{
+ "version": "C",
+ "form": "21-wheel-pros",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Business Type (Automotive / Powersports / Manufacturer): the profile does not say the business sells automotive or powersports products; approver's call (possible NOT_A_FIT if Wheel Pros only sells to those trades - not stated on the page)",
+  "Business Legal Structure (required): Salesforce combobox did not open with synthetic clicks",
+  "Sales Tax or Business License upload and Resale Certificate upload (required): file uploads are human-only",
+  "steps 2-4 (Contact, Credit Terms, Finish) not opened; credit terms are left blank by policy"
+ ],
+ "notes": "Wheel Pros Dealer Application (Salesforce Experience site), step 1 of 4. Filled Company Name (Legal), FEIN, Year Established (from the profile's established date). DBA and Other Notes left blank. Did not press Next.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "input-25",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input-33",
+   "st": "profile",
+   "key": "ein"
+  },
+  {
+   "k": "input-35",
+   "st": "profile",
+   "key": "established_year"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_140117.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2900,
+    "out_chars": 120,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 300,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 250,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 200,
+    "image": null
+   }
+  ],
+  "brain_calls": 5,
+  "chars_in": 880,
+  "chars_out": 870,
+  "images": 3,
+  "img_tokens": 4602,
+  "tool_ms": 0,
+  "harness_chars": 4420,
+  "token_est": 5102,
+  "tool_calls": 5,
+  "wall_ms": 43947
+ },
+ "started_at": "2026-09-24T18:00:41.551Z",
+ "ended_at": "2026-09-24T18:01:25.498Z"
+}

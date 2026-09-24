@@ -1,0 +1,140 @@
+{
+ "version": "B",
+ "form": "21-wheel-pros",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Business Type (Automotive / Powersports / Manufacturer): not in profile; approver's call (possible NOT_A_FIT if Wheel Pros only sells to those trades - not stated)",
+  "Business Legal Structure and Shipping State (required Lightning comboboxes): not set",
+  "'Is the business operating at the owner's residence?' (required Yes/No): not in profile",
+  "Sales Tax or Business License and Resale Certificate uploads (required): human-only",
+  "steps 2-4 not opened; credit terms blank by policy"
+ ],
+ "notes": "Wheel Pros Dealer Application step 1 (Salesforce). Typed Company Name (Legal), FEIN, Year Established (profile established date), and the Shipping Address street/city/ZIP from the ship-to keys. Each echo ~11K characters. Did not press Continue.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "input-25",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input-33",
+   "st": "profile",
+   "key": "ein"
+  },
+  {
+   "k": "input-35",
+   "st": "profile",
+   "key": "established_year"
+  },
+  {
+   "k": "input-49",
+   "st": "profile",
+   "key": "ship_to_street_full"
+  },
+  {
+   "k": "input-51",
+   "st": "profile",
+   "key": "ship_to_city"
+  },
+  {
+   "k": "input-57",
+   "st": "profile",
+   "key": "ship_to_zip"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3700,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 10800,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 10900,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 11000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 20,
+    "out_chars": 11100,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 11100,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 11100,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 20,
+    "out_chars": 11200,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 300,
+    "image": null
+   }
+  ],
+  "brain_calls": 7,
+  "chars_in": 190,
+  "chars_out": 77200,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 5260,
+  "token_est": 22112,
+  "tool_calls": 7,
+  "wall_ms": 39930
+ },
+ "started_at": "2026-09-24T18:02:22.620Z",
+ "ended_at": "2026-09-24T18:03:02.550Z"
+}

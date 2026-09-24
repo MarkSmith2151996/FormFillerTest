@@ -1,0 +1,64 @@
+{
+ "version": "A",
+ "form": "17-unfi",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "account type (approver decision): the lead form opens on delivery options that are not form controls ($1,500 minimum per delivered order and 48-foot-trailer access vs no/low-minimum parcel options); A's snapshot cannot list or pick them",
+  "all later steps depend on that choice"
+ ],
+ "notes": "UNFI LeadFormV2 (Salesforce LWC). A's snapshot: 0 fields, no title (heading inside shadow DOM), NOTES carrying the account options' requirements. classify_page returned NOT_A_FORM because the account-type cards are not form controls (chooser gap, same family as A3); the brain reported NEEDS_HUMAN from the snapshot notes and the lead-form URL, and did not click anything, per the form's hint. Harness: code carried in the URL fragment (the site clears window.name).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 380,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 3300,
+    "out_chars": 290,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1000,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 4410,
+  "chars_out": 440,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 420,
+  "token_est": 1386,
+  "tool_calls": 3,
+  "wall_ms": 28059
+ },
+ "started_at": "2026-09-24T18:21:25.084Z",
+ "ended_at": "2026-09-24T18:21:53.143Z"
+}

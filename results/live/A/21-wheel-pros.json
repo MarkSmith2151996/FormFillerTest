@@ -1,0 +1,57 @@
+{
+ "version": "A",
+ "form": "21-wheel-pros",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "toolkit error: snapshot crashed on this Salesforce Lightning Locker page ('Disallowed method getElementById on ShadowRoot'), so no fields could be listed or filled",
+  "Wheel Pros Dealer Application (4 steps) needs a person or a toolkit fix"
+ ],
+ "notes": "New toolkit gap A8: the label lookup calls getElementById on shadow roots, which Salesforce Lightning Locker forbids; __ft.snapshot threw. Nothing typed.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2700,
+    "out_chars": 900,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1100,
+    "out_chars": 80,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 3800,
+  "chars_out": 980,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 370,
+  "token_est": 1366,
+  "tool_calls": 2,
+  "wall_ms": 8851
+ },
+ "started_at": "2026-09-24T18:01:49.215Z",
+ "ended_at": "2026-09-24T18:01:58.066Z"
+}
