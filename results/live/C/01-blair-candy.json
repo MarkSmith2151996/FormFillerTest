@@ -1,0 +1,7 @@
+{
+ "version": "C",
+ "form": "01-blair-candy",
+ "mode": "live",
+ "status": "not_run",
+ "reason": "Blair's Shopify Forms wholesale widget stopped rendering after the A and B runs (site-side); C could not see a form. C's attempt is in results/live-rerun/C/01-blair-candy.json (widget still absent)."
+}

@@ -9,6 +9,7 @@
 //           T=type_text L=select_option C=click_element K=press_key X=close_page
 //      role b=brain (the version's own call) h=harness (guard/injection/readback/evidence)
 //   started_at, ended_at (ISO), or t0/t1 (epoch ms from the page)
+//   mode (optional): results folder, default 'live'; 'live-rerun' = CS-588 re-runs with the ship-to profile
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -39,12 +40,12 @@ const ledger = { calls, ...tokensFor(calls) };
 ledger.tool_calls = ledger.brain_calls;
 if (inp.started_at && inp.ended_at) ledger.wall_ms = new Date(inp.ended_at) - new Date(inp.started_at);
 const res = {
-  version: inp.version, form: inp.form, mode: 'live', profile: 'real (injected at runtime, never stored)', transport: 'Custodian MCP -> Steel (wsl-steel)',
+  version: inp.version, form: inp.form, mode: inp.mode || 'live', profile: 'real (injected at runtime, never stored)', transport: 'Custodian MCP -> Steel (wsl-steel)',
   outcome: inp.outcome, needs_human: inp.needs_human || [], notes: inp.notes || '', field_map: inp.field_map || {},
   readback, guard: inp.guard || {}, screenshot: inp.screenshot || null, steel_session: inp.steel_session || null,
   ledger, started_at: inp.started_at, ended_at: inp.ended_at,
 };
-const dir = path.join(ROOT, 'results/live', inp.version);
+const dir = path.join(ROOT, 'results', inp.mode || 'live', inp.version);
 fs.mkdirSync(dir, { recursive: true });
 fs.writeFileSync(path.join(dir, `${inp.form}.json`), JSON.stringify(res, null, 1));
-console.log(`results/live/${inp.version}/${inp.form}.json | ${inp.outcome} | brain calls ${ledger.brain_calls} | ~${ledger.token_est} tokens | harness ~${Math.ceil(ledger.harness_chars / 3.5)}`);
+console.log(`results/${inp.mode || 'live'}/${inp.version}/${inp.form}.json | ${inp.outcome} | brain calls ${ledger.brain_calls} | ~${ledger.token_est} tokens | harness ~${Math.ceil(ledger.harness_chars / 3.5)}`);

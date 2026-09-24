@@ -1,0 +1,283 @@
+{
+ "version": "B",
+ "form": "10-dhp-supply",
+ "mode": "live-rerun",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "FILLED",
+ "needs_human": [
+  "reCAPTCHA at submit (approver)",
+  "billing terms: separate PandaDoc application linked on the page (not opened; net terms are left blank by policy)",
+  "buying-group note (optional): left blank"
+ ],
+ "notes": "CS-588 ship-to re-run. Clicked 'No' on 'Do you have a DHP account number?' -> New Customer Registration (harness re-injected on the new page and B re-read, booked as harness). Filled company, first/last name, phone, email, Bill To street/city/State=Michigan/ZIP from the business address, and the Ship To block (street, unit, city, State=Ohio, ZIP) from the profile's ship-to keys; 'Use Bill To Address' left unticked. The pre-ticked '$25 OFF' marketing opt-in needed a second click (the first click did not toggle it; readback confirmed), now unticked. Every required field is filled; only the captcha remains for the approver.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "form[151_0]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "form[1_1]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "form[11_2]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "form[31_3]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "form[21_4]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "form[212_5]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "form[212_7]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "form[226_8]",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "form[212_9]",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "form[212_11]",
+   "st": "profile",
+   "key": "ship_to_street"
+  },
+  {
+   "k": "form[212_12]",
+   "st": "profile",
+   "key": "ship_to_street2"
+  },
+  {
+   "k": "form[212_13]",
+   "st": "profile",
+   "key": "ship_to_city"
+  },
+  {
+   "k": "form[226_14]",
+   "st": "profile",
+   "key": "ship_to_state_name"
+  },
+  {
+   "k": "form[212_15]",
+   "st": "profile",
+   "key": "ship_to_zip"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3500,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 14500,
+    "image": null
+   },
+   {
+    "cmd": "click_element",
+    "role": "brain",
+    "args_chars": 20,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3600,
+    "out_chars": 70,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 14500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "select_option",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "select_option",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "click_element",
+    "role": "brain",
+    "args_chars": 20,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 800,
+    "out_chars": 900,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 14500,
+    "image": null
+   },
+   {
+    "cmd": "click_element",
+    "role": "brain",
+    "args_chars": 20,
+    "out_chars": 5600,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 900,
+    "image": null
+   }
+  ],
+  "brain_calls": 18,
+  "chars_in": 550,
+  "chars_out": 118100,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 40030,
+  "token_est": 33900,
+  "tool_calls": 18,
+  "wall_ms": 128673
+ },
+ "started_at": "2026-09-24T17:47:48.417Z",
+ "ended_at": "2026-09-24T17:49:57.090Z"
+}
