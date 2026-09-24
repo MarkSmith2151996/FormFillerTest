@@ -31,7 +31,7 @@ harness/daemonctl.sh start             # offline harness daemon: serves fixtures
 ./ff A 03 open                         # Version A on fixture 03
 ./ff A 03 fill '{"f1":"{{profile.legal_name}}"}'
 ./ff A 03 report '{"outcome":"NEEDS_HUMAN","needs_human":["password"]}'
-node harness/score.mjs                 # results/SCOREBOARD.md, results/scoreboard.json, REPORT.md block
+node harness/score.mjs                 # results/SCOREBOARD.md, results/scoreboard.json, REPORT.md generated tables
 ```
 
 On the PC, against Steel: `claude mcp add form-toolkit -- node versions/a_form_toolkit/mcp-server.mjs --cdp ws://127.0.0.1:3001/v1/cdp/<steel-session> --profile <dealer_profile.json>`

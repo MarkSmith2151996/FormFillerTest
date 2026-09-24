@@ -41,7 +41,7 @@ A typical form takes **3 calls**: `open_form`, `fill`, `report`.
 
 ## Profile keys
 `legal_name entity_type entity_short entity_state michigan_entity_number street_address city state state_name zip zip5 country country_code full_address contact_name contact_first_name contact_last_name contact_title email email_confirm phone phone_digits phone_dashed phone_area phone_prefix phone_line phone_e164 owner_name owner_first_name owner_last_name owner_title signature_name signature_title ein ein_digits amazon_seller_id website website_url sales_channel business_type payment_method ownership established_date established_year established_iso years_in_business years_in_business_text today today_iso`
-(`ship_to_address` and `fax` exist but are empty. A template for an empty key returns an error instead of a value.)
+plus the ship-to keys above (CS-588). `fax` exists but is empty; a template for an empty key returns an error instead of a value.
 
 ## Live mode (Steel via Custodian, as in this bake-off)
 The same runtime runs in the page. Inject `harness/live/hA.min.js` once per tab (see the README), then:
@@ -51,7 +51,7 @@ The same runtime runs in the page. Inject `harness/live/hA.min.js` once per tab 
 ## Lessons from the live run (known toolkit gaps, check these yourself)
 - **Eligibility first.** `NOTES` only carries text next to the form. Read the page's headings and intro for who the
   supplier sells to (licensed salons only, sign shops only, brick-and-mortar only, a sales territory). If the dealer
-  doesn't qualify, stop with `NEEDS_HUMAN` and name the eligibility issue. Filling is the approver's call.
+  doesn't qualify, stop with `NOT_A_FIT` and quote the restriction (CS-588). Don't fill, and never misstate the business.
 - **Choosers.** Buttons outside a `<form>` are not listed. If the snapshot has no fields but the page asks a
   question ("Do you have an account number?"), call `classify_page()` and report instead of guessing `BLOCKED`.
 - **Dependent fields.** When a Country select re-renders State (BigCommerce), set Country in one `fill`, then call
@@ -61,3 +61,11 @@ The same runtime runs in the page. Inject `harness/live/hA.min.js` once per tab 
   in `needs_human`.
 - **Yes/No radios.** A radio group's question text can be missing from its label. Check `(preset!)` radios near
   opt-in wording, and set marketing/SMS opt-ins to `No`.
+- **Unlinked labels (A7).** If the snapshot lists inputs with empty labels (the label is plain text above each input,
+  as on ISI), do not fill by position. Report the form for the vision fallback (C) or name the fields in `needs_human`.
+- **Salesforce Locker (A8).** On Salesforce Experience sites `snapshot` can throw ("Disallowed method getElementById on
+  ShadowRoot"). Report the error; the page needs the fallback.
+- **Block pages (A9).** `classify_page` has no rule for WAF or bot-check pages. If the page title says the page is
+  blocked, "Just a moment..." or a security verification, report `BLOCKED` and don't click the check.
+- **Choice cards (A10).** Account-type cards that are not form controls (Salesforce LWC) are invisible to the snapshot.
+  If NOTES describe options but no fields are listed, report `NEEDS_HUMAN` and name the choice.
