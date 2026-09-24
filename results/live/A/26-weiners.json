@@ -1,0 +1,69 @@
+{
+ "version": "A",
+ "form": "26-weiners",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "LOGIN_GATED",
+ "needs_human": [
+  "login: Shopify 'Sign in / Register' by emailed verification code (human-only); submitting an email auto-creates an account"
+ ],
+ "notes": "Snapshot: 2 fields (Email, preset 'Email me with news and offers'), buttons Continue/Terms/Submit, h1 'Sign in / Register'. Not an application; nothing typed or toggled.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "marketing-consent",
+   "st": "checked",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 360,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2200,
+    "out_chars": 260,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1150,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 3350,
+  "chars_out": 350,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 620,
+  "token_est": 1058,
+  "tool_calls": 2,
+  "wall_ms": 6047
+ },
+ "started_at": "2026-09-24T17:28:24.876Z",
+ "ended_at": "2026-09-24T17:28:30.923Z"
+}

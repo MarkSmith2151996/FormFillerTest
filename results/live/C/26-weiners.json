@@ -1,0 +1,93 @@
+{
+ "version": "C",
+ "form": "26-weiners",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "LOGIN_GATED",
+ "needs_human": [
+  "login: Shopify 'Sign in / Register' by emailed verification code (human-only); entering an email would also auto-create an account"
+ ],
+ "notes": "One screenshot: Weiners 'Sign in / Register' card, Email box with arrow button, 'Email me with news and offers' preset checked, Terms of service. Not an application; classified LOGIN_GATED without acting. Harness: leaving account.weinersltd.com cleared window.name (as on COOP sites), so the code came back via example.com.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "marketing-consent",
+   "st": "checked",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_132751.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 360,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2350,
+    "out_chars": 10,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 380,
+    "out_chars": 30,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2350,
+    "out_chars": 90,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 90,
+    "out_chars": 1300,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 820,
+    "out_chars": 120,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 90,
+  "chars_out": 1300,
+  "images": 1,
+  "img_tokens": 1534,
+  "tool_ms": 0,
+  "harness_chars": 6790,
+  "token_est": 1932,
+  "tool_calls": 1,
+  "wall_ms": 11227
+ },
+ "started_at": "2026-09-24T17:27:47.226Z",
+ "ended_at": "2026-09-24T17:27:58.453Z"
+}

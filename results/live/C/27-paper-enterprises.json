@@ -1,0 +1,87 @@
+{
+ "version": "C",
+ "form": "27-paper-enterprises",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "Cloudflare 'Performing security verification' page with a 'Verify you are human' checkbox; the contact page never loaded. A person can open it; the agent does not click bot checks"
+ ],
+ "notes": "One screenshot: www.paperenterprisesusa.com 'Performing security verification' (Cloudflare Turnstile, title 'Just a moment...'). Not interacted with. The target itself is a Contact Us page (not an application) per earlier recon. Harness: the interstitial cleared window.name, so the code came in via the URL fragment.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_132920.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 420,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2350,
+    "out_chars": 10,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 260,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 400,
+    "out_chars": 30,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2380,
+    "out_chars": 100,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 90,
+    "out_chars": 260,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 130,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 90,
+  "chars_out": 260,
+  "images": 1,
+  "img_tokens": 1534,
+  "tool_ms": 0,
+  "harness_chars": 6990,
+  "token_est": 1634,
+  "tool_calls": 1,
+  "wall_ms": 18817
+ },
+ "started_at": "2026-09-24T17:29:16.925Z",
+ "ended_at": "2026-09-24T17:29:35.742Z"
+}
