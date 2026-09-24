@@ -12,7 +12,8 @@ You are the brain. The tools are `@playwright/mcp`'s own tools, unmodified. The 
    For native selects, use `browser_select_option({"target":"eN","values":["Michigan"]})`.
 5. `browser_snapshot({"target":"<form ref>"})` to verify values. Watch for presets such as a country defaulting to Afghanistan, or pre-checked opt-ins.
 6. Tell the harness the outcome (`./ff B <form> report '{"outcome":"…","needs_human":[…],"notes":"…"}'` offline). Use exactly one class:
-   `FILLED`, `PARTIAL`, `NEEDS_HUMAN`, `NOT_A_FORM`, `LOGIN_GATED`, `PDF_APPLICATION`, `ENTERPRISE_ONLY`, `BLOCKED`.
+   `FILLED`, `PARTIAL`, `NEEDS_HUMAN`, `NOT_A_FIT`, `NOT_A_FORM`, `LOGIN_GATED`, `PDF_APPLICATION`, `ENTERPRISE_ONLY`, `BLOCKED`
+   (`NOT_A_FIT` = the supplier only sells to businesses the dealer isn't; ranks above `NEEDS_HUMAN`; see A's guide).
 
 Never click Submit, Register, Create account, Apply, or Send, or a Continue that submits. The guard blocks the request but still counts the attempt.
 `browser_evaluate` and `browser_run_code_unsafe` exist in the server. Using them turns B into a custom toolkit, so the bake-off doesn't use them.
@@ -20,7 +21,7 @@ Never click Submit, Register, Create account, Apply, or Send, or a Continue that
 ## Values
 B has no templates, so type literal values from the profile file you were given (offline: `profile/synthetic.json`, plus the
 derived keys in `profile/derive.js`, e.g. first and last name split, state name, "United States"). The fill rules are the same as
-in `versions/a_form_toolkit/CLAUDE.md`: never invent, no passwords, no uploads, no credit card, no opt-ins, ship-to only from the profile.
+in `versions/a_form_toolkit/CLAUDE.md`: never invent, no passwords, no uploads, no credit card, no opt-ins, ship-to only from the profile's ship-to keys, the CS-588 still-NEEDS_HUMAN list, and `NOT_A_FIT` for who-we-sell-to restrictions.
 
 ## Live mode in this bake-off
 Steel's CDP endpoint is local to the PC, so from the cloud VM the live B runs used Custodian's own Playwright-MCP-style tools:

@@ -16,9 +16,9 @@ You are the brain and the vision model. You only see screenshots, and you act by
 3. Scroll and repeat until the form's end, then scroll back to check presets (country, opt-ins).
    **Always take one screenshot at the very bottom before reporting.** Opt-ins and consents often sit below the last
    field. In the live run, Salon Services' SMS opt-in was preset to Yes below the fold and was missed.
-4. Report exactly one outcome class, the same set as A and B, with `needs_human` listing the fields.
+4. Report exactly one outcome class, the same set as A and B (including `NOT_A_FIT` for who-we-sell-to restrictions), with `needs_human` listing the fields.
 
-Rules are the same as A: never submit, never invent, no passwords, no uploads, no credit card, leave opt-ins unchecked, ship-to only from the profile.
+Rules are the same as A: never submit, never invent, no passwords, no uploads, no credit card, leave opt-ins unchecked, ship-to only from the profile's ship-to keys, and the CS-588 still-NEEDS_HUMAN list (see A's guide).
 Cost note: every screenshot is about 770 image tokens (offline). On Steel via Custodian a 1920×~1000 screenshot is about 1,600.
 
 ## Live mode in this bake-off

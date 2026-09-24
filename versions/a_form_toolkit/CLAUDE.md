@@ -18,16 +18,25 @@ A typical form takes **3 calls**: `open_form`, `fill`, `report`.
    or `ERR profile.x empty -> NEEDS_HUMAN`. Fix only the failures with a second `fill`.
 4. For multi-step forms, `next_step()` returns the next step's snapshot. It refuses submit-like controls and native form submits. Stop there with `PARTIAL` or `NEEDS_HUMAN`.
 5. `report(outcome, needs_human[], notes)` with exactly one outcome:
-   `FILLED`, `PARTIAL` (list missing fields), `NEEDS_HUMAN` (name the fields), `NOT_A_FORM`, `LOGIN_GATED`, `PDF_APPLICATION`, `ENTERPRISE_ONLY`, `BLOCKED`.
+   `FILLED`, `PARTIAL` (list missing fields), `NEEDS_HUMAN` (name the fields), `NOT_A_FIT`, `NOT_A_FORM`, `LOGIN_GATED`, `PDF_APPLICATION`, `ENTERPRISE_ONLY`, `BLOCKED`.
+   **`NOT_A_FIT`** (added by CS-588): the supplier restricts who it sells to in a way the dealer doesn't meet (storefront /
+   brick-and-mortar only; one trade only such as sign shops, licensed salons, dental practices; a region such as western
+   states only; no Amazon or online resellers). Don't fill it, quote the restriction text in `needs_human`/notes, and never
+   misstate the business to qualify. It ranks above `NEEDS_HUMAN`: a form that is both is `NOT_A_FIT`.
 
 ## Fill rules (dealer profile)
 - **Never invent.** If a required field isn't in the profile, leave it and name it in `needs_human`. Examples: order volume, referral source, receiving hours, number of locations, licence numbers, account numbers.
 - Phone is a mobile line. Use it for phone and mobile fields and leave fax blank. If a form demands a landline, mark NEEDS_HUMAN.
-- Bill-to is the profile business address. Ship-to comes only from `profile.ship_to_address`. It is empty today, so a required separate ship-to means NEEDS_HUMAN. Never tick "same as billing".
+- Bill-to is the profile business address. Ship-to (delivery / "where will we ship") comes only from the profile's ship-to keys
+  (`ship_to_name`, `ship_to_street`, `ship_to_street2`, `ship_to_city`, `ship_to_state`, `ship_to_state_name`, `ship_to_zip`, `ship_to_address`),
+  which hold the prep-center address (CS-588). Never tick "same as billing": the addresses differ.
+- Still `NEEDS_HUMAN` until the dealer decides (CS-588, do not guess): years in business, employee count, annual sales or
+  purchase volume, "how did you hear about us", website URL, sales-tax licence / resale account numbers, file uploads, captchas.
 - Business type: e-commerce reseller (Amazon and other online marketplaces). Payment: wire transfer or ACH, **never credit card**.
 - Leave net-terms requests, trade references, bank references, and personal-guarantee sections blank.
 - File uploads (resale certificate MI Form 3372, EIN letter, licences) are NEEDS_HUMAN. Passwords and account creation are human-only.
-- Leave marketing, SMS, and VIP opt-ins unchecked, and uncheck them if preset. Terms and consent boxes are for the approver.
+- Leave marketing, SMS, and VIP opt-ins unchecked, and uncheck them if preset (set Yes/No opt-in radios to No). Look below the
+  last field for pre-checked boxes. Terms and consent boxes are for the approver.
 - Signature fields may take `{{profile.signature_name}}` (the owner) and `{{profile.today}}`.
 
 ## Profile keys

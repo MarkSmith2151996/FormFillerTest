@@ -1,0 +1,63 @@
+{
+ "version": "B",
+ "form": "30-canadian-linen",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [
+  "not a wholesale application: 'Request a Quote' for linen and uniform rental service (Canadian provinces only); a representative calls back"
+ ],
+ "notes": "read_page: h1 'Request a Quote' ('a Canadian Linen representative will contact you'), contact fields with a Canadian Province list, a honeypot 'Website (leave blank)'. Service enquiry, not a reseller application; nothing typed.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3700,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 12500,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 80,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 12500,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 5060,
+  "token_est": 3572,
+  "tool_calls": 1,
+  "wall_ms": 8836
+ },
+ "started_at": "2026-09-24T17:39:45.791Z",
+ "ended_at": "2026-09-24T17:39:54.627Z"
+}

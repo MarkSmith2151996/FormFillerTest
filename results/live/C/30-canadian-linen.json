@@ -1,0 +1,73 @@
+{
+ "version": "C",
+ "form": "30-canadian-linen",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [
+  "not a wholesale application: 'Request a Quote' for linen and uniform rental service ('a Canadian Linen representative will contact you'); nothing to apply for as a reseller"
+ ],
+ "notes": "One screenshot: Contact Us page with a 'Request a Quote' service-enquiry form (First/Last name, Email, Business Name, City...). A sales enquiry for linen/uniform service, not a reseller application; nothing typed. First screenshot attempt timed out after 30 s (transport; retried with a 60 s timeout, booked as harness).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_133824.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 10,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2800,
+    "out_chars": 110,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 90,
+    "out_chars": 200,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 80,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 110,
+  "chars_out": 250,
+  "images": 1,
+  "img_tokens": 1534,
+  "tool_ms": 0,
+  "harness_chars": 4320,
+  "token_est": 1637,
+  "tool_calls": 1,
+  "wall_ms": 67677
+ },
+ "started_at": "2026-09-24T17:37:47.092Z",
+ "ended_at": "2026-09-24T17:38:54.769Z"
+}
