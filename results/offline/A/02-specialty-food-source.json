@@ -1,0 +1,280 @@
+{
+ "version": "A",
+ "form": "02-specialty-food-source",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "The number of locations",
+  "What items are you interested in purchasing",
+  "Business receiving hours",
+  "Business Location Type",
+  "Special Delivery Instructions",
+  "Reach out after approval (preference)",
+  "Hear about us",
+  "Steps 2-3 not reached (fixture is step 1)"
+ ],
+ "notes": "Step 1 filled from profile; payment ACH; website with https://. Required fields not in profile left blank.",
+ "field_map": {
+  "f1": {
+   "label": "Owners Legal Name",
+   "src": "owner_name"
+  },
+  "f2": {
+   "label": "Company name",
+   "src": "legal_name"
+  },
+  "f3": {
+   "label": "Street address",
+   "src": "street_address"
+  },
+  "f5": {
+   "label": "City",
+   "src": "city"
+  },
+  "f6": {
+   "label": "Postal/Zip",
+   "src": "zip"
+  },
+  "f7": {
+   "label": "Country",
+   "src": "literal"
+  },
+  "f8": {
+   "label": "Phone",
+   "src": "phone"
+  },
+  "f9": {
+   "label": "Email",
+   "src": "email"
+  },
+  "f10": {
+   "label": "Business website (Start with https://)",
+   "src": "website_url"
+  },
+  "f12": {
+   "label": "How have you been in business",
+   "src": "literal"
+  },
+  "f14": {
+   "label": "What type of business are you?",
+   "src": "business_type"
+  },
+  "f21": {
+   "label": "Preferred Payment Method",
+   "src": "literal"
+  }
+ },
+ "readback": [
+  {
+   "k": "name",
+   "label": "Owners Legal Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "owner_name"
+  },
+  {
+   "k": "text",
+   "label": "Company name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "text-2",
+   "label": "Street address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "text-3",
+   "label": "Apartment, suite, etc",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "text-4",
+   "label": "City *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "text-5",
+   "label": "Postal/Zip *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "select",
+   "label": "Country",
+   "type": "select",
+   "req": false,
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "phone-2",
+   "label": "Phone *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "email-2",
+   "label": "Email *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "url",
+   "label": "Business website (Start with https://)",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "website_url"
+  },
+  {
+   "k": "text-15",
+   "label": "The number of locations *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-5",
+   "label": "How have you been in business *",
+   "type": "select",
+   "req": true,
+   "st": "choice",
+   "opt": "Less than One year"
+  },
+  {
+   "k": "text-13",
+   "label": "What items are you interested in purchasing with us? *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "text-14",
+   "label": "What type of business are you? *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "business_type"
+  },
+  {
+   "k": "select-3",
+   "label": "Does your location have a loading dock and/or work lift?",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "text-16",
+   "label": "Business receiving hours *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-4",
+   "label": "Business Location Type *",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "text-17",
+   "label": "Do you have any Special Delivery Instructions? *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-6",
+   "label": "Would you like someone to reach out after your account is approved? *",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-7",
+   "label": "Hear about us? *",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-8",
+   "label": "Preferred Payment Method *",
+   "type": "select",
+   "req": true,
+   "st": "choice",
+   "opt": "ACH"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/02-specialty-food-source.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 1270,
+    "image": null,
+    "ms": 81
+   },
+   {
+    "cmd": "fill",
+    "args_chars": 318,
+    "out_chars": 118,
+    "image": null,
+    "ms": 221
+   },
+   {
+    "cmd": "report",
+    "args_chars": 414,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 734,
+  "chars_out": 1448,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 302,
+  "harness_chars": 0,
+  "token_est": 624,
+  "wall_ms": 31602
+ },
+ "started_at": "2026-09-24T13:44:36.396Z",
+ "ended_at": "2026-09-24T13:45:07.998Z"
+}

@@ -91,5 +91,5 @@
     [].forEach.call(g.children, function (c) { c.style.cssText += ';font:bold 11px monospace;color:#c00050;background:rgba(255,255,255,.8);padding:0 2px'; });
     document.documentElement.appendChild(g); return 'grid ' + W + 'x' + H;
   };
-  CV.live = function (p) { return Promise.resolve(p).then(function (r) { var h = document.documentElement; h.style.setProperty('display', 'none', 'important'); setTimeout(function () { h.style.removeProperty('display'); }, 1200); return r; }); };
+  CV.live = function (p) { return Promise.resolve(p).then(function (r) { var h = document.documentElement; h.style.setProperty('display', 'none', 'important'); setTimeout(function () { h.style.removeProperty('display'); }, 1200); return typeof r === 'string' ? '[' + r.length + 'c] ' + r : r; }); };
 })();

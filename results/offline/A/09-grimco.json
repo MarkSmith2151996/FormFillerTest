@@ -1,0 +1,127 @@
+{
+ "version": "A",
+ "form": "09-grimco",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Next steps create an account (password is human-only)",
+  "Fit: Grimco sells only to sign / digital print shops"
+ ],
+ "notes": "Step 1 filled; language preset English - US kept; fixture has no step 2.",
+ "field_map": {
+  "f1": {
+   "label": "Email Address",
+   "src": "email"
+  },
+  "f2": {
+   "label": "Confirm Email Address",
+   "src": "email_confirm"
+  },
+  "f3": {
+   "label": "First Name",
+   "src": "contact_first_name"
+  },
+  "f4": {
+   "label": "Last Name",
+   "src": "contact_last_name"
+  },
+  "f6": {
+   "label": "Are you an existing Grimco customer?",
+   "src": "literal"
+  }
+ },
+ "readback": [
+  {
+   "k": "userName",
+   "label": "Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "confirmUserName",
+   "label": "Confirm Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "firstName",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "lastName",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "preferredLocalizationId",
+   "label": "Preferred Language *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "text",
+   "value": "English - US"
+  },
+  {
+   "k": "radio::r7:",
+   "label": "Are you an existing Grimco customer? *",
+   "type": "radio",
+   "req": true,
+   "st": "choice",
+   "opt": "No"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/09-grimco.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 324,
+    "image": null,
+    "ms": 71
+   },
+   {
+    "cmd": "fill",
+    "args_chars": 144,
+    "out_chars": 34,
+    "image": null,
+    "ms": 64
+   },
+   {
+    "cmd": "report",
+    "args_chars": 235,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 381,
+  "chars_out": 418,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 135,
+  "harness_chars": 0,
+  "token_est": 229,
+  "wall_ms": 13752
+ },
+ "started_at": "2026-09-24T13:51:55.750Z",
+ "ended_at": "2026-09-24T13:52:09.502Z"
+}

@@ -1,0 +1,172 @@
+{
+ "version": "C",
+ "form": "05-prime-wholesale",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Seller Permit upload",
+  "EIN document upload",
+  "Product type (preset Health & Household)"
+ ],
+ "notes": "Payment preset ACH/Wire kept; verified visually.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "form_fields[name]",
+   "label": "Full Name",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_name"
+  },
+  {
+   "k": "form_fields[email]",
+   "label": "Your Email",
+   "type": "email",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "form_fields[field_b961db6]",
+   "label": "Phone Number",
+   "type": "tel",
+   "req": false,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "form_fields[field_210ce40]",
+   "label": "Company Name",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "form_fields[field_fad8593]",
+   "label": "Type of Products or Services Needed",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "choice",
+   "opt": "Health &Household"
+  },
+  {
+   "k": "form_fields[field_3c3eb32]",
+   "label": "Preferred Payment Method",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "choice",
+   "opt": "ACH/Wire Transfer"
+  },
+  {
+   "k": "form_fields[field_b9d22ed]",
+   "label": "Upload Seller' Permit",
+   "type": "file",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "form_fields[field_d5a3b72]",
+   "label": "Upload EIN Document",
+   "type": "file",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "form_fields[field_26b6687]",
+   "label": "Address",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "form_fields[field_257ce7a]",
+   "label": "City",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "form_fields[field_f6c5f32]",
+   "label": "State",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "form_fields[field_5385f10]",
+   "label": "Zip Code",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "zip"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/05-prime-wholesale.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 62,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 133
+   },
+   {
+    "cmd": "act",
+    "args_chars": 272,
+    "out_chars": 108,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 888
+   },
+   {
+    "cmd": "act",
+    "args_chars": 139,
+    "out_chars": 85,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 413
+   },
+   {
+    "cmd": "report",
+    "args_chars": 188,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 4,
+  "brain_calls": 4,
+  "chars_in": 601,
+  "chars_out": 315,
+  "images": 3,
+  "img_tokens": 2304,
+  "tool_ms": 1434,
+  "harness_chars": 0,
+  "token_est": 2566,
+  "wall_ms": 40221
+ },
+ "started_at": "2026-09-24T13:48:04.395Z",
+ "ended_at": "2026-09-24T13:48:44.616Z"
+}

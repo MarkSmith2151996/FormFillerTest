@@ -1,0 +1,70 @@
+{
+ "form": "10-dhp-supply",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "FILLED",
+ "acceptable_outcomes": [
+  "FILLED"
+ ],
+ "needs_human": [],
+ "fields": [
+  {
+   "k": "form[151_0]",
+   "req": true,
+   "expect": "profile:legal_name"
+  },
+  {
+   "k": "form[1_1]",
+   "req": true,
+   "expect": "profile:contact_first_name"
+  },
+  {
+   "k": "form[11_2]",
+   "req": true,
+   "expect": "profile:contact_last_name"
+  },
+  {
+   "k": "form[121_3]",
+   "req": true,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "form[101_4]",
+   "req": true,
+   "expect": "profile:city"
+  },
+  {
+   "k": "form[221_5]",
+   "req": true,
+   "expect": "profile:state"
+  },
+  {
+   "k": "form[131_6]",
+   "req": true,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "form[31_7]",
+   "req": true,
+   "expect": "profile:phone"
+  },
+  {
+   "k": "form[21_8]",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "form[191_9_0]=Yes",
+   "req": false,
+   "expect": "unchecked",
+   "label": "marketing opt-in (preset checked!)"
+  },
+  {
+   "k": "form[41_10]",
+   "req": false,
+   "expect": "blank"
+  }
+ ],
+ "notes": "\"Request a Quote\" form; reCAPTCHA is solved by the approver at submit. Preset trap: email-deals opt-in is pre-checked."
+}

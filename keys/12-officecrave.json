@@ -1,0 +1,13 @@
+{
+ "form": "12-officecrave",
+ "unreviewed": true,
+ "key_source": "live-recon",
+ "trap": false,
+ "expected_outcome": "BLOCKED",
+ "acceptable_outcomes": [
+  "BLOCKED"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Cloudflare \"Just a moment...\" challenge from Steel."
+}

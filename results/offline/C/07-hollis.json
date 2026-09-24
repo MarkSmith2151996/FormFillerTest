@@ -1,0 +1,218 @@
+{
+ "version": "C",
+ "form": "07-hollis",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Account Number (existing Hollis dealer account)"
+ ],
+ "notes": "Sub-labels sit under inputs (Gravity Forms); newsletter popup left alone.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "input_1",
+   "label": "Store Name(Required)",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input_3",
+   "label": "Account Number(Required)",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "input_4",
+   "label": "Primary Email Address On Retail Account(Required)",
+   "type": "email",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "input_6",
+   "label": "Contact First Name(Required)",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "input_17",
+   "label": "Contact Last Name(Required)",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "input_7",
+   "label": "Store Phone Number(Required)",
+   "type": "tel",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "input_8.1",
+   "label": "Street Address",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "input_8.2",
+   "label": "Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "input_8.3",
+   "label": "City",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "input_8.4",
+   "label": "State / Province / Region",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "input_8.5",
+   "label": "ZIP / Postal Code",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "input_8.6",
+   "label": "Country",
+   "type": "select",
+   "req": true,
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "input_9",
+   "label": "Optional Comments or Special Requests",
+   "type": "textarea",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "first_name_016JB91TTR00000000002MSQ41",
+   "label": "First Name",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "last_name_016JB91TTR00000000002MSQ42",
+   "label": "Last Name",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "email",
+   "label": "Email",
+   "type": "email",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "country_016JB91TTR00000000002MSQ44",
+   "label": "Country",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/07-hollis.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 53,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 133
+   },
+   {
+    "cmd": "act",
+    "args_chars": 281,
+    "out_chars": 99,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 859
+   },
+   {
+    "cmd": "act",
+    "args_chars": 210,
+    "out_chars": 91,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 768
+   },
+   {
+    "cmd": "act",
+    "args_chars": 36,
+    "out_chars": 56,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 381
+   },
+   {
+    "cmd": "report",
+    "args_chars": 175,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 5,
+  "brain_calls": 5,
+  "chars_in": 704,
+  "chars_out": 359,
+  "images": 4,
+  "img_tokens": 3072,
+  "tool_ms": 2141,
+  "harness_chars": 0,
+  "token_est": 3376,
+  "wall_ms": 56979
+ },
+ "started_at": "2026-09-24T13:48:45.051Z",
+ "ended_at": "2026-09-24T13:49:42.030Z"
+}

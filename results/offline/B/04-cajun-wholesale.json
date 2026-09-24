@@ -1,0 +1,62 @@
+{
+ "version": "B",
+ "form": "04-cajun-wholesale",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [],
+ "notes": "Page says email a wholesale inquiry to orders@cajunwholesale.com; only newsletter field.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "NewsletterEmail",
+   "label": "Sign up for our newsletter",
+   "type": "email",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/B/04-cajun-wholesale.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 315,
+    "image": null,
+    "ms": 214
+   },
+   {
+    "cmd": "browser_snapshot",
+    "args_chars": 2,
+    "out_chars": 1513,
+    "image": null,
+    "ms": 12
+   },
+   {
+    "cmd": "report",
+    "args_chars": 123,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 127,
+  "chars_out": 1888,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 226,
+  "harness_chars": 0,
+  "token_est": 576,
+  "wall_ms": 11921
+ },
+ "started_at": "2026-09-24T13:46:52.622Z",
+ "ended_at": "2026-09-24T13:47:04.543Z"
+}

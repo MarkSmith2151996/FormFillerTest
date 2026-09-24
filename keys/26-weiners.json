@@ -1,0 +1,13 @@
+{
+ "form": "26-weiners",
+ "unreviewed": true,
+ "key_source": "task",
+ "trap": true,
+ "expected_outcome": "LOGIN_GATED",
+ "acceptable_outcomes": [
+  "LOGIN_GATED"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Shopify email-code login; a retailer."
+}

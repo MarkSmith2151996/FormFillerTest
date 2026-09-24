@@ -12,9 +12,10 @@
   var SUBMITISH = /submit|apply|register|create|sign ?up|send|finish|complete|place order|confirm|join|request|save|enroll|get started|log ?in|sign ?in/i;
   var SENSITIVE = [
     [/password|passcode|\bpin\b/i, 'password', 'human-only (account creation)'],
-    [/card ?(number|no|#)|credit ?card|\bcvv|\bcvc|security code|expir(y|ation)/i, 'card', 'never (no credit cards)'],
+    [/security code|captcha|verification code|enter the (code|characters)|type the (code|characters)/i, 'captcha', 'human (captcha / verification code)'],
+    [/card ?(number|no|#)|credit ?card|\bcvv\b|\bcvc\b/i, 'card', 'never (no credit cards)'],
     [/\bssn\b|social security|driver'?s? licen[cs]e/i, 'ssn', 'never (personal id)'],
-    [/routing|account ?(number|no|#)|\biban\b|bank ?(name|account|reference)/i, 'bank', 'never (bank data / references)']
+    [/routing|\biban\b|bank ?(name|account|reference)|(checking|savings) account/i, 'bank', 'never (bank data / references)']
   ];
   var ST = { AL:'Alabama',AK:'Alaska',AZ:'Arizona',AR:'Arkansas',CA:'California',CO:'Colorado',CT:'Connecticut',DE:'Delaware',DC:'District of Columbia',FL:'Florida',GA:'Georgia',HI:'Hawaii',ID:'Idaho',IL:'Illinois',IN:'Indiana',IA:'Iowa',KS:'Kansas',KY:'Kentucky',LA:'Louisiana',ME:'Maine',MD:'Maryland',MA:'Massachusetts',MI:'Michigan',MN:'Minnesota',MS:'Mississippi',MO:'Missouri',MT:'Montana',NE:'Nebraska',NV:'Nevada',NH:'New Hampshire',NJ:'New Jersey',NM:'New Mexico',NY:'New York',NC:'North Carolina',ND:'North Dakota',OH:'Ohio',OK:'Oklahoma',OR:'Oregon',PA:'Pennsylvania',RI:'Rhode Island',SC:'South Carolina',SD:'South Dakota',TN:'Tennessee',TX:'Texas',UT:'Utah',VT:'Vermont',VA:'Virginia',WA:'Washington',WV:'West Virginia',WI:'Wisconsin',WY:'Wyoming' };
 
@@ -48,23 +49,31 @@
     return true;
   }
   function lblText(l) { var c = l.cloneNode(true), x = c.querySelectorAll('select,option,input,textarea,button'); for (var i = 0; i < x.length; i++) x[i].remove(); return txt(c); }
-  function near(el, maxLvl) {
+  function near(el, maxLvl, maxLen) {
     var n = el;
     for (var lvl = 0; lvl < (maxLvl || 3) && n; lvl++) {
       for (var s = n.previousSibling; s; s = s.previousSibling) {
         if (s.nodeType === 3 && s.textContent.trim()) return s.textContent.trim();
         if (s.nodeType !== 1) continue;
         if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(s.tagName) || (lvl > 0 && /^H[12]$/.test(s.tagName))) break;
-        var t = txt(s); if (t && t.length < 90 && !s.querySelector('input,select,textarea')) return t; if (t) break;
+        var t = txt(s); if (t && t.length < (maxLen || 90) && !s.querySelector('input,select,textarea')) return t; if (t) break;
       }
       n = n.parentElement;
     }
     return '';
   }
+  function after(el) {
+    for (var s = el.nextSibling, i = 0; s && i < 3; s = s.nextSibling, i++) {
+      if (s.nodeType === 3 && s.textContent.trim()) return s.textContent.trim();
+      if (s.nodeType === 1) { if (/^(INPUT|SELECT|TEXTAREA|BR)$/.test(s.tagName)) break; var t = txt(s); if (t && !s.querySelector('input,select,textarea')) return t; }
+    }
+    return '';
+  }
   function rawLabel(el) {
     var root = el.getRootNode(), doc = el.ownerDocument, t = '', ids = el.getAttribute('aria-labelledby');
-    if (ids) t = ids.split(/\s+/).map(function (i) { return txt((root.getElementById && root.getElementById(i)) || doc.getElementById(i)); }).join(' ');
+    if (ids) t = ids.split(/\s+/).map(function (i) { var n = (root.getElementById && root.getElementById(i)) || doc.getElementById(i); return n && n.querySelector && n.querySelector('select,input,textarea') ? lblText(n) : txt(n); }).join(' ');
     if (!t && el.labels && el.labels.length) t = lblText(el.labels[0]);
+    if (!t && /^(checkbox|radio)$/i.test(el.type || '')) t = after(el);
     if (!t) t = el.getAttribute('aria-label') || near(el, 1) || el.getAttribute('placeholder') || near(el, 3) || el.getAttribute('title') || '';
     if (!t && (el.name || el.id)) t = String(el.name || el.id).replace(/[\[\]_\-.]+/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
     return t.replace(/\s+/g, ' ').replace(/\s*:\s*$/, '').trim();
@@ -153,6 +162,21 @@
     }).map(function (b) { return { el: b, t: (txt(b) || b.value || b.getAttribute('aria-label') || '').slice(0, 40) }; }).filter(function (b) { return b.t; });
   }
 
+  // Key sentences from the page body that change what "correct" means (requirements, eligibility, channel).
+  var IMPORTANT = /\b(required|only|must|not accept|existing (customer|dealer|account)s?|licen[cs]ed?|diversion|approv(al|ed)|by invitation|restricted|unable to ship|territor|e-?mail (us|a |your)|call us|pdf|download the|minimum order)/i;
+  function notes() {
+    var root = document.querySelector('main') || document.body, out = [], seen = {};
+    var tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    while (tw.nextNode() && out.length < 4) {
+      var n = tw.currentNode, p = n.parentElement;
+      if (!p || /^(SCRIPT|STYLE|NOSCRIPT|OPTION|LABEL|BUTTON|SELECT)$/.test(p.tagName) || p.closest('header,footer,nav,label,[role=dialog],[aria-modal=true]') || !p.getClientRects().length) continue;
+      var t = n.textContent.replace(/\s+/g, ' ').trim();
+      if (t.length < 20) continue;
+      t.split(/(?<=[.!?])\s+/).forEach(function (x) { if (out.length < 4 && IMPORTANT.test(x) && !seen[x]) { seen[x] = 1; out.push(x.slice(0, 160)); } });
+    }
+    return out;
+  }
+
   // ---------- observation ----------
   FT.setProfile = function (base) { FT.profile = ffDeriveProfile(base); return Object.keys(FT.profile).length; };
   FT.snapshot = async function (opt) {
@@ -173,7 +197,7 @@
       var fid = 'f' + (++id), req = required(el, lab), clean = lab.replace(/\s*\*\s*/g, ' ').replace(/\(required\)/i, '').trim().slice(0, 70);
       var form = el.form || (el.closest && el.closest('form')), sec = section(gname ? (el.closest('fieldset') || el) : el);
       if (gname) { var fs0 = el.closest('fieldset'), lg0 = fs0 && fs0.querySelector('legend'); if (/\*/.test(lg0 ? txt(lg0) : near(el.parentElement, 2)) || el.required) req = true; }
-      if (form && form !== lastForm) { lastForm = form; var fb = buttons(form).map(function (b) { return b.t; }); lines.push('## form' + (form.id ? ' #' + form.id : '') + (form.getAttribute('action') ? ' action=' + form.getAttribute('action').slice(0, 50) : '') + (fb.length ? ' buttons[' + fb.slice(0, 4).join('|') + ']' : '')); }
+      if (form && form !== lastForm) { lastForm = form; var fb = buttons(form).map(function (b) { return b.t; }); lines.push('## form' + (form.closest && form.closest('[role=dialog],[aria-modal=true],dialog') ? ' (popup/dialog)' : '') + (form.id ? ' #' + form.id : '') + (form.getAttribute('action') ? ' action=' + form.getAttribute('action').slice(0, 50) : '') + (fb.length ? ' buttons[' + fb.slice(0, 4).join('|') + ']' : '')); }
       if (sec && sec !== lastSec) { lastSec = sec; lines.push('# ' + sec); }
       lines.push({ fid: fid });
       var m = FT.meta[fid] = { k: k, label: clean, req: req, sec: sec };
@@ -198,12 +222,13 @@
     var xo = [].slice.call(document.querySelectorAll('iframe')).filter(function (f) { try { return !f.contentDocument; } catch (_) { return true; } }).filter(vis).map(function (f) { return (f.src || '').replace(/^https?:\/\//, '').slice(0, 40); }).filter(function (s) { return !/recaptcha|hcaptcha|turnstile|pixel|analytics|youtube|vimeo|maps/.test(s); });
     var head = 'PAGE ' + document.title.slice(0, 70) + ' | ' + location.host + location.pathname.slice(0, 60) + (h1 ? ' | h1: ' + txt(h1).slice(0, 60) : '') +
       '\nFIELDS ' + id + ' (' + nreq + ' required)' + (capt ? ' | captcha' : '') + Object.keys(flags).map(function (f) { return ' | ' + f + ':' + flags[f]; }).join('') + (xo.length ? ' | cross-origin iframes: ' + xo.join(', ') : '');
-    return head + (lines.length ? '\n' + lines.join('\n') : '\n(no fillable fields; try classify())');
+    var nt = notes();
+    return head + (nt.length ? '\nNOTES "' + nt.join('" | "') + '"' : '') + (lines.length ? '\n' + lines.join('\n') : '\n(no fillable fields; try classify())');
   };
   function groupLabel(r) {
     var fs = r.closest('fieldset'), lg = fs && fs.querySelector('legend');
     if (lg) return txt(lg).replace(/\*/g, '').trim().slice(0, 70);
-    var box = r.parentElement; for (var i = 0; i < 3 && box; i++) { var t = near(box); if (t) return t.replace(/\*/g, '').trim().slice(0, 70); box = box.parentElement; }
+    var box = r.parentElement; for (var i = 0; i < 3 && box; i++) { var t = near(box, 1, 200); if (t) return t.replace(/\*/g, '').trim().slice(0, 90); box = box.parentElement; }
     return '';
   }
 
@@ -333,6 +358,10 @@
     ev.push(ctrls.length + ' fields, ' + biz + ' business-type fields, ' + pw + ' password');
     var pdfs = [].slice.call(document.querySelectorAll('a[href*=".pdf"]')).filter(function (a) { return /application|credit|account|dealer|wholesale|reseller/i.test(txt(a) + a.href); }).map(function (a) { return txt(a).slice(0, 40); });
     if (pdfs.length) ev.push('PDF links: ' + pdfs.slice(0, 3).join('; '));
+    var mails = [].slice.call(document.querySelectorAll('a[href^="mailto:"]')).map(function (a) { return a.getAttribute('href').slice(7).split('?')[0]; }).filter(function (m, i, arr) { return m && arr.indexOf(m) === i; });
+    var m2 = body.match(/(e-?mail|send)[^.]{0,80}(wholesale|inquir|application)[^.]{0,80}\./i) || body.match(/(wholesale|inquir|application)[^.]{0,80}(e-?mail)[^.]{0,80}\./i);
+    if (mails.length) ev.push('mailto: ' + mails.slice(0, 3).join(', '));
+    if (m2) ev.push('"' + m2[0].trim().slice(0, 140) + '"');
     var login = /sign ?in|log ?in/i.test(buttons().map(function (b) { return b.t; }).join(' ') + ' ' + title);
     var codeLogin = /one-time|verification code|we('|’)ll send (you )?a code|send code|enter (the|your) code/i.test(body.slice(0, 5000));
     var enterprise = /contact (your|a|our) (local )?(sales )?(rep|representative|account manager)|existing customers only|by invitation|call (us|\d)[^.]{0,40}(open|set up) an account|not accepting new/i.test(body);
@@ -352,5 +381,5 @@
   };
   // Live transport helper: hide the page for a moment so the transport's post-call accessibility
   // echo (Custodian evaluate_js) is ~empty. Visual state is restored before the next action.
-  FT.live = function (p) { return Promise.resolve(p).then(function (r) { var h = document.documentElement; h.style.setProperty('display', 'none', 'important'); setTimeout(function () { h.style.removeProperty('display'); }, 1200); return r; }); };
+  FT.live = function (p) { return Promise.resolve(p).then(function (r) { var h = document.documentElement; h.style.setProperty('display', 'none', 'important'); setTimeout(function () { h.style.removeProperty('display'); }, 1200); return typeof r === 'string' ? '[' + r.length + 'c] ' + r : r; }); };
 })();

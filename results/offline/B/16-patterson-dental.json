@@ -1,0 +1,70 @@
+{
+ "version": "B",
+ "form": "16-patterson-dental",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "LOGIN_GATED",
+ "needs_human": [],
+ "notes": "B2C sign-in page",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "Email Address",
+   "label": "Email Address",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "Password",
+   "label": "Password",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/B/16-patterson-dental.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 424,
+    "image": null,
+    "ms": 137
+   },
+   {
+    "cmd": "browser_snapshot",
+    "args_chars": 2,
+    "out_chars": 839,
+    "image": null,
+    "ms": 11
+   },
+   {
+    "cmd": "report",
+    "args_chars": 52,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 56,
+  "chars_out": 1323,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 148,
+  "harness_chars": 0,
+  "token_est": 394,
+  "wall_ms": 13213
+ },
+ "started_at": "2026-09-24T13:56:20.773Z",
+ "ended_at": "2026-09-24T13:56:33.986Z"
+}

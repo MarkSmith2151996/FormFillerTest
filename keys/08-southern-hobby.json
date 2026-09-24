@@ -1,0 +1,260 @@
+{
+ "form": "08-southern-hobby",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "FILLED"
+ ],
+ "needs_human": [
+  "security code (image captcha)",
+  "product categories",
+  "referral source"
+ ],
+ "fields": [
+  {
+   "k": "businessname",
+   "req": false,
+   "expect": "profile:legal_name"
+  },
+  {
+   "k": "address",
+   "req": false,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "city",
+   "req": false,
+   "expect": "profile:city"
+  },
+  {
+   "k": "state",
+   "req": false,
+   "expect": "profile:state",
+   "label": "preset Alabama!"
+  },
+  {
+   "k": "zipcd",
+   "req": false,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "companyname",
+   "req": false,
+   "expect": "blank",
+   "label": "only if different"
+  },
+  {
+   "k": "contactname",
+   "req": false,
+   "expect": "profile:contact_name"
+  },
+  {
+   "k": "phone",
+   "req": false,
+   "expect": "profile:phone"
+  },
+  {
+   "k": "email",
+   "req": false,
+   "expect": "profile:email"
+  },
+  {
+   "k": "sportscards",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "nonsportscards",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "collectiblecardgames",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "toys",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "supplies",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "bgminirpg",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "othertype",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "othertypetxt",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "aboutbusiness",
+   "req": false,
+   "expect": "profile_or_blank:business_type"
+  },
+  {
+   "k": "brickandmortar",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "sportscardbreaker",
+   "req": false,
+   "expect": "any",
+   "label": "Online Retailer"
+  },
+  {
+   "k": "kiosk",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "vendor",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "amazon",
+   "req": false,
+   "expect": "checked",
+   "label": "Amazon retailer"
+  },
+  {
+   "k": "ebay",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "sellonwebsite",
+   "req": false,
+   "expect": "any"
+  },
+  {
+   "k": "sellonwebsitetxt",
+   "req": false,
+   "expect": "profile_or_blank:website"
+  },
+  {
+   "k": "otherbusiness",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "otherbusinesstxt",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ccg_wizards",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_fnb",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_yugioh",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_pokemon",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_game",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_bushinavi",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_lorcana",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_dealer",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_ugn",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_other",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ccg_othertxt",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "socialmediaurls",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "servicedbyanother",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "radio:howdidyouhear",
+   "req": false,
+   "expect": "human",
+   "label": "preset \"Other\""
+  },
+  {
+   "k": "referraltxt",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "othertypenewtxt",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "contactmethod",
+   "req": false,
+   "expect": "any"
+  },
+  {
+   "k": "radio:resalecert",
+   "req": false,
+   "expect": "choice:Yes"
+  },
+  {
+   "k": "visual_verify_code",
+   "req": true,
+   "expect": "human",
+   "label": "image security code"
+  }
+ ],
+ "notes": "No required markers except the captcha. Preset traps: State=Alabama, How-did-you-hear=Other."
+}

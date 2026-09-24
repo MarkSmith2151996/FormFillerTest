@@ -1,0 +1,50 @@
+{
+ "form": "09-grimco",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "PARTIAL"
+ ],
+ "needs_human": [
+  "later steps create an account (password)",
+  "fit: Grimco sells only to sign / digital print shops"
+ ],
+ "fields": [
+  {
+   "k": "userName",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "confirmUserName",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "firstName",
+   "req": true,
+   "expect": "profile:contact_first_name"
+  },
+  {
+   "k": "lastName",
+   "req": true,
+   "expect": "profile:contact_last_name"
+  },
+  {
+   "k": "preferredLocalizationId",
+   "req": true,
+   "expect": "any",
+   "label": "preset English - US"
+  },
+  {
+   "k": "radio::r7:",
+   "req": true,
+   "expect": "choice:No",
+   "label": "existing customer?"
+  }
+ ],
+ "notes": "MUI multi-step registration; fixture holds step 1."
+}

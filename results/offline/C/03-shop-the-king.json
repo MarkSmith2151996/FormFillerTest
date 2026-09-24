@@ -1,0 +1,275 @@
+{
+ "version": "C",
+ "form": "03-shop-the-king",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Password (account creation)",
+  "Monthly Order Volume",
+  "Delivery Method",
+  "Referral source"
+ ],
+ "notes": "3 act batches; verified visually; opt-ins untouched.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "customer[first_name]",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "label": "Email *",
+   "type": "email",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "customer[password]",
+   "label": "Set Password *",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[password_confirmation]",
+   "label": "Confirm Password *",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[phone]",
+   "label": "Phone *",
+   "type": "tel",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "customer[note][Business Name]",
+   "label": "Business Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "customer[note][Website]",
+   "label": "Business Website",
+   "type": "url",
+   "req": false,
+   "st": "profile",
+   "key": "website_url"
+  },
+  {
+   "k": "customer[note][Business Tax ID]",
+   "label": "Business Tax ID / EIN",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "ein"
+  },
+  {
+   "k": "customer[note][Address 1]",
+   "label": "Address Line 1 *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "customer[note][Address 2]",
+   "label": "Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[note][City]",
+   "label": "City *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "customer[note][State]",
+   "label": "State / Province *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "customer[note][Postal Code]",
+   "label": "Postal Code *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "customer[note][Country]",
+   "label": "Country *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "customer[note][Type of Business]",
+   "label": "Type of Business *",
+   "type": "select",
+   "req": true,
+   "st": "choice",
+   "opt": "Online Retailer"
+  },
+  {
+   "k": "customer[note][Products Interested]",
+   "label": "Products Interested in Purchasing",
+   "type": "textarea",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[note][Final Destination]",
+   "label": "Final Destination for the Goods",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[note][DUNS]",
+   "label": "DUNS Number",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[note][Order Volume]",
+   "label": "Anticipated Monthly Order Volume *",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[note][Delivery Method]",
+   "label": "Preferred Delivery Method *",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[note][Referral]",
+   "label": "How did you hear about Shop the King?",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "customer[note][Resale Confirmation]=Yes",
+   "label": "I confirm that I am applying for a resale wholesale account.",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "customer[note][VIP Opt-in]=Yes",
+   "label": "I'm applying for VIP account",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "customer[sms_marketing_consent][state]=subscribed",
+   "label": "Yes, send me SMS text updates about wholesale specials, restocks, and order upda",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/03-shop-the-king.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 60,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 155
+   },
+   {
+    "cmd": "act",
+    "args_chars": 379,
+    "out_chars": 122,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 956
+   },
+   {
+    "cmd": "act",
+    "args_chars": 298,
+    "out_chars": 108,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 780
+   },
+   {
+    "cmd": "report",
+    "args_chars": 193,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 4,
+  "brain_calls": 4,
+  "chars_in": 872,
+  "chars_out": 350,
+  "images": 3,
+  "img_tokens": 2304,
+  "tool_ms": 1891,
+  "harness_chars": 0,
+  "token_est": 2654,
+  "wall_ms": 50353
+ },
+ "started_at": "2026-09-24T13:45:59.130Z",
+ "ended_at": "2026-09-24T13:46:49.483Z"
+}

@@ -1,0 +1,148 @@
+{
+ "version": "B",
+ "form": "10-dhp-supply",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "FILLED",
+ "needs_human": [],
+ "notes": "preset opt-in unchecked; captcha at submit",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "form[151_0]",
+   "label": "Company Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "form[1_1]",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "form[11_2]",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "form[121_3]",
+   "label": "Company Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "form[101_4]",
+   "label": "City *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "form[221_5]",
+   "label": "Select state... *",
+   "type": "select",
+   "req": true,
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "form[131_6]",
+   "label": "Zip Code *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "form[31_7]",
+   "label": "Phone Number *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "form[21_8]",
+   "label": "Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "form[191_9_0]=Yes",
+   "label": "Yes, please sign me up for Smart Email Deals",
+   "type": "checkbox",
+   "req": false,
+   "st": "unchecked"
+  },
+  {
+   "k": "form[41_10]",
+   "label": "Comments or Questions",
+   "type": "textarea",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/B/10-dhp-supply.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 295,
+    "image": null,
+    "ms": 190
+   },
+   {
+    "cmd": "browser_snapshot",
+    "args_chars": 2,
+    "out_chars": 2623,
+    "image": null,
+    "ms": 18
+   },
+   {
+    "cmd": "browser_fill_form",
+    "args_chars": 773,
+    "out_chars": 844,
+    "image": null,
+    "ms": 261
+   },
+   {
+    "cmd": "report",
+    "args_chars": 73,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 4,
+  "brain_calls": 4,
+  "chars_in": 850,
+  "chars_out": 3822,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 469,
+  "harness_chars": 0,
+  "token_est": 1335,
+  "wall_ms": 11796
+ },
+ "started_at": "2026-09-24T13:52:28.435Z",
+ "ended_at": "2026-09-24T13:52:40.231Z"
+}

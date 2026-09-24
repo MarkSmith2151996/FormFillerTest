@@ -1,0 +1,175 @@
+{
+ "form": "11-sweis",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN"
+ ],
+ "needs_human": [
+  "license / student ID, state, expiry",
+  "username + password",
+  "Michigan missing from billing states",
+  "ship-to address"
+ ],
+ "fields": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "req": false,
+   "expect": "profile:legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "req": true,
+   "expect": "profile:contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "req": true,
+   "expect": "profile:contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLicense",
+   "req": true,
+   "expect": "human",
+   "label": "license / student ID"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlLicenseState",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLicenseExpDate",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlSalonType",
+   "req": true,
+   "expect": "choice:E-Merchant",
+   "label": "preset Beauty Center!"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbResaleTaxNumber",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlDoBMonth",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlDoBDay",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "req": true,
+   "expect": "profile:phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbUserName",
+   "req": true,
+   "expect": "human",
+   "label": "username"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPassword",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPasswordVerify",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rblBillingAddressType",
+   "req": true,
+   "expect": "choice:Business"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "req": true,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress2",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingCity",
+   "req": true,
+   "expect": "profile:city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlBillingState",
+   "req": true,
+   "expect": "human",
+   "label": "Michigan not offered"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingZip",
+   "req": true,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbShippingSameAsBilling",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rblShippingAddressType",
+   "req": false,
+   "expect": "any"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingAddress",
+   "req": true,
+   "expect": "human",
+   "label": "ship-to not in profile"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingAddress2",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingCity",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlShippingState",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingZip",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbCustomerNote",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbDiversionAgreement",
+   "req": true,
+   "expect": "unchecked",
+   "label": "legal consent: approver only"
+  }
+ ],
+ "notes": "Licensed salon professionals only; anti-diversion policy targets non-salon resellers. Likely non-fit."
+}

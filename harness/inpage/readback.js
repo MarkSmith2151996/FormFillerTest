@@ -25,29 +25,37 @@
     return !(r.right + w.scrollX < -20 || r.bottom + w.scrollY < -20);
   }
   function lblText(l) { var c = l.cloneNode(true), x = c.querySelectorAll('select,option,input,textarea'); for (var i = 0; i < x.length; i++) x[i].remove(); return txt(c); }
-  function near(el) {
+  function near(el, max) {
     var n = el;
-    for (var up = 0; up < 3 && n; up++) {
+    for (var up = 0; up < (max || 3) && n; up++) {
       for (var s = n.previousSibling; s; s = s.previousSibling) {
         if (s.nodeType === 3 && s.textContent.trim()) return s.textContent.trim();
         if (s.nodeType !== 1) continue;
-        if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(s.tagName)) break;
+        if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(s.tagName) || (up > 0 && /^H[12]$/.test(s.tagName))) break;
         var tt = txt(s); if (tt && tt.length < 80 && !s.querySelector('input,select,textarea')) return tt; if (tt) break;
       }
       n = n.parentElement;
     }
     return '';
   }
+  function after(el) {
+    for (var s = el.nextSibling, i = 0; s && i < 3; s = s.nextSibling, i++) {
+      if (s.nodeType === 3 && s.textContent.trim()) return s.textContent.trim();
+      if (s.nodeType === 1) { if (/^(INPUT|SELECT|TEXTAREA|BR)$/.test(s.tagName)) break; var t = txt(s); if (t && !s.querySelector('input,select,textarea')) return t; }
+    }
+    return '';
+  }
   function labelOf(el) {
     var root = el.getRootNode(), doc = el.ownerDocument, t = '', ids = el.getAttribute('aria-labelledby');
-    if (ids) t = ids.split(/\s+/).map(function (i) { return txt((root.getElementById && root.getElementById(i)) || doc.getElementById(i)); }).join(' ');
+    if (ids) t = ids.split(/\s+/).map(function (i) { var n = (root.getElementById && root.getElementById(i)) || doc.getElementById(i); return n && n.querySelector && n.querySelector('select,input,textarea') ? lblText(n) : txt(n); }).join(' ');
     if (!t && el.labels && el.labels.length) t = lblText(el.labels[0]);
+    if (!t && /^(checkbox|radio)$/i.test(el.type || '')) t = after(el);
     if (!t) t = el.getAttribute('aria-label') || el.getAttribute('placeholder') || el.getAttribute('title') || near(el);
     return t.replace(/\s+/g, ' ').trim().slice(0, 80);
   }
   function groupLabel(el) {
     var fs = el.closest('fieldset'), lg = fs && fs.querySelector('legend');
-    return lg ? txt(lg) : near(el.parentElement && el.parentElement.parentElement || el);
+    return lg ? txt(lg) : (near(el.parentElement || el, 1) || near(el.parentElement && el.parentElement.parentElement || el, 2));
   }
   function isPh(o) { return !o || o.value === '' || /^(-+|select|choose|please|pick)/i.test(txt(o)); }
   function rows() {
@@ -106,9 +114,15 @@
         if (r.kind === 'check') o.st = r.v ? 'checked' : 'unchecked';
         else if (r.kind === 'file') o.st = r.v ? 'file' : 'empty';
         else if (r.v === '' || r.v == null) o.st = 'empty';
-        else { var key = match(ix, profile || {}, r.v, r.kind); if (key) { o.st = 'profile'; o.key = key; } else if (r.kind === 'choice') { o.st = 'choice'; o.opt = String(r.v).slice(0, 60); } else { o.st = 'text'; if (redact) o.len = String(r.v).length; else o.value = String(r.v).slice(0, 60); } }
+        else { var key = match(ix, profile || {}, r.v, r.kind); if (key) { o.st = 'profile'; o.key = key; } else if (r.kind === 'choice') { o.st = 'choice'; o.opt = String(r.v).slice(0, 60); } else { o.st = 'text'; if (redact && !/^(unknown|n\/?a|none|no|yes)$/i.test(String(r.v).trim())) o.len = String(r.v).length; else o.value = String(r.v).slice(0, 60); } }
         return o;
       });
+    },
+    // compact(): only rows that are not empty, one per line  k~st~detail~same  (plus a row count)
+    compact: function (profile, redact) {
+      var rs = RB.read(profile, redact), out = ['rows=' + rs.length];
+      rs.forEach(function (o) { if (o.st === 'empty' || o.st === 'unchecked') return; out.push([o.k, o.st, o.key || o.opt || o.value || (o.len != null ? 'len' + o.len : ''), o.same ? 'same' : ''].join('~')); });
+      return out.join('\n');
     }
   };
 })();

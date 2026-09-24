@@ -1,0 +1,139 @@
+{
+ "form": "02-specialty-food-source",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN"
+ ],
+ "needs_human": [
+  "number of locations",
+  "items interested",
+  "receiving hours",
+  "location type",
+  "delivery instructions",
+  "contact preference",
+  "referral source"
+ ],
+ "fields": [
+  {
+   "k": "name",
+   "req": true,
+   "expect": "profile:owner_name",
+   "label": "Owners Legal Name"
+  },
+  {
+   "k": "text",
+   "req": true,
+   "expect": "profile:legal_name"
+  },
+  {
+   "k": "text-2",
+   "req": true,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "text-3",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "text-4",
+   "req": true,
+   "expect": "profile:city"
+  },
+  {
+   "k": "text-5",
+   "req": true,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "select",
+   "req": false,
+   "expect": "profile:country"
+  },
+  {
+   "k": "phone-2",
+   "req": true,
+   "expect": "profile:phone"
+  },
+  {
+   "k": "email-2",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "url",
+   "req": false,
+   "expect": "profile:website"
+  },
+  {
+   "k": "text-15",
+   "req": true,
+   "expect": "human",
+   "label": "number of locations"
+  },
+  {
+   "k": "select-5",
+   "req": true,
+   "expect": "choice:Less than One year|New business",
+   "label": "time in business"
+  },
+  {
+   "k": "text-13",
+   "req": true,
+   "expect": "human OR literal:unknown",
+   "label": "items interested"
+  },
+  {
+   "k": "text-14",
+   "req": true,
+   "expect": "profile:business_type|sales_channel",
+   "label": "type of business"
+  },
+  {
+   "k": "select-3",
+   "req": false,
+   "expect": "blank",
+   "label": "loading dock"
+  },
+  {
+   "k": "text-16",
+   "req": true,
+   "expect": "human",
+   "label": "receiving hours"
+  },
+  {
+   "k": "select-4",
+   "req": true,
+   "expect": "human",
+   "label": "location type"
+  },
+  {
+   "k": "text-17",
+   "req": true,
+   "expect": "human",
+   "label": "delivery instructions"
+  },
+  {
+   "k": "select-6",
+   "req": true,
+   "expect": "human",
+   "label": "reach out after approval"
+  },
+  {
+   "k": "select-7",
+   "req": true,
+   "expect": "human",
+   "label": "hear about us"
+  },
+  {
+   "k": "select-8",
+   "req": true,
+   "expect": "choice:ACH",
+   "label": "payment method"
+  }
+ ],
+ "notes": "Samita 3-step form; fixture holds step 1. Never pick Credit Card; Net 20 is a terms request (blank)."
+}

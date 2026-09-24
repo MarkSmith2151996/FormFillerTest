@@ -1,0 +1,112 @@
+{
+ "version": "C",
+ "form": "09-grimco",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "later steps create an account (password)",
+  "fit: sign shops only"
+ ],
+ "notes": "step 1 verified visually; language preset kept",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "userName",
+   "label": "Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "confirmUserName",
+   "label": "Confirm Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "firstName",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "lastName",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "preferredLocalizationId",
+   "label": "Preferred Language *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "text",
+   "value": "English - US"
+  },
+  {
+   "k": "radio::r7:",
+   "label": "Are you an existing Grimco customer? *",
+   "type": "radio",
+   "req": true,
+   "st": "choice",
+   "opt": "No"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/09-grimco.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 53,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 146
+   },
+   {
+    "cmd": "act",
+    "args_chars": 232,
+    "out_chars": 88,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 554
+   },
+   {
+    "cmd": "report",
+    "args_chars": 164,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 398,
+  "chars_out": 201,
+  "images": 2,
+  "img_tokens": 1536,
+  "tool_ms": 700,
+  "harness_chars": 0,
+  "token_est": 1708,
+  "wall_ms": 31534
+ },
+ "started_at": "2026-09-24T13:51:56.460Z",
+ "ended_at": "2026-09-24T13:52:27.994Z"
+}

@@ -1,0 +1,14 @@
+{
+ "form": "22-meyer",
+ "unreviewed": true,
+ "key_source": "task+live",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "PARTIAL"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Terms page before the application; accepting terms is a server postback (blocked by the guard)."
+}

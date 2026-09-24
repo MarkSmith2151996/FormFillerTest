@@ -1,0 +1,66 @@
+{
+ "version": "C",
+ "form": "16-patterson-dental",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "LOGIN_GATED",
+ "needs_human": [],
+ "notes": "Screenshot: sign-in page (email + password); sign-up needs verification.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "Email Address",
+   "label": "Email Address",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "Password",
+   "label": "Password",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/16-patterson-dental.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 63,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 270
+   },
+   {
+    "cmd": "report",
+    "args_chars": 108,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 2,
+  "brain_calls": 2,
+  "chars_in": 110,
+  "chars_out": 123,
+  "images": 1,
+  "img_tokens": 768,
+  "tool_ms": 270,
+  "harness_chars": 0,
+  "token_est": 835,
+  "wall_ms": 20901
+ },
+ "started_at": "2026-09-24T13:56:21.525Z",
+ "ended_at": "2026-09-24T13:56:42.426Z"
+}

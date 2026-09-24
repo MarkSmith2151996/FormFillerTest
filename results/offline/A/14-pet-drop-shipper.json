@@ -1,0 +1,101 @@
+{
+ "version": "A",
+ "form": "14-pet-drop-shipper",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Password (account creation)"
+ ],
+ "notes": "Plain Shopify customer account; wholesale approval happens after sign-up.",
+ "field_map": {
+  "f1": {
+   "label": "First Name",
+   "src": "contact_first_name"
+  },
+  "f2": {
+   "label": "Last Name",
+   "src": "contact_last_name"
+  },
+  "f3": {
+   "label": "Email",
+   "src": "email"
+  }
+ },
+ "readback": [
+  {
+   "k": "customer[first_name]",
+   "label": "First Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "label": "Last Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "label": "Email",
+   "type": "email",
+   "req": false,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "customer[password]",
+   "label": "Password",
+   "type": "password",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/14-pet-drop-shipper.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 287,
+    "image": null,
+    "ms": 83
+   },
+   {
+    "cmd": "fill",
+    "args_chars": 101,
+    "out_chars": 17,
+    "image": null,
+    "ms": 9
+   },
+   {
+    "cmd": "report",
+    "args_chars": 155,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 258,
+  "chars_out": 364,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 92,
+  "harness_chars": 0,
+  "token_est": 178,
+  "wall_ms": 13607
+ },
+ "started_at": "2026-09-24T13:56:19.579Z",
+ "ended_at": "2026-09-24T13:56:33.186Z"
+}

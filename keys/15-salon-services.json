@@ -1,0 +1,242 @@
+{
+ "form": "15-salon-services",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN"
+ ],
+ "needs_human": [
+  "license / student ID",
+  "Michigan missing from state lists",
+  "type / class code",
+  "license + resale certificate uploads"
+ ],
+ "fields": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "req": false,
+   "expect": "profile:legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "req": true,
+   "expect": "profile:contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "req": true,
+   "expect": "profile:contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolAddress1",
+   "req": true,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolAddress2",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolCity",
+   "req": true,
+   "expect": "profile:city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlSalonSchoolState",
+   "req": true,
+   "expect": "human",
+   "label": "Michigan not offered (western states only)"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolZip",
+   "req": true,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLicense",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlLicenseState",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLicenseExpiration",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlCustomerTypeCode",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlCustomerClassCode",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlBrands",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$fuProLicense",
+   "req": false,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "req": true,
+   "expect": "profile:phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbMobilePhone",
+   "req": false,
+   "expect": "profile_or_blank:phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlSalesRep",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbTaxExempt",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$fuResaleCert",
+   "req": false,
+   "expect": "human"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredGiveAway",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredOnlineSearch",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredSocialMedia",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredAtSchool",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferralEmail",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredIndustryEvent",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredOther",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "req": true,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress2",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingCity",
+   "req": true,
+   "expect": "profile:city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlBillingState",
+   "req": true,
+   "expect": "human",
+   "label": "Michigan not offered (western states only)"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingZip",
+   "req": true,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbShippingSameAsBilling",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingAddress",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingAddress2",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingCity",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlShippingState",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingZip",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbDiversionAgreement",
+   "req": true,
+   "expect": "unchecked"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rbOptInText",
+   "req": false,
+   "expect": "choice:No",
+   "label": "SMS/email opt-in preset Yes!"
+  },
+  {
+   "k": "cphBody_ctl00_cbOptInInvoice",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "cphBody_ctl00_cbOptInShipment",
+   "req": false,
+   "expect": "unchecked"
+  },
+  {
+   "k": "cphBody_ctl00_cbOptInMarketing",
+   "req": false,
+   "expect": "unchecked"
+  }
+ ],
+ "notes": "Salon professionals in 10 western states only; non-fit for a Michigan e-commerce reseller."
+}

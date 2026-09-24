@@ -1,0 +1,14 @@
+{
+ "form": "01-blair-candy",
+ "unreviewed": true,
+ "key_source": "live-recon",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "BLOCKED"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Page says \"complete the form below\" but the Shopify Forms inline widget (forms-root-335495) stays empty in Steel: config GET 200, nothing rendered. A person must check the page or use /account/register."
+}

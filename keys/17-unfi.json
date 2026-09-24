@@ -1,0 +1,14 @@
+{
+ "form": "17-unfi",
+ "unreviewed": true,
+ "key_source": "task+live",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "ENTERPRISE_ONLY"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Salesforce LWC lead form. eCommerce path redirects to Everyday Supply Co.; only Truck Deliveries is a real UNFI application. Classify, do not force-fill."
+}

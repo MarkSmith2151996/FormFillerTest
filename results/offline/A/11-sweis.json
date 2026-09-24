@@ -1,0 +1,339 @@
+{
+ "version": "A",
+ "form": "11-sweis",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "License / Student ID, License State, License Exp Date",
+  "Username + Password (account creation)",
+  "Billing state not offered (restricted-state list)",
+  "Shipping address (ship-to not in profile)",
+  "Diversion policy agreement (legal, approver) - likely non-fit: salon professionals only"
+ ],
+ "notes": "Type preset Beauty Center changed to E-Merchant.",
+ "field_map": {
+  "f1": {
+   "label": "Salon Name",
+   "src": "legal_name"
+  },
+  "f2": {
+   "label": "First Name",
+   "src": "contact_first_name"
+  },
+  "f3": {
+   "label": "Last Name",
+   "src": "contact_last_name"
+  },
+  "f7": {
+   "label": "Type",
+   "src": "literal"
+  },
+  "f11": {
+   "label": "Email Address",
+   "src": "email"
+  },
+  "f12": {
+   "label": "Phone",
+   "src": "phone"
+  },
+  "f17": {
+   "label": "Billing Address Line 1",
+   "src": "street_address"
+  },
+  "f19": {
+   "label": "City",
+   "src": "city"
+  },
+  "f21": {
+   "label": "Postal Code",
+   "src": "zip"
+  }
+ },
+ "readback": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "label": "Salon Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "label": "First Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "label": "Last Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLicense",
+   "label": "License / Student ID",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlLicenseState",
+   "label": "License State",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLicenseExpDate",
+   "label": "License Exp Date",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlSalonType",
+   "label": "Type",
+   "type": "select",
+   "req": false,
+   "st": "choice",
+   "opt": "E-Merchant"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbResaleTaxNumber",
+   "label": "Resale Tax Number (Optional)",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlDoBMonth",
+   "label": "Birth Month",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlDoBDay",
+   "label": "Birth Day",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "label": "Email Address",
+   "type": "email",
+   "req": false,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "label": "Phone",
+   "type": "tel",
+   "req": false,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbUserName",
+   "label": "(minimum 8 characters)",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPassword",
+   "label": "Password",
+   "type": "password",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPasswordVerify",
+   "label": "Verify Password",
+   "type": "password",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rblBillingAddressType",
+   "label": "",
+   "type": "radio",
+   "req": false,
+   "same": true,
+   "st": "choice",
+   "opt": "Business"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "label": "Billing Address Line 1",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress2",
+   "label": "Billing Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingCity",
+   "label": "City",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlBillingState",
+   "label": "Billing Address State/Province",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingZip",
+   "label": "Postal Code",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbShippingSameAsBilling",
+   "label": "Same as Billing Address",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rblShippingAddressType",
+   "label": "",
+   "type": "radio",
+   "req": false,
+   "same": true,
+   "st": "choice",
+   "opt": "Business"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingAddress",
+   "label": "Shipping Address Line 1",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingAddress2",
+   "label": "Shipping Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingCity",
+   "label": "City",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlShippingState",
+   "label": "Shipping Address State/Province",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingZip",
+   "label": "Postal Code",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbCustomerNote",
+   "label": "Note",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbDiversionAgreement",
+   "label": "I Agree",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/11-sweis.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 1536,
+    "image": null,
+    "ms": 106
+   },
+   {
+    "cmd": "fill",
+    "args_chars": 291,
+    "out_chars": 108,
+    "image": null,
+    "ms": 93
+   },
+   {
+    "cmd": "report",
+    "args_chars": 383,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 676,
+  "chars_out": 1704,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 199,
+  "harness_chars": 0,
+  "token_est": 680,
+  "wall_ms": 27238
+ },
+ "started_at": "2026-09-24T13:52:59.006Z",
+ "ended_at": "2026-09-24T13:53:26.244Z"
+}

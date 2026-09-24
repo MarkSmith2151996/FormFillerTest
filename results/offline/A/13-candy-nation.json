@@ -1,0 +1,270 @@
+{
+ "version": "A",
+ "form": "13-candy-nation",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Password + Confirm Password (account creation)",
+  "B2B wizard steps 2-3 (Details/Finish) not reachable offline"
+ ],
+ "notes": "Filled native BigCommerce form and the BundleB2B iframe step 1; promo opt-in unchecked.",
+ "field_map": {
+  "f1": {
+   "label": "Email Address",
+   "src": "email"
+  },
+  "f4": {
+   "label": "First Name",
+   "src": "contact_first_name"
+  },
+  "f5": {
+   "label": "Last Name",
+   "src": "contact_last_name"
+  },
+  "f6": {
+   "label": "Company Name",
+   "src": "legal_name"
+  },
+  "f7": {
+   "label": "Address Line 1",
+   "src": "street_address"
+  },
+  "f9": {
+   "label": "City",
+   "src": "city"
+  },
+  "f10": {
+   "label": "Country",
+   "src": "literal"
+  },
+  "f11": {
+   "label": "State/Province",
+   "src": "state"
+  },
+  "f12": {
+   "label": "Zip/Postcode",
+   "src": "zip"
+  },
+  "f13": {
+   "label": "Phone Number",
+   "src": "phone"
+  },
+  "f14": {
+   "label": "Account type",
+   "src": "literal"
+  },
+  "f15": {
+   "label": "First Name",
+   "src": "contact_first_name"
+  },
+  "f16": {
+   "label": "Last Name",
+   "src": "contact_last_name"
+  },
+  "f17": {
+   "label": "Email Address",
+   "src": "email"
+  },
+  "f18": {
+   "label": "Phone Number",
+   "src": "phone"
+  }
+ },
+ "readback": [
+  {
+   "k": "FormField[1][1]",
+   "label": "Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "FormField[1][2]",
+   "label": "Password *",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "FormField[1][3]",
+   "label": "Confirm Password *",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "FormField[2][4]",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "FormField[2][5]",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "FormField[2][6]",
+   "label": "Company Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "FormField[2][8]",
+   "label": "Address Line 1 *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "FormField[2][9]",
+   "label": "Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "FormField[2][10]",
+   "label": "City *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "FormField[2][11]",
+   "label": "Country *",
+   "type": "select",
+   "req": true,
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "FormField[2][12]",
+   "label": "State/Province *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "FormField[2][13]",
+   "label": "Zip/Postcode *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "FormField[2][7]",
+   "label": "Phone Number *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "radio:row-radio-buttons-group",
+   "label": "Account type",
+   "type": "radio",
+   "req": false,
+   "st": "choice",
+   "opt": "Business account"
+  },
+  {
+   "k": "Zmlyc3RfbmFtZQ==",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "bGFzdF9uYW1l",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "email",
+   "label": "Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "cGhvbmU=",
+   "label": "Phone Number",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "Email me special promotions and updates",
+   "label": "Email me special promotions and updates",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/13-candy-nation.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 736,
+    "image": null,
+    "ms": 144
+   },
+   {
+    "cmd": "fill",
+    "args_chars": 441,
+    "out_chars": 133,
+    "image": null,
+    "ms": 174
+   },
+   {
+    "cmd": "report",
+    "args_chars": 250,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 693,
+  "chars_out": 929,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 318,
+  "harness_chars": 0,
+  "token_est": 464,
+  "wall_ms": 15928
+ },
+ "started_at": "2026-09-24T13:55:20.360Z",
+ "ended_at": "2026-09-24T13:55:36.287Z"
+}

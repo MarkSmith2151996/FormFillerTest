@@ -1,0 +1,13 @@
+{
+ "form": "28-arett-pdf",
+ "unreviewed": true,
+ "key_source": "task",
+ "trap": true,
+ "expected_outcome": "PDF_APPLICATION",
+ "acceptable_outcomes": [
+  "PDF_APPLICATION"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Credit application PDF."
+}

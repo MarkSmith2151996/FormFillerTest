@@ -38,6 +38,7 @@ http.createServer((req, res) => {
 
 const browser = await launch();
 const runs = new Map();
+for (const sig of ['SIGTERM', 'SIGINT']) process.on(sig, () => { browser.close().catch(() => {}).finally(() => process.exit(0)); setTimeout(() => process.exit(0), 1500); });
 const formOf = (id) => (String(id).startsWith('_') ? { n: 0, slug: id, name: id } : forms.find((f) => f.slug === id || f.slug.startsWith(`${id}-`) || String(f.n) === String(Number(id))));
 
 async function getRun(V, form) {

@@ -1,0 +1,15 @@
+{
+ "form": "18-isi",
+ "unreviewed": true,
+ "key_source": "live-recon (fields drafted at first live visit)",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "PARTIAL",
+  "FILLED"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": ""
+}

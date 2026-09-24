@@ -1,0 +1,24 @@
+{
+ "form": "16-patterson-dental",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "LOGIN_GATED",
+ "acceptable_outcomes": [
+  "LOGIN_GATED"
+ ],
+ "needs_human": [],
+ "fields": [
+  {
+   "k": "Email Address",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "Password",
+   "req": false,
+   "expect": "blank"
+  }
+ ],
+ "notes": "/account/register redirects to Azure AD B2C sign-in; sign-up needs an emailed verification code (forbidden)."
+}
