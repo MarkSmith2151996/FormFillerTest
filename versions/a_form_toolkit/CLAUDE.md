@@ -38,3 +38,17 @@ A typical form takes **3 calls**: `open_form`, `fill`, `report`.
 The same runtime runs in the page. Inject `harness/live/hA.min.js` once per tab (see the README), then:
 `__ft.setProfile({...})`, `__ft.live(__ft.snapshot({wait:6000}))`, `__ft.live(__ft.fill({...}))`, `__ft.report(...)`.
 `__ft.live()` briefly hides the page so Custodian's post-call accessibility echo stays empty.
+
+## Lessons from the live run (known toolkit gaps, check these yourself)
+- **Eligibility first.** `NOTES` only carries text next to the form. Read the page's headings and intro for who the
+  supplier sells to (licensed salons only, sign shops only, brick-and-mortar only, a sales territory). If the dealer
+  doesn't qualify, stop with `NEEDS_HUMAN` and name the eligibility issue. Filling is the approver's call.
+- **Choosers.** Buttons outside a `<form>` are not listed. If the snapshot has no fields but the page asks a
+  question ("Do you have an account number?"), call `classify_page()` and report instead of guessing `BLOCKED`.
+- **Dependent fields.** When a Country select re-renders State (BigCommerce), set Country in one `fill`, then call
+  `snapshot_form()` and set State in a second `fill`. A `fill` verified before the re-render can report `ok` on a
+  field that no longer exists.
+- **Custom dropdowns.** `<button>`-based dropdowns (Shopify Forms State, company type) are not listed. Name them
+  in `needs_human`.
+- **Yes/No radios.** A radio group's question text can be missing from its label. Check `(preset!)` radios near
+  opt-in wording, and set marketing/SMS opt-ins to `No`.
