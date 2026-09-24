@@ -532,7 +532,7 @@ Custodian list_outreach_targets(stage='ready_form')      read-only queue
   it was redacted, and the three local commits that carried it were rebuilt before anything was pushed. Results store
   profile keys only. The live profile existed only in page memory and was cleared at the end of each run.
 - **No LLM keys.** `grep -rniE "deepseek|api\.deepseek\.com|ANTHROPIC_API_KEY|OPENAI_API_KEY|api_key"` over the tree
-  and the history: 0 matches.
+  and the history: no match except this line.
 - **Not touched:** the Cloudflare form-filler worker, any PC-side repo, hive-db, outreach stages, `log_contact`, email
   tools and other tasks.
 
