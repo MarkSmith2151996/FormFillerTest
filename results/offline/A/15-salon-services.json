@@ -461,5 +461,15 @@
   "wall_ms": 12571
  },
  "started_at": "2026-09-24T13:56:53.138Z",
- "ended_at": "2026-09-24T13:57:05.709Z"
+ "ended_at": "2026-09-24T13:57:05.709Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "State: only 10 western states offered (territory restriction) - Illinois/Michigan not available",
+   "Diversion agreement (approver) - likely non-fit"
+  ]
+ },
+ "restriction": "Salon Services sells to licensed salon professionals and ships only to 10 western states ('unable to ship to states not listed'; no Michigan)"
 }

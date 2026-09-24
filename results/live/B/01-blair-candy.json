@@ -248,5 +248,18 @@
   "wall_ms": 147413
  },
  "started_at": "2026-09-24T14:18:19.453Z",
- "ended_at": "2026-09-24T14:20:46.866Z"
+ "ended_at": "2026-09-24T14:20:46.866Z",
+ "transport_failures": {
+  "cause": "Custodian: duplicate labels -> get_by_role strict-mode violation (type_text)",
+  "fields": "contact first/last name, email, phones",
+  "keys": [
+   "first_name",
+   "last_name",
+   "email",
+   "phone_number",
+   "billing_address_first_name",
+   "billing_address_last_name",
+   "billing_address_phone"
+  ]
+ }
 }

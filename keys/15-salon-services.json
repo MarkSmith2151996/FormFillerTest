@@ -3,9 +3,9 @@
  "unreviewed": true,
  "key_source": "fixture",
  "trap": false,
- "expected_outcome": "NEEDS_HUMAN",
+ "expected_outcome": "NOT_A_FIT",
  "acceptable_outcomes": [
-  "NEEDS_HUMAN"
+  "NOT_A_FIT"
  ],
  "needs_human": [
   "license / student ID",
@@ -238,5 +238,19 @@
    "expect": "unchecked"
   }
  ],
- "notes": "Salon professionals in 10 western states only; non-fit for a Michigan e-commerce reseller."
+ "notes": "Salon professionals in 10 western states only; non-fit for a Michigan e-commerce reseller.",
+ "rule_change": {
+  "rule": "CS-588 3a NOT_A_FIT",
+  "restriction": "Salon Services sells to licensed salon professionals and ships only to 10 western states ('unable to ship to states not listed'; no Michigan)",
+  "modes": [
+   "live",
+   "offline"
+  ],
+  "before": {
+   "expected_outcome": "NEEDS_HUMAN",
+   "acceptable_outcomes": [
+    "NEEDS_HUMAN"
+   ]
+  }
+ }
 }

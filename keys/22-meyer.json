@@ -1,7 +1,7 @@
 {
  "form": "22-meyer",
  "unreviewed": true,
- "key_source": "task+live",
+ "key_source": "task+live; fields none (no fillable step reached / trap)",
  "trap": false,
  "expected_outcome": "NEEDS_HUMAN",
  "acceptable_outcomes": [
@@ -10,5 +10,14 @@
  ],
  "needs_human": [],
  "fields": [],
- "notes": "Terms page before the application; accepting terms is a server postback (blocked by the guard)."
+ "notes": "Terms page before the application; accepting terms is a server postback (blocked by the guard).",
+ "proposed": {
+  "source": "after the live runs",
+  "expected_outcome": "PDF_APPLICATION",
+  "acceptable_outcomes": [
+   "PDF_APPLICATION"
+  ],
+  "notes": "Live page has no terms-accept step or online form: three PDF applications to download and email back, plus a state tax-exemption form."
+ },
+ "drafted_after_runs": true
 }

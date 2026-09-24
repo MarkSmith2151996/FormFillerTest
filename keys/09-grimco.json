@@ -3,10 +3,9 @@
  "unreviewed": true,
  "key_source": "fixture",
  "trap": false,
- "expected_outcome": "NEEDS_HUMAN",
+ "expected_outcome": "NOT_A_FIT",
  "acceptable_outcomes": [
-  "NEEDS_HUMAN",
-  "PARTIAL"
+  "NOT_A_FIT"
  ],
  "needs_human": [
   "later steps create an account (password)",
@@ -46,5 +45,20 @@
    "label": "existing customer?"
   }
  ],
- "notes": "MUI multi-step registration; fixture holds step 1."
+ "notes": "MUI multi-step registration; fixture holds step 1.",
+ "rule_change": {
+  "rule": "CS-588 3a NOT_A_FIT",
+  "restriction": "Grimco sells only to sign and digital print shops or businesses with sign-making capability",
+  "modes": [
+   "live",
+   "offline"
+  ],
+  "before": {
+   "expected_outcome": "NEEDS_HUMAN",
+   "acceptable_outcomes": [
+    "NEEDS_HUMAN",
+    "PARTIAL"
+   ]
+  }
+ }
 }

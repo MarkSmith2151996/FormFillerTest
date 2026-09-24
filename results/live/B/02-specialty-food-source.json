@@ -61,5 +61,10 @@
   "wall_ms": 42333
  },
  "started_at": "2026-09-24T14:24:09.654Z",
- "ended_at": "2026-09-24T14:24:51.987Z"
+ "ended_at": "2026-09-24T14:24:51.987Z",
+ "transport_failures": {
+  "cause": "Custodian: snapshot cut at 50,000 characters (1,150-option header select) before the form",
+  "fields": "all",
+  "keys": "all"
+ }
 }

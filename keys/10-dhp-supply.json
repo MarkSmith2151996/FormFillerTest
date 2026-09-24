@@ -67,7 +67,7 @@
   }
  ],
  "notes": "\"Request a Quote\" form; reCAPTCHA is solved by the approver at submit. Preset trap: email-deals opt-in is pre-checked.",
- "live": {
+ "proposed": {
   "expected_outcome": "NEEDS_HUMAN",
   "acceptable_outcomes": [
    "NEEDS_HUMAN",
@@ -119,6 +119,50 @@
     "k": "form[212_9]",
     "req": true,
     "expect": "profile:zip"
+   }
+  ],
+  "source": "live override added after the live runs (commit 32a24d0); non-scoring under the CS-588 frozen-key rule",
+  "after_cs588": {
+   "expected_outcome": "FILLED",
+   "acceptable_outcomes": [
+    "FILLED"
+   ],
+   "why": "with the ship-to keys every required field is fillable; only the captcha is left for the approver"
+  }
+ },
+ "ship_to_rule": {
+  "rule": "CS-588 1 ship-to (allowed key change)",
+  "applies_to": "runs made with the ship-to profile (results/live-rerun)",
+  "fields": [
+   {
+    "k": "form[212_11]",
+    "req": true,
+    "expect": "profile:ship_to_street|ship_to_street_full",
+    "label": "Ship To street"
+   },
+   {
+    "k": "form[212_12]",
+    "req": false,
+    "expect": "profile:ship_to_street2 OR blank",
+    "label": "Ship To street 2"
+   },
+   {
+    "k": "form[212_13]",
+    "req": true,
+    "expect": "profile:ship_to_city",
+    "label": "Ship To city"
+   },
+   {
+    "k": "form[226_14]",
+    "req": true,
+    "expect": "profile:ship_to_state|ship_to_state_name",
+    "label": "Ship To state"
+   },
+   {
+    "k": "form[212_15]",
+    "req": true,
+    "expect": "profile:ship_to_zip",
+    "label": "Ship To ZIP"
    }
   ]
  }

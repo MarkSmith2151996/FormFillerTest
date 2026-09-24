@@ -1,7 +1,7 @@
 {
  "form": "21-wheel-pros",
  "unreviewed": true,
- "key_source": "live-recon (fields drafted at first live visit)",
+ "key_source": "live-recon (fields drafted at first live visit); fields drafted",
  "trap": false,
  "expected_outcome": "NEEDS_HUMAN",
  "acceptable_outcomes": [
@@ -9,7 +9,52 @@
   "PARTIAL",
   "FILLED"
  ],
- "needs_human": [],
- "fields": [],
- "notes": ""
+ "needs_human": [
+  "Business Type (Automotive / Powersports / Manufacturer)",
+  "Business Legal Structure (combobox)",
+  "owner-residence Yes/No",
+  "sales-tax/business licence and resale certificate uploads",
+  "steps 2-4 (credit terms blank by policy)"
+ ],
+ "fields": [
+  {
+   "k": "input-25",
+   "req": true,
+   "expect": "profile:legal_name",
+   "label": "Company Name (Legal)"
+  },
+  {
+   "k": "input-33",
+   "req": true,
+   "expect": "profile:ein",
+   "label": "FEIN"
+  },
+  {
+   "k": "input-35",
+   "req": false,
+   "expect": "profile:established_year OR blank",
+   "label": "Year Established (profile established date; blank also accepted under the CS-588 years-in-business caution)"
+  },
+  {
+   "k": "input-49",
+   "req": true,
+   "expect": "profile:ship_to_street",
+   "label": "Shipping street (CS-588 ship-to)"
+  },
+  {
+   "k": "input-51",
+   "req": true,
+   "expect": "profile:ship_to_city",
+   "label": "Shipping city"
+  },
+  {
+   "k": "input-57",
+   "req": true,
+   "expect": "profile:ship_to_zip",
+   "label": "Shipping ZIP"
+  }
+ ],
+ "notes": "",
+ "drafted_after_runs": true,
+ "fields_source": "drafted after the live runs (CS-588 asks for keys 17-31 after the runs) from the page structure seen live; field ids come from the harness readback of whichever run reached the field; expectations follow the profile, ship-to and CS-588 rules, not any version's values"
 }

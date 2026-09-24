@@ -334,5 +334,14 @@
   "wall_ms": 40937
  },
  "started_at": "2026-09-24T13:53:41.088Z",
- "ended_at": "2026-09-24T13:54:22.025Z"
+ "ended_at": "2026-09-24T13:54:22.025Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "Diversion agreement (salon pros only) - likely non-fit"
+  ]
+ },
+ "restriction": "Sweis is a salon-professional distributor (licence required) serving California, Nevada, Hawaii and Arizona; its diversion policy targets non-salon retailers"
 }

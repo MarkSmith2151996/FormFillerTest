@@ -109,5 +109,14 @@
   "wall_ms": 13993
  },
  "started_at": "2026-09-24T13:51:56.005Z",
- "ended_at": "2026-09-24T13:52:09.998Z"
+ "ended_at": "2026-09-24T13:52:09.998Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "fit: sign shops only"
+  ]
+ },
+ "restriction": "Grimco sells only to sign and digital print shops or businesses with sign-making capability"
 }

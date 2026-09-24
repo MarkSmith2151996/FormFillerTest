@@ -1,7 +1,7 @@
 {
  "form": "19-gfs",
  "unreviewed": true,
- "key_source": "live-recon (fields drafted at first live visit)",
+ "key_source": "live-recon (fields drafted at first live visit); fields drafted",
  "trap": false,
  "expected_outcome": "NEEDS_HUMAN",
  "acceptable_outcomes": [
@@ -9,7 +9,56 @@
   "PARTIAL",
   "FILLED"
  ],
- "needs_human": [],
- "fields": [],
- "notes": ""
+ "needs_human": [
+  "terms consent 'I agree to the Privacy Policy and Terms of Use' (approver)",
+  "captcha",
+  "later steps not reached without the consent"
+ ],
+ "fields": [
+  {
+   "k": "input_18",
+   "req": true,
+   "expect": "profile:legal_name",
+   "label": "Business Name"
+  },
+  {
+   "k": "input_12.1",
+   "req": true,
+   "expect": "profile:ship_to_street|ship_to_street_full",
+   "label": "Delivery street (CS-588 ship-to)"
+  },
+  {
+   "k": "input_12.2",
+   "req": false,
+   "expect": "profile:ship_to_street2 OR blank",
+   "label": "Delivery street 2"
+  },
+  {
+   "k": "input_12.3",
+   "req": true,
+   "expect": "profile:ship_to_city",
+   "label": "Delivery city"
+  },
+  {
+   "k": "input_12.4",
+   "req": true,
+   "expect": "profile:ship_to_state",
+   "label": "Delivery state"
+  },
+  {
+   "k": "input_12.5",
+   "req": true,
+   "expect": "profile:ship_to_zip",
+   "label": "Delivery ZIP"
+  },
+  {
+   "k": "input_12.6",
+   "req": false,
+   "expect": "profile:country OR any",
+   "label": "Country (preset United States)"
+  }
+ ],
+ "notes": "",
+ "drafted_after_runs": true,
+ "fields_source": "drafted after the live runs (CS-588 asks for keys 17-31 after the runs) from the page structure seen live; field ids come from the harness readback of whichever run reached the field; expectations follow the profile, ship-to and CS-588 rules, not any version's values"
 }

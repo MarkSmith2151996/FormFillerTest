@@ -1,7 +1,7 @@
 {
  "form": "28-arett-pdf",
  "unreviewed": true,
- "key_source": "task",
+ "key_source": "task; fields none (no fillable step reached / trap)",
  "trap": true,
  "expected_outcome": "PDF_APPLICATION",
  "acceptable_outcomes": [
@@ -9,5 +9,6 @@
  ],
  "needs_human": [],
  "fields": [],
- "notes": "Credit application PDF."
+ "notes": "Credit application PDF.",
+ "drafted_after_runs": true
 }

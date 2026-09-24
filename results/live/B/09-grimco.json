@@ -158,5 +158,14 @@
   "wall_ms": 29163
  },
  "started_at": "2026-09-24T15:02:19.258Z",
- "ended_at": "2026-09-24T15:02:48.421Z"
+ "ended_at": "2026-09-24T15:02:48.421Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility: Grimco sells only to sign and digital print shops or businesses with sign-making capability (profile is an e-commerce reseller)"
+  ]
+ },
+ "restriction": "Grimco sells only to sign and digital print shops or businesses with sign-making capability"
 }

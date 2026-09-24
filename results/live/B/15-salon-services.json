@@ -207,5 +207,22 @@
   "wall_ms": 212099
  },
  "started_at": "2026-09-24T15:25:40.450Z",
- "ended_at": "2026-09-24T15:29:12.549Z"
+ "ended_at": "2026-09-24T15:29:12.549Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility/territory: ships only to 10 western states (Alaska, Arizona, Colorado, Idaho, Montana, New Mexico, Oregon, Utah, Washington, Wyoming); no Michigan in any State list; salon-professional distributor with licence required"
+  ]
+ },
+ "restriction": "Salon Services sells to licensed salon professionals and ships only to 10 western states ('unable to ship to states not listed'; no Michigan)",
+ "transport_failures": {
+  "cause": "Custodian: duplicate labels (billing vs shipping City/Postal Code) -> strict-mode violation",
+  "fields": "billing city, postal code",
+  "keys": [
+   "ctl00$cphBody$ctl00$tbBillingCity",
+   "ctl00$cphBody$ctl00$tbBillingZip"
+  ]
+ }
 }

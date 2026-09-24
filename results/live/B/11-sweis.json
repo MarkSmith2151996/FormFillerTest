@@ -169,5 +169,22 @@
   "wall_ms": 77992
  },
  "started_at": "2026-09-24T15:08:39.938Z",
- "ended_at": "2026-09-24T15:09:57.930Z"
+ "ended_at": "2026-09-24T15:09:57.930Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility: salon-professional distributor serving California, Nevada, Hawaii & Arizona; licence required; diversion policy targets non-salon retailers (profile is an Amazon/e-commerce reseller)"
+  ]
+ },
+ "restriction": "Sweis is a salon-professional distributor (licence required) serving California, Nevada, Hawaii and Arizona; its diversion policy targets non-salon retailers",
+ "transport_failures": {
+  "cause": "Custodian: duplicate labels (billing vs shipping City/Postal Code) -> strict-mode violation",
+  "fields": "billing city, postal code",
+  "keys": [
+   "ctl00$cphBody$ctl00$tbBillingCity",
+   "ctl00$cphBody$ctl00$tbBillingZip"
+  ]
+ }
 }

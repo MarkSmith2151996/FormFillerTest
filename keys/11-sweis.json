@@ -3,9 +3,9 @@
  "unreviewed": true,
  "key_source": "fixture",
  "trap": false,
- "expected_outcome": "NEEDS_HUMAN",
+ "expected_outcome": "NOT_A_FIT",
  "acceptable_outcomes": [
-  "NEEDS_HUMAN"
+  "NOT_A_FIT"
  ],
  "needs_human": [
   "license / student ID, state, expiry",
@@ -171,5 +171,19 @@
    "label": "legal consent: approver only"
   }
  ],
- "notes": "Licensed salon professionals only; anti-diversion policy targets non-salon resellers. Likely non-fit."
+ "notes": "Licensed salon professionals only; anti-diversion policy targets non-salon resellers. Likely non-fit.",
+ "rule_change": {
+  "rule": "CS-588 3a NOT_A_FIT",
+  "restriction": "Sweis is a salon-professional distributor (licence required) serving California, Nevada, Hawaii and Arizona; its diversion policy targets non-salon retailers",
+  "modes": [
+   "live",
+   "offline"
+  ],
+  "before": {
+   "expected_outcome": "NEEDS_HUMAN",
+   "acceptable_outcomes": [
+    "NEEDS_HUMAN"
+   ]
+  }
+ }
 }

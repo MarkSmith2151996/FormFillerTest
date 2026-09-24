@@ -29,5 +29,7 @@ const FAMILY = {
   zip5: 'zip', ein_digits: 'ein', website_url: 'website', email_confirm: 'email', signature_name: 'owner_name',
   signature_title: 'owner_title', established_iso: 'established_date', years_in_business_text: 'years_in_business',
   today_iso: 'today',
+  // CS-588 ship-to keys: a state/street/country field may carry either spelling of the same value
+  ship_to_state_name: 'ship_to_state', ship_to_street_full: 'ship_to_street', ship_to_country: 'country',
 };
 export const familyOf = (k) => (k ? FAMILY[k] || k : k);

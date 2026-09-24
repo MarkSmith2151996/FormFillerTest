@@ -1,7 +1,7 @@
 {
  "form": "25-napa-corpbill",
  "unreviewed": true,
- "key_source": "live-recon (fields drafted at first live visit)",
+ "key_source": "live-recon (fields drafted at first live visit); fields drafted",
  "trap": false,
  "expected_outcome": "NEEDS_HUMAN",
  "acceptable_outcomes": [
@@ -9,7 +9,104 @@
   "PARTIAL",
   "FILLED"
  ],
- "needs_human": [],
- "fields": [],
- "notes": ""
+ "needs_human": [
+  "Trade Name",
+  "PO Required",
+  "credit request, references, guarantee (blank by policy)"
+ ],
+ "fields": [
+  {
+   "k": "cog-2",
+   "req": true,
+   "expect": "profile:legal_name",
+   "label": "Legal Name"
+  },
+  {
+   "k": "cog-3",
+   "req": true,
+   "expect": "human",
+   "label": "Trade Name (no DBA in profile)"
+  },
+  {
+   "k": "cog-4-line1",
+   "req": true,
+   "expect": "profile:street_address",
+   "label": "Physical address line 1"
+  },
+  {
+   "k": "cog-4-line2",
+   "req": false,
+   "expect": "blank",
+   "label": "Physical address line 2"
+  },
+  {
+   "k": "cog-4-city",
+   "req": true,
+   "expect": "profile:city",
+   "label": "Physical city"
+  },
+  {
+   "k": "cog-4-international-state",
+   "req": true,
+   "expect": "profile:state",
+   "label": "Physical state"
+  },
+  {
+   "k": "cog-4-postal-code",
+   "req": true,
+   "expect": "profile:zip",
+   "label": "Physical ZIP"
+  },
+  {
+   "k": "cog-4-country",
+   "req": false,
+   "expect": "profile:country OR any",
+   "label": "Country (preset United States)"
+  },
+  {
+   "k": "radio:Yes",
+   "req": true,
+   "expect": "choice:Yes",
+   "label": "Physical same as billing = Yes (the profile's one business address)"
+  },
+  {
+   "k": "cog-7",
+   "req": true,
+   "expect": "profile:contact_name",
+   "label": "A/P contact name"
+  },
+  {
+   "k": "cog-8",
+   "req": true,
+   "expect": "profile:email",
+   "label": "A/P email"
+  },
+  {
+   "k": "cog-9",
+   "req": true,
+   "expect": "profile:phone",
+   "label": "A/P phone"
+  },
+  {
+   "k": "cog-10",
+   "req": true,
+   "expect": "profile:ein",
+   "label": "Federal ID # / Business #"
+  },
+  {
+   "k": "cog-11",
+   "req": false,
+   "expect": "blank",
+   "label": "Motor Carrier / USDOT #"
+  },
+  {
+   "k": "cog-12",
+   "req": false,
+   "expect": "blank",
+   "label": "Number of Vehicles in Fleet"
+  }
+ ],
+ "notes": "",
+ "drafted_after_runs": true,
+ "fields_source": "drafted after the live runs (CS-588 asks for keys 17-31 after the runs) from the page structure seen live; field ids come from the harness readback of whichever run reached the field; expectations follow the profile, ship-to and CS-588 rules, not any version's values"
 }

@@ -74,5 +74,10 @@
   "wall_ms": 16948
  },
  "started_at": "2026-09-24T15:21:02.471Z",
- "ended_at": "2026-09-24T15:21:19.419Z"
+ "ended_at": "2026-09-24T15:21:19.419Z",
+ "transport_failures": {
+  "cause": "Custodian: labels not linked to inputs -> get_by_role strict-mode violation (type_text)",
+  "fields": "all",
+  "keys": "all"
+ }
 }

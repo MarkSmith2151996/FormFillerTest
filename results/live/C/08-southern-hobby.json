@@ -206,5 +206,14 @@
   "wall_ms": 72578
  },
  "started_at": "2026-09-24T14:56:04.639Z",
- "ended_at": "2026-09-24T14:57:17.217Z"
+ "ended_at": "2026-09-24T14:57:17.217Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility: survey says only brick-and-mortar retail stores are accepted and online-only businesses will not be considered (profile is an online/Amazon reseller)"
+  ]
+ },
+ "restriction": "Southern Hobby's dealer survey accepts brick-and-mortar retail hobby stores only; online-only businesses will not be considered"
 }

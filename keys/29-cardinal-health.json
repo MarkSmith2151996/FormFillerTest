@@ -1,7 +1,7 @@
 {
  "form": "29-cardinal-health",
  "unreviewed": true,
- "key_source": "task",
+ "key_source": "task; fields none (no fillable step reached / trap)",
  "trap": true,
  "expected_outcome": "ENTERPRISE_ONLY",
  "acceptable_outcomes": [
@@ -10,5 +10,6 @@
  ],
  "needs_human": [],
  "fields": [],
- "notes": "Enterprise-only / contact page."
+ "notes": "Enterprise-only / contact page.",
+ "drafted_after_runs": true
 }

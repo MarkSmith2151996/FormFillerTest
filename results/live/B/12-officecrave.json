@@ -39,5 +39,6 @@
   "wall_ms": 5000
  },
  "started_at": "2026-09-24T15:13:40Z",
- "ended_at": "2026-09-24T15:13:45Z"
+ "ended_at": "2026-09-24T15:13:45Z",
+ "env_blocked": true
 }
