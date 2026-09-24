@@ -1,0 +1,246 @@
+{
+ "version": "C",
+ "form": "_selftest",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "PARTIAL",
+ "needs_human": [],
+ "notes": "mechanics smoke test",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "company",
+   "label": "Company Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "dba",
+   "label": "DBA",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ein",
+   "label": "Tax ID / EIN *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "ein"
+  },
+  {
+   "k": "radio:btype",
+   "label": "Business Type *",
+   "type": "radio",
+   "req": false,
+   "st": "choice",
+   "opt": "Online Retailer"
+  },
+  {
+   "k": "website",
+   "label": "Website:",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "first_name",
+   "label": "First Name*",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "last_name",
+   "label": "Last Name*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "email",
+   "label": "Email Address*",
+   "type": "email",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "phone",
+   "label": "Phone*",
+   "type": "tel",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "fax",
+   "label": "Fax",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "react_contact",
+   "label": "Contact (React-style)*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "street",
+   "label": "Street Address*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "city",
+   "label": "City*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "state",
+   "label": "State*",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "zip",
+   "label": "Zip*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "country",
+   "label": "Country",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "choice",
+   "opt": "Afghanistan"
+  },
+  {
+   "k": "combo",
+   "label": "Primary Sales Channel *",
+   "type": "combobox",
+   "req": true,
+   "same": true,
+   "st": "choice",
+   "opt": "Choose..."
+  },
+  {
+   "k": "seller_id",
+   "label": "Amazon Seller ID",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "password",
+   "label": "Password*",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "card_number",
+   "label": "Card Number",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "resale_cert",
+   "label": "Resale Certificate",
+   "type": "file",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "terms",
+   "label": "I agree to the terms and conditions",
+   "type": "checkbox",
+   "req": true,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "news",
+   "label": "Subscribe to our newsletter",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/_selftest.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 53,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 142
+   },
+   {
+    "cmd": "act",
+    "args_chars": 225,
+    "out_chars": 88,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 519
+   },
+   {
+    "cmd": "report",
+    "args_chars": 52,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 279,
+  "chars_out": 201,
+  "images": 2,
+  "img_tokens": 1536,
+  "tool_ms": 661,
+  "harness_chars": 0,
+  "token_est": 1674,
+  "wall_ms": 44572
+ },
+ "started_at": "2026-09-24T13:21:23.118Z",
+ "ended_at": "2026-09-24T13:22:07.690Z"
+}

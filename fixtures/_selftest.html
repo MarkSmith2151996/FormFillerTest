@@ -1,0 +1,43 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Self-test Wholesale Application</title><link rel="stylesheet" href="fixture.css"></head>
+<body><main><h1>Wholesale Account Application</h1>
+<form id="app" action="/submit-here" method="post">
+<h2>Business Information</h2>
+<label for="co">Company Name *</label><input id="co" name="company" required>
+<label>DBA <input name="dba"></label>
+<input name="ein" placeholder="Tax ID / EIN *" required>
+<fieldset><legend>Business Type *</legend><label><input type="radio" name="btype" value="retail"> Retail Store</label><label><input type="radio" name="btype" value="online"> Online Retailer</label><label><input type="radio" name="btype" value="dist"> Distributor</label></fieldset>
+<table><tr><td>Website:</td><td><input name="website"></td></tr></table>
+<h2>Contact</h2>
+<label for="fn">First Name*</label><input id="fn" name="first_name" required>
+<label for="ln">Last Name*</label><input id="ln" name="last_name" required>
+<label for="em">Email Address*</label><input id="em" type="email" name="email" required>
+<label for="ph">Phone*</label><input id="ph" type="tel" name="phone" required>
+<label for="fx">Fax</label><input id="fx" name="fax">
+<label for="rc">Contact (React-style)*</label><input id="rc" name="react_contact" required>
+<h2>Address</h2>
+<label for="st1">Street Address*</label><input id="st1" name="street" required>
+<label for="ci">City*</label><input id="ci" name="city" required>
+<label for="sta">State*</label><select id="sta" name="state" required><option value="">Select a state</option><option value="IL">Illinois</option><option value="MI">Michigan</option><option value="OH">Ohio</option></select>
+<label for="zp">Zip*</label><input id="zp" name="zip" required>
+<label for="cty">Country</label><select id="cty" name="country"><option>Afghanistan</option><option>Canada</option><option>United States of America</option></select>
+<div class="field"><span id="chl">Primary Sales Channel *</span><div id="combo" role="combobox" aria-labelledby="chl" aria-haspopup="listbox" aria-expanded="false" tabindex="0">Choose...</div>
+<ul id="lb" role="listbox" hidden><li role="option">Brick and mortar</li><li role="option">E-commerce / Online marketplaces</li><li role="option">Wholesale</li></ul><input type="hidden" name="channel" id="chv"></div>
+<ff-shadow-field></ff-shadow-field>
+<div style="position:absolute;left:-9999px"><label>Leave this field empty <input name="hp_field" tabindex="-1"></label></div>
+<h2>Account</h2>
+<label for="pw">Password*</label><input id="pw" type="password" name="password" required>
+<label for="cc">Card Number</label><input id="cc" name="card_number" autocomplete="cc-number">
+<label for="rs">Resale Certificate</label><input id="rs" type="file" name="resale_cert">
+<label><input type="checkbox" name="terms" required> I agree to the terms and conditions</label>
+<label><input type="checkbox" name="news"> Subscribe to our newsletter</label>
+<button type="submit">Submit Application</button>
+</form></main>
+<script>
+customElements.define('ff-shadow-field', class extends HTMLElement { connectedCallback() { const r = this.attachShadow({ mode: 'open' }); r.innerHTML = '<label for="sid">Amazon Seller ID</label><input id="sid" name="seller_id">'; } });
+const ph = document.getElementById('ph');
+ph.addEventListener('input', () => { const d = ph.value.replace(/\D/g, '').slice(0, 10); ph.value = d.length > 6 ? `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}` : d.length > 3 ? `(${d.slice(0,3)}) ${d.slice(3)}` : d; });
+const rc = document.getElementById('rc'); let rcState = ''; rc.addEventListener('input', () => { rcState = rc.value; }); rc.addEventListener('blur', () => { rc.value = rcState; });
+const combo = document.getElementById('combo'), lb = document.getElementById('lb');
+combo.addEventListener('click', () => { lb.hidden = !lb.hidden; combo.setAttribute('aria-expanded', String(!lb.hidden)); });
+lb.addEventListener('click', (e) => { const o = e.target.closest('[role=option]'); if (!o) return; combo.textContent = o.textContent; document.getElementById('chv').value = o.textContent; lb.hidden = true; });
+</script></body></html>

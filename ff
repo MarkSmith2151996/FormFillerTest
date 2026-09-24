@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+// Bake-off CLI (offline). Talks to harness/daemon.mjs. Examples:
+//   ./ff A 01 open                      A: open_form -> returns the form snapshot
+//   ./ff A 01 fill '{"f1":"{{profile.legal_name}}","f5":"{{profile.state_name}}","f9":true}'
+//   ./ff A 01 report '{"outcome":"FILLED","needs_human":[],"notes":"..."}'
+//   ./ff B 01 open                      B: browser_navigate to the fixture
+//   ./ff B 01 browser_snapshot '{}'     B: any @playwright/mcp tool by name + JSON args
+//   ./ff C 01 open                      C: screenshot path (Read it), then:
+//   ./ff C 01 act '[["click",420,310],["type","{{profile.email}}"],["scroll",600]]'
+const [V, form, cmd, ...rest] = process.argv.slice(2);
+if (!V || !form || !cmd) { console.error('usage: ./ff <A|B|C> <form#|slug> <cmd> [json|args...]'); process.exit(2); }
+let args = rest;
+if (rest.length === 1 && /^\s*[[{]/.test(rest[0])) args = JSON.parse(rest[0]);
+const port = process.env.FF_API_PORT || 7801;
+const r = await fetch(`http://127.0.0.1:${port}/cmd`, { method: 'POST', body: JSON.stringify({ V, form, cmd, args }) }).catch((e) => ({ json: async () => ({ text: `daemon not reachable (${e.message}); start: node harness/daemon.mjs`, error: true }) }));
+const o = await r.json();
+process.stdout.write(`${o.text}\n`);
+if (o.error) process.exitCode = 1;

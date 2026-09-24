@@ -1,0 +1,22 @@
+{
+  "name": "formfillertest",
+  "private": true,
+  "type": "module",
+  "description": "Wholesale-application form filler bake-off (EE-1071): three Claude-driven toolkits, one harness.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "daemon": "node harness/daemon.mjs",
+    "score": "node harness/score.mjs",
+    "test": "node harness/selftest.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.0",
+    "@playwright/mcp": "0.0.82",
+    "playwright": "1.56.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  }
+}

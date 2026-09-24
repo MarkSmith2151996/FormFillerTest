@@ -1,0 +1,246 @@
+{
+ "version": "B",
+ "form": "_selftest",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "PARTIAL",
+ "needs_human": [],
+ "notes": "smoke",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "company",
+   "label": "Company Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "dba",
+   "label": "DBA",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ein",
+   "label": "Tax ID / EIN *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "ein"
+  },
+  {
+   "k": "radio:btype",
+   "label": "Business Type *",
+   "type": "radio",
+   "req": false,
+   "st": "choice",
+   "opt": "Online Retailer"
+  },
+  {
+   "k": "website",
+   "label": "Website:",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "first_name",
+   "label": "First Name*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "last_name",
+   "label": "Last Name*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "email",
+   "label": "Email Address*",
+   "type": "email",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "phone",
+   "label": "Phone*",
+   "type": "tel",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "fax",
+   "label": "Fax",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "react_contact",
+   "label": "Contact (React-style)*",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_name"
+  },
+  {
+   "k": "street",
+   "label": "Street Address*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "city",
+   "label": "City*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "state",
+   "label": "State*",
+   "type": "select",
+   "req": true,
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "zip",
+   "label": "Zip*",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "country",
+   "label": "Country",
+   "type": "select",
+   "req": false,
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "combo",
+   "label": "Primary Sales Channel *",
+   "type": "combobox",
+   "req": true,
+   "same": true,
+   "st": "choice",
+   "opt": "Choose..."
+  },
+  {
+   "k": "seller_id",
+   "label": "Amazon Seller ID",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "password",
+   "label": "Password*",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "card_number",
+   "label": "Card Number",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "resale_cert",
+   "label": "Resale Certificate",
+   "type": "file",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "terms",
+   "label": "I agree to the terms and conditions",
+   "type": "checkbox",
+   "req": true,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "news",
+   "label": "Subscribe to our newsletter",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/B/_selftest.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 389,
+    "image": null,
+    "ms": 188
+   },
+   {
+    "cmd": "browser_snapshot",
+    "args_chars": 2,
+    "out_chars": 3046,
+    "image": null,
+    "ms": 22
+   },
+   {
+    "cmd": "browser_fill_form",
+    "args_chars": 550,
+    "out_chars": 577,
+    "image": null,
+    "ms": 213
+   },
+   {
+    "cmd": "report",
+    "args_chars": 37,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 4,
+  "brain_calls": 4,
+  "chars_in": 591,
+  "chars_out": 4072,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 423,
+  "harness_chars": 0,
+  "token_est": 1333,
+  "wall_ms": 10955
+ },
+ "started_at": "2026-09-24T13:21:04.469Z",
+ "ended_at": "2026-09-24T13:21:15.424Z"
+}
