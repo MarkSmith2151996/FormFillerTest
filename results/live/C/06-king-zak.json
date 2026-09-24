@@ -1,0 +1,106 @@
+{
+ "version": "C",
+ "form": "06-king-zak",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [
+  "no wholesale application: contact the manufacturer's sales team via the Contact page"
+ ],
+ "notes": "Wholesale page is marketing copy for distributors/supermarkets with a Contact button and a newsletter signup; no application form. Code cache was cleared leaving the previous site (COOP); re-seeded via example.com before t0.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 1,
+  "write_blocked": 1
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_104541.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2800,
+    "out_chars": 10,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 5,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 300,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2950,
+    "out_chars": 90,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 200,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 560,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 200,
+  "chars_out": 515,
+  "images": 2,
+  "img_tokens": 3068,
+  "tool_ms": 0,
+  "harness_chars": 7550,
+  "token_est": 3273,
+  "tool_calls": 3,
+  "wall_ms": 33971
+ },
+ "started_at": "2026-09-24T14:45:17.720Z",
+ "ended_at": "2026-09-24T14:45:51.691Z"
+}

@@ -16,3 +16,16 @@ for (const [name, list] of Object.entries(bundles)) {
   fs.writeFileSync(new URL(`./live/${name}.min.js`, import.meta.url), code.trim());
   console.log(`${name}.min.js ${code.length} bytes`);
 }
+// Parts for pasting through Custodian evaluate_js with the function-wrapper trick
+// ('(' + (function(){ <part> }).toString() + ')()' is kept in window.name), each small enough to copy in one go.
+//   pH.min.js  derive + guard + readback (+ exposes window.ffDeriveProfile)   -> every live session
+//   pA.min.js  Version A runtime (window.__ft)                                  -> A session
+//   pC.min.js  Version C helper  (window.__cv)                                  -> C session
+const partSpec = { pH: ['derive', 'guard', 'readback'], pA: ['ft'], pC: ['cv'] };
+for (const [name, list] of Object.entries(partSpec)) {
+  let src = list.map((k) => parts[k]).join('\n;\n');
+  if (name === 'pH') src += '\n;window.ffDeriveProfile = ffDeriveProfile;';
+  const { code } = transformSync(src, { minify: true, target: 'es2019', legalComments: 'none', supported: { 'template-literal': false } });
+  fs.writeFileSync(new URL(`./live/${name}.min.js`, import.meta.url), code.trim());
+  console.log(`${name}.min.js ${code.length} bytes${/`/.test(code) ? ' (has backtick!)' : ''}`);
+}

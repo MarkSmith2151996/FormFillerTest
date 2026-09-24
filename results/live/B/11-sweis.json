@@ -1,0 +1,173 @@
+{
+ "version": "B",
+ "form": "11-sweis",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "eligibility: salon-professional distributor serving California, Nevada, Hawaii & Arizona; licence required; diversion policy targets non-salon retailers (profile is an Amazon/e-commerce reseller)",
+  "License / Student ID, License State, License Exp Date: not in profile",
+  "Billing City and Postal Code: not fillable with B-live tools (duplicate 'City'/'Postal Code' labels in billing and shipping -> strict-mode violation)",
+  "Billing State: list has no Michigan",
+  "Username / Password: account creation is human-only",
+  "Shipping block: profile has no ship-to address; 'Same as Billing' left unticked",
+  "Diversion policy 'I Agree': approver"
+ ],
+ "notes": "ASP.NET WebForms page: the whole page is one <form>, so the echo shim could not trim Custodian's echo (~38K chars per action, including a 250-option language list). Filled salon name (legal name), first/last name, Type = E-Merchant (preset was Beauty Center), email, phone, billing address line 1. type_text on the billing City failed with a strict-mode violation (2 textboxes named 'City'); Postal Code has the same duplicate, so it was not tried. Resale tax number (optional) left blank: the profile has an EIN, not a resale number.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlSalonType",
+   "st": "choice",
+   "opt": "E-Merchant"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rblBillingAddressType",
+   "st": "choice",
+   "opt": "Business",
+   "same": true
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rblShippingAddressType",
+   "st": "choice",
+   "opt": "Business",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 39000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 38500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 38500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 38500,
+    "image": null
+   },
+   {
+    "cmd": "select_option",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 38500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 38500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 38500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 38500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 900,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 760,
+    "out_chars": 700,
+    "image": null
+   }
+  ],
+  "brain_calls": 9,
+  "chars_in": 280,
+  "chars_out": 309400,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 4895,
+  "token_est": 88480,
+  "tool_calls": 9,
+  "wall_ms": 77992
+ },
+ "started_at": "2026-09-24T15:08:39.938Z",
+ "ended_at": "2026-09-24T15:09:57.930Z"
+}

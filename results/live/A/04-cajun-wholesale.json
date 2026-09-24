@@ -1,0 +1,65 @@
+{
+ "version": "A",
+ "form": "04-cajun-wholesale",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [
+  "wholesale inquiry by email (no web application)"
+ ],
+ "notes": "Retail site shows retail prices only; wholesale is by emailed inquiry to the orders@ mailbox (classify found the mailto). Nothing filled.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "radio:newsletter_block",
+   "st": "choice",
+   "opt": "Subscribe",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2350,
+    "out_chars": 540,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 760,
+    "out_chars": 640,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 3110,
+  "chars_out": 1180,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 265,
+  "token_est": 1226,
+  "tool_calls": 2,
+  "wall_ms": 8133
+ },
+ "started_at": "2026-09-24T14:37:50.944Z",
+ "ended_at": "2026-09-24T14:37:59.077Z"
+}

@@ -1,0 +1,65 @@
+{
+ "version": "B",
+ "form": "02-specialty-food-source",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "entire form: Custodian read_page truncates the accessibility snapshot at 50,000 chars; the header category <select> (1,150+ options) fills it before the form begins"
+ ],
+ "notes": "B-live could not see any form field, so no refs and no fills. Real @playwright/mcp would scope the snapshot to the form ref (browser_snapshot target) and is not affected; this is a Custodian transport limit.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 4,
+  "write_blocked": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2700,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 58400,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 700,
+    "out_chars": 60,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 58400,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 3785,
+  "token_est": 16686,
+  "tool_calls": 1,
+  "wall_ms": 42333
+ },
+ "started_at": "2026-09-24T14:24:09.654Z",
+ "ended_at": "2026-09-24T14:24:51.987Z"
+}

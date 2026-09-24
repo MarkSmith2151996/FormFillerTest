@@ -1,0 +1,138 @@
+{
+ "version": "A",
+ "form": "07-hollis",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Account Number (existing Hollis dealer account; profile has none)",
+  "eligibility: page says existing Hollis dealers must complete this form (new-dealer path unclear)"
+ ],
+ "notes": "Gravity Forms dealer (CRIB) application aimed at existing Hollis dealers. Filled store/contact/address; newsletter popup fields ignored.",
+ "field_map": {
+  "f1": "legal_name",
+  "f3": "email",
+  "f4": "contact_first_name",
+  "f5": "contact_last_name",
+  "f6": "phone",
+  "f7": "street_address",
+  "f9": "city",
+  "f10": "state_name",
+  "f11": "zip",
+  "f12": "country"
+ },
+ "readback": [
+  {
+   "k": "input_1",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input_4",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "input_6",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "input_17",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "input_7",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "input_8.1",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "input_8.3",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "input_8.4",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "input_8.5",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "input_8.6",
+   "st": "profile",
+   "key": "country"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_104806.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2450,
+    "out_chars": 900,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 420,
+    "out_chars": 130,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1350,
+    "out_chars": 1150,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 4220,
+  "chars_out": 2180,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 595,
+  "token_est": 1829,
+  "tool_calls": 3,
+  "wall_ms": 18953
+ },
+ "started_at": "2026-09-24T14:47:42.563Z",
+ "ended_at": "2026-09-24T14:48:01.516Z"
+}

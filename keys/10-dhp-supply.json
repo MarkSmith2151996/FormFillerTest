@@ -66,5 +66,60 @@
    "expect": "blank"
   }
  ],
- "notes": "\"Request a Quote\" form; reCAPTCHA is solved by the approver at submit. Preset trap: email-deals opt-in is pre-checked."
+ "notes": "\"Request a Quote\" form; reCAPTCHA is solved by the approver at submit. Preset trap: email-deals opt-in is pre-checked.",
+ "live": {
+  "expected_outcome": "NEEDS_HUMAN",
+  "acceptable_outcomes": [
+   "NEEDS_HUMAN",
+   "FILLED"
+  ],
+  "notes": "Live the URL served a chooser ('Do you have a DHP account number?') and then the online-account registration form (Bill To / Ship To), not the 'Request a Quote' fixture page. Ship To block is required but the profile has no ship-to, so NEEDS_HUMAN; FILLED also accepted if a driver treats ship-to = bill-to as the approver's call. reCAPTCHA is solved by the approver.",
+  "fields": [
+   {
+    "k": "form[151_0]",
+    "req": true,
+    "expect": "profile:legal_name"
+   },
+   {
+    "k": "form[1_1]",
+    "req": true,
+    "expect": "profile:contact_first_name"
+   },
+   {
+    "k": "form[11_2]",
+    "req": true,
+    "expect": "profile:contact_last_name"
+   },
+   {
+    "k": "form[31_3]",
+    "req": true,
+    "expect": "profile:phone"
+   },
+   {
+    "k": "form[21_4]",
+    "req": true,
+    "expect": "profile:email"
+   },
+   {
+    "k": "form[212_5]",
+    "req": true,
+    "expect": "profile:street_address"
+   },
+   {
+    "k": "form[212_7]",
+    "req": true,
+    "expect": "profile:city"
+   },
+   {
+    "k": "form[226_8]",
+    "req": true,
+    "expect": "profile:state"
+   },
+   {
+    "k": "form[212_9]",
+    "req": true,
+    "expect": "profile:zip"
+   }
+  ]
+ }
 }

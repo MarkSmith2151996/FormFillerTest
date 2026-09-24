@@ -1,0 +1,131 @@
+{
+ "version": "A",
+ "form": "15-salon-services",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "eligibility: all state lists (salon, billing, shipping) cover only Alaska, Arizona, Colorado, Idaho, Montana, New Mexico, Oregon, Utah, Washington, Wyoming ('unable to ship to states not listed'): Michigan business is outside the territory",
+  "f10-f12 license ID/state/expiry, f13 Type Code, f14 Class Code, f15 brands: not in profile",
+  "f16/f22 license + resale certificate uploads: human-only",
+  "f44 diversion policy 'I Agree': approver",
+  "f45 radio preset 'Yes' (question text not captured): human to check",
+  "shipping block: no ship-to in profile"
+ ],
+ "notes": "Salon-professional application (iBeAuthentic). Filled salon name (legal name), names, salon address/city/zip, email, phone, billing address/city/postal in one fill. State selects left empty: the snapshot showed the full 10-state list, so the territory restriction was clear before filling. f45 is the SMS-opt-in radio preset to Yes, but A's snapshot labelled it only 'No {No|Yes}' without the question, so A left it and flagged it instead of switching it to No (toolkit gap: radio group label missed).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolAddress1",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolCity",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolZip",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingCity",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingZip",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rbOptInText",
+   "st": "choice",
+   "opt": "Yes",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "write_blocked": 1
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2950,
+    "out_chars": 3560,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 420,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1300,
+    "out_chars": 1000,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 4670,
+  "chars_out": 4640,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 345,
+  "token_est": 2660,
+  "tool_calls": 3,
+  "wall_ms": 22831
+ },
+ "started_at": "2026-09-24T15:24:40.771Z",
+ "ended_at": "2026-09-24T15:25:03.602Z"
+}

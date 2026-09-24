@@ -1,0 +1,80 @@
+{
+ "version": "A",
+ "form": "14-pet-drop-shipper",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "f6 Password: account creation is human-only"
+ ],
+ "notes": "Shopify customer 'Create Account': filled first/last name and email in one fill. The 'No Minimums Ever!' popup did not matter (DOM fill). Footer newsletter email (required only for its own subscribe form) left blank.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "customer[first_name]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "st": "profile",
+   "key": "email"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 7
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2950,
+    "out_chars": 1000,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 150,
+    "out_chars": 30,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 760,
+    "out_chars": 250,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 3860,
+  "chars_out": 1280,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 345,
+  "token_est": 1469,
+  "tool_calls": 3,
+  "wall_ms": 12938
+ },
+ "started_at": "2026-09-24T15:22:40.699Z",
+ "ended_at": "2026-09-24T15:22:53.637Z"
+}

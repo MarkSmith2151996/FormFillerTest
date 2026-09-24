@@ -1,0 +1,203 @@
+{
+ "version": "B",
+ "form": "05-prime-wholesale",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Upload Seller's Permit (file)",
+  "Upload EIN Document (file)",
+  "Type of Products needed (preset Health & Household; buyer's choice)",
+  "reCAPTCHA at submit"
+ ],
+ "notes": "Payment preset ACH/Wire Transfer matches profile; left as is. Product category preset left for the human. One type_text hit a gateway 502 and was retried.",
+ "field_map": {
+  "Full Name": "contact_name",
+  "Your Email": "email",
+  "Phone Number": "phone",
+  "Company Name": "legal_name",
+  "Address": "street_address",
+  "City": "city",
+  "State": "state",
+  "Zip Code": "zip"
+ },
+ "readback": [
+  {
+   "k": "form_fields[name]",
+   "st": "profile",
+   "key": "contact_name"
+  },
+  {
+   "k": "form_fields[email]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "form_fields[field_b961db6]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "form_fields[field_210ce40]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "form_fields[field_fad8593]",
+   "st": "choice",
+   "opt": "Health &Household",
+   "same": true
+  },
+  {
+   "k": "form_fields[field_3c3eb32]",
+   "st": "choice",
+   "opt": "ACH/Wire Transfer",
+   "same": true
+  },
+  {
+   "k": "form_fields[field_26b6687]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "form_fields[field_257ce7a]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "form_fields[field_f6c5f32]",
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "form_fields[field_5385f10]",
+   "st": "profile",
+   "key": "zip"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_104058.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2700,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 12500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 3600,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 3700,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 3700,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 45,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 45,
+    "out_chars": 3700,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 3700,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 3700,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 25,
+    "out_chars": 3700,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 3700,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 1500,
+    "out_chars": 800,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   }
+  ],
+  "brain_calls": 10,
+  "chars_in": 355,
+  "chars_out": 42000,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 5555,
+  "token_est": 12102,
+  "tool_calls": 10,
+  "wall_ms": 65104
+ },
+ "started_at": "2026-09-24T14:39:48.985Z",
+ "ended_at": "2026-09-24T14:40:54.089Z"
+}

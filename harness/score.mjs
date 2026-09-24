@@ -48,6 +48,9 @@ function evalField(expect, row) {
   return first;
 }
 
+// A key may carry a `live` override (fields/outcomes) when the live page differs from the offline fixture.
+const keyFor = (slug, mode) => (mode === 'live' && keys[slug].live ? { ...keys[slug], ...keys[slug].live } : keys[slug]);
+
 function scoreRun(res, key) {
   const rows = new Map((res.readback || []).map((r) => [r.k, r]));
   const out = { outcome: res.outcome ?? 'NOT_RUN', outcome_ok: key.acceptable_outcomes.includes(res.outcome), req_total: 0, req_ok: 0, all_scored: 0, all_ok: 0, invented: 0, discipline_total: 0, discipline_ok: 0, wrong_consent: 0, extra_profile_fills: 0, errors: [] };
@@ -84,7 +87,7 @@ for (const mode of modes) {
       const file = path.join(ROOT, 'results', mode, V, `${f.slug}.json`);
       if (!fs.existsSync(file)) continue;
       const res = JSON.parse(fs.readFileSync(file, 'utf8'));
-      per[V][f.slug] = res.status === 'not_run' ? { outcome: 'NOT_RUN', reason: res.reason } : scoreRun(res, keys[f.slug]);
+      per[V][f.slug] = res.status === 'not_run' ? { outcome: 'NOT_RUN', reason: res.reason } : scoreRun(res, keyFor(f.slug, mode));
     }
   }
   const sum = {};
@@ -118,7 +121,7 @@ for (const mode of modes) {
   for (const f of forms) {
     if (!VERSIONS.some((V) => per[V][f.slug])) continue;
     const cell = (V) => { const r = per[V][f.slug]; if (!r) return '-'; if (r.outcome === 'NOT_RUN') return 'not run'; return `${r.outcome_ok ? '✅' : '❌'} ${r.outcome} · ${r.calls}c/${r.tokens}t${r.invented ? ` · ${r.invented} inv` : ''}${r.req_total ? ` · req ${r.req_ok}/${r.req_total}` : ''}`; };
-    md += `| ${f.slug} | ${keys[f.slug].expected_outcome} | ${VERSIONS.map(cell).join(' | ')} |\n`;
+    md += `| ${f.slug} | ${keyFor(f.slug, mode).expected_outcome} | ${VERSIONS.map(cell).join(' | ')} |\n`;
   }
 }
 fs.writeFileSync(path.join(ROOT, 'results/scoreboard.json'), JSON.stringify(board, null, 1));

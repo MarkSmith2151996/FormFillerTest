@@ -1,0 +1,104 @@
+{
+ "version": "B",
+ "form": "08-southern-hobby",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "eligibility: survey says only brick-and-mortar retail stores are accepted and online-only businesses will not be considered (profile is an online/Amazon reseller)",
+  "all contact fields (Store Name, Store Address, City, State, Zip, Contact Name, Phone, Email): not fillable with B-live tools (unlabeled inputs)",
+  "product types (Q1), business description (Q2), store type (Q3), social media, current distributors: buyer's answers",
+  "Security code (image captcha)"
+ ],
+ "notes": "Survey, not an application. The inputs have no accessible names (labels are plain divs), so Custodian's type_text resolved ref e93 to get_by_role(\"textbox\") and hit a strict-mode violation (19 matches). select_option/click on the unnamed combobox/checkboxes would fail the same way, so B stopped after one failed call rather than typing through press_key one character at a time. Presets left as they were (State Alabama, How did you hear = Other, contact = Call, reseller permit = Yes).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "q",
+   "st": "text",
+   "len": 26,
+   "same": true
+  },
+  {
+   "k": "state",
+   "st": "choice",
+   "opt": "Alabama",
+   "same": true
+  },
+  {
+   "k": "radio:howdidyouhear",
+   "st": "choice",
+   "opt": "Other (Please Specify)",
+   "same": true
+  },
+  {
+   "k": "contactmethod",
+   "st": "choice",
+   "opt": "Call",
+   "same": true
+  },
+  {
+   "k": "radio:resalecert",
+   "st": "choice",
+   "opt": "Yes",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 15500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 1900,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 720,
+    "out_chars": 230,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 40,
+  "chars_out": 17400,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 4385,
+  "token_est": 4983,
+  "tool_calls": 2,
+  "wall_ms": 56135
+ },
+ "started_at": "2026-09-24T14:54:36.673Z",
+ "ended_at": "2026-09-24T14:55:32.808Z"
+}

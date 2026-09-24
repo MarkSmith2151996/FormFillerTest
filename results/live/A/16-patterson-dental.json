@@ -1,0 +1,56 @@
+{
+ "version": "A",
+ "form": "16-patterson-dental",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "LOGIN_GATED",
+ "needs_human": [
+  "login: /account/register redirects to Patterson's Azure AD B2C sign-in page (Email + Password only, 'We can't sign you in'); no application form without an existing account"
+ ],
+ "notes": "Register URL lands on pattersonb2c.b2clogin.com sign-in. A's snapshot listed 2 fields (email, password flagged human-only) and one Sign in button; classified LOGIN_GATED, nothing typed.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2150,
+    "out_chars": 310,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1500,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 3650,
+  "chars_out": 400,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 345,
+  "token_est": 1158,
+  "tool_calls": 2,
+  "wall_ms": 11938
+ },
+ "started_at": "2026-09-24T15:30:19.723Z",
+ "ended_at": "2026-09-24T15:30:31.661Z"
+}

@@ -1,0 +1,75 @@
+{
+ "version": "C",
+ "form": "04-cajun-wholesale",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [
+  "wholesale inquiry by email (no web application)"
+ ],
+ "notes": "First screenshot shows the whole policy: retail prices only; email a wholesale inquiry to the orders@ mailbox; rep responds in 1-2 business days and sends registration steps after verification. No form to fill.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "radio:newsletter_block",
+   "st": "choice",
+   "opt": "Subscribe",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_103911.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2700,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 560,
+    "out_chars": 120,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 250,
+  "images": 1,
+  "img_tokens": 1534,
+  "tool_ms": 0,
+  "harness_chars": 3685,
+  "token_est": 1606,
+  "tool_calls": 1,
+  "wall_ms": 13195
+ },
+ "started_at": "2026-09-24T14:39:07.421Z",
+ "ended_at": "2026-09-24T14:39:20.616Z"
+}

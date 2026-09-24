@@ -16,7 +16,7 @@
   }
   function txt(n) { return ((n && n.textContent) || '').replace(/\s+/g, ' ').trim(); }
   function vis(el) {
-    var w = el.ownerDocument.defaultView, cs = w.getComputedStyle(el), r = el.getBoundingClientRect(), t = (el.type || '').toLowerCase();
+    var w = el.ownerDocument.defaultView, cs = w.getComputedStyle(el), r = el.getBoundingClientRect(), t = String(el.type || '').toLowerCase();
     if (cs.display === 'none' || cs.visibility === 'hidden') return false;
     if ((t === 'checkbox' || t === 'radio') && (r.width < 2 || r.height < 2 || +cs.opacity === 0)) {
       var l = el.labels && el.labels[0]; if (l) { var lr = l.getBoundingClientRect(); return lr.width > 1 && lr.height > 1; }
@@ -61,7 +61,7 @@
   function rows() {
     var out = [], seen = {}, groups = {};
     walk(document, []).forEach(function (el) {
-      var tag = el.tagName, t = (el.type || '').toLowerCase(), role = el.getAttribute('role');
+      var tag = el.tagName, t = String(el.type || '').toLowerCase(), role = el.getAttribute('role');
       var nat = tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA';
       if (nat && /^(hidden|submit|button|reset|image)$/.test(t)) return;
       if (!nat && !(role && /^(combobox|checkbox|radio|switch|textbox)$/.test(role)) && !(el.isContentEditable && el.getAttribute('contenteditable') != null)) return;

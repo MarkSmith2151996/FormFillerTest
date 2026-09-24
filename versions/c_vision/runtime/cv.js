@@ -63,6 +63,22 @@
     ['input', 'change'].forEach(function (t) { s.dispatchEvent(new Event(t, { bubbles: true })); });
     return 'ok';
   }
+  // Scroll the window instantly (sites with CSS smooth scrolling make scrollBy async); if the window
+  // does not move, scroll the nearest scrollable ancestor of the element at the viewport centre.
+  function scrollAny(dy) {
+    var y0 = window.scrollY;
+    window.scrollTo({ top: y0 + dy, behavior: 'instant' });
+    if (window.scrollY !== y0) return 'y=' + Math.round(window.scrollY);
+    for (var el = document.elementFromPoint(innerWidth / 2, innerHeight / 2); el; el = el.parentElement) {
+      var cs = getComputedStyle(el);
+      if (/(auto|scroll)/.test(cs.overflowY) && el.scrollHeight > el.clientHeight + 10) {
+        var t0 = el.scrollTop;
+        el.scrollTo({ top: t0 + dy, behavior: 'instant' });
+        return 'inner y=' + Math.round(el.scrollTop) + (el.scrollTop === t0 ? ' (end)' : '');
+      }
+    }
+    return 'y=' + Math.round(window.scrollY) + ' (no scroll)';
+  }
   // act([["click",x,y],["type","{{profile.email}}"],["clear"],["key","Tab"],["select",x,y,"Michigan"],["scroll",600]])
   CV.act = function (list) {
     return list.map(function (a) {
@@ -73,7 +89,7 @@
           case 'clear': return clear();
           case 'key': return key(a[1]);
           case 'select': return pick(+a[1], +a[2], a[3]);
-          case 'scroll': window.scrollBy(0, +a[1]); return 'y=' + Math.round(window.scrollY);
+          case 'scroll': return scrollAny(+a[1]);
           default: return 'unknown ' + a[0];
         }
       } catch (e) { return 'ERR ' + e.message; }

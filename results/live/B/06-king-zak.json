@@ -1,0 +1,65 @@
+{
+ "version": "B",
+ "form": "06-king-zak",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [
+  "no wholesale application: contact the manufacturer's sales team via the Contact page"
+ ],
+ "notes": "Snapshot: wholesale marketing copy, a Contact link and a newsletter textbox only.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2600,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 6400,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 620,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 6400,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 3675,
+  "token_est": 1829,
+  "tool_calls": 1,
+  "wall_ms": 11331
+ },
+ "started_at": "2026-09-24T14:47:05.561Z",
+ "ended_at": "2026-09-24T14:47:16.892Z"
+}

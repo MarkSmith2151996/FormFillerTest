@@ -1,0 +1,154 @@
+{
+ "version": "C",
+ "form": "07-hollis",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Account Number (existing Hollis dealer account; profile has none)",
+  "eligibility: page says existing Hollis dealers must complete this form (new-dealer path unclear)"
+ ],
+ "notes": "First act (close newsletter popup + 5 fields) returned ok for every step but no text landed: the popup overlay intercepted the clicks and only closed at the end. Second screenshot showed empty fields; re-sent the whole field list at scroll 550 and verified by screenshot. Country select chosen by visible text. SIGN UP widget overlaps the ZIP box (value still set).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "input_1",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input_4",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "input_6",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "input_17",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "input_7",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "input_8.1",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "input_8.3",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "input_8.4",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "input_8.5",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "input_8.6",
+   "st": "profile",
+   "key": "country"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 1,
+  "write_blocked": 1
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_105340.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2950,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 460,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 720,
+    "out_chars": 110,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 720,
+    "out_chars": 460,
+    "image": null
+   }
+  ],
+  "brain_calls": 5,
+  "chars_in": 1180,
+  "chars_out": 920,
+  "images": 3,
+  "img_tokens": 4602,
+  "tool_ms": 0,
+  "harness_chars": 4515,
+  "token_est": 5202,
+  "tool_calls": 5,
+  "wall_ms": 183624
+ },
+ "started_at": "2026-09-24T14:50:45.863Z",
+ "ended_at": "2026-09-24T14:53:49.487Z"
+}

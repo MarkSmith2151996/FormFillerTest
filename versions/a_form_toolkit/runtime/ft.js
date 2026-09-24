@@ -38,7 +38,7 @@
   function cls(el) { return typeof el.className === 'string' ? el.className : ''; }
   function vis(el) {
     if (!el.isConnected) return false;
-    var cs = css(el), r = el.getBoundingClientRect(), w = win(el), t = (el.type || '').toLowerCase();
+    var cs = css(el), r = el.getBoundingClientRect(), w = win(el), t = String(el.type || '').toLowerCase();
     if (cs.display === 'none' || cs.visibility === 'hidden') return false;
     for (var a = el, i = 0; a && i < 8; a = up(a), i++) if (a.nodeType === 1 && (css(a).display === 'none' || a.getAttribute('aria-hidden') === 'true' && /INPUT|SELECT|TEXTAREA/.test(el.tagName) && a !== el)) return false;
     if ((t === 'checkbox' || t === 'radio') && (r.width < 2 || r.height < 2 || +cs.opacity === 0)) {
@@ -94,7 +94,7 @@
     return false;
   }
   function kind(el) {
-    var tag = el.tagName, t = (el.type || '').toLowerCase(), role = el.getAttribute('role');
+    var tag = el.tagName, t = String(el.type || '').toLowerCase(), role = el.getAttribute('role');
     if (tag === 'SELECT') return 'sel';
     if (tag === 'TEXTAREA') return 'ta';
     if (tag === 'INPUT') {
@@ -108,7 +108,7 @@
     return 't';
   }
   function isCtrl(el) {
-    var tag = el.tagName, t = (el.type || '').toLowerCase(), role = el.getAttribute('role');
+    var tag = el.tagName, t = String(el.type || '').toLowerCase(), role = el.getAttribute('role');
     if (tag === 'INPUT') return !/^(hidden|submit|button|reset|image)$/.test(t);
     if (tag === 'SELECT' || tag === 'TEXTAREA') return true;
     if (role && /^(combobox|listbox|checkbox|radio|switch|textbox)$/.test(role)) return !el.querySelector('input,select,textarea');
@@ -120,7 +120,7 @@
     return /(^|_)hp(_|$)|honeypot|bot_?field|fax_only/i.test(n) && el.tabIndex < 0;
   }
   function sensitive(el, lab) {
-    if ((el.type || '').toLowerCase() === 'password') return ['password', 'human-only (account creation)'];
+    if (String(el.type || '').toLowerCase() === 'password') return ['password', 'human-only (account creation)'];
     var ac = el.getAttribute('autocomplete') || '';
     if (/^cc-/.test(ac)) return ['card', 'never (no credit cards)'];
     for (var i = 0; i < SENSITIVE.length; i++) if (SENSITIVE[i][0].test(lab + ' ' + (el.name || ''))) return [SENSITIVE[i][1], SENSITIVE[i][2]];
@@ -258,7 +258,7 @@
     if (d && d.set && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) d.set.call(el, v); else el.textContent = v;
   }
   async function typeText(el, v) {
-    if ((el.type || '').toLowerCase() === 'date') { var m = String(v).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/); if (m) v = m[3] + '-' + ('0' + m[1]).slice(-2) + '-' + ('0' + m[2]).slice(-2); }
+    if (String(el.type || '').toLowerCase() === 'date') { var m = String(v).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/); if (m) v = m[3] + '-' + ('0' + m[1]).slice(-2) + '-' + ('0' + m[2]).slice(-2); }
     try { el.focus({ preventScroll: true }); } catch (_) {}
     setVal(el, v); fire(el, 'input'); fire(el, 'change');
     if (!same(currentValue(el, 't'), v)) { // masked inputs: replay character by character

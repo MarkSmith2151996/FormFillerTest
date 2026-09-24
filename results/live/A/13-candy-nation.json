@@ -1,0 +1,143 @@
+{
+ "version": "A",
+ "form": "13-candy-nation",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "f3/f4 Password + Confirm Password: account creation is human-only",
+  "captcha on the create-account form"
+ ],
+ "notes": "BigCommerce create-account. Filled email, names, company (legal name), address, city, country United States, zip, phone, and the Business-account contact block (f17-f20); promotions opt-in left unchecked. TOOLKIT BUG: fill reported f12 State 'ok', but setting Country re-rendered State as a new <select>, so the value went into the detached text input and the live State stayed empty (readback has no state row). A did not re-snapshot after the country change.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "FormField[1][1]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "FormField[2][4]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "FormField[2][5]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "FormField[2][6]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "FormField[2][8]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "FormField[2][10]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "FormField[2][11]",
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "FormField[2][13]",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "FormField[2][7]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "radio:row-radio-buttons-group",
+   "st": "choice",
+   "opt": "Business account",
+   "same": true
+  },
+  {
+   "k": "Zmlyc3RfbmFtZQ==",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "bGFzdF9uYW1l",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "email",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "cGhvbmU=",
+   "st": "profile",
+   "key": "phone"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 10,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 280,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2950,
+    "out_chars": 990,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 560,
+    "out_chars": 125,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1000,
+    "out_chars": 900,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 4510,
+  "chars_out": 2015,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 510,
+  "token_est": 1865,
+  "tool_calls": 3,
+  "wall_ms": 20434
+ },
+ "started_at": "2026-09-24T15:14:42.157Z",
+ "ended_at": "2026-09-24T15:15:02.591Z"
+}

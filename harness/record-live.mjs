@@ -8,7 +8,7 @@
 //      tool E=evaluate_js N=navigation (evaluate_js) S=screenshot_page R=read_page B=browse_page
 //           T=type_text L=select_option C=click_element K=press_key X=close_page
 //      role b=brain (the version's own call) h=harness (guard/injection/readback/evidence)
-//   started_at, ended_at (ISO)
+//   started_at, ended_at (ISO), or t0/t1 (epoch ms from the page)
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -17,6 +17,9 @@ import { tokensFor } from './ledger.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TOOLS = { E: 'evaluate_js', N: 'evaluate_js(navigate)', S: 'screenshot_page', R: 'read_page', B: 'browse_page', T: 'type_text', L: 'select_option', C: 'click_element', K: 'press_key', X: 'close_page' };
 const inp = JSON.parse(fs.readFileSync(0, 'utf8'));
+// t0/t1: epoch ms taken in the page (PC clock) at the version's first and last call
+if (inp.t0 && !inp.started_at) inp.started_at = new Date(inp.t0).toISOString();
+if (inp.t1 && !inp.ended_at) inp.ended_at = new Date(inp.t1).toISOString();
 const calls = (inp.calls || []).map((c) => {
   if (typeof c !== 'string') return c;
   const [t, role, a, o, img] = c.split(':');

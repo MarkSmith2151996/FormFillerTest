@@ -1,0 +1,188 @@
+{
+ "version": "C",
+ "form": "05-prime-wholesale",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Upload Seller's Permit (file)",
+  "Upload EIN Document (file)",
+  "Type of Products needed (preset Health & Household; buyer's choice)",
+  "reCAPTCHA at submit"
+ ],
+ "notes": "Payment preset ACH/Wire Transfer matches profile. The page's scripts had wiped the window.name code cache after the previous run; restored from example.com localStorage (harness overhead, before t0).",
+ "field_map": {
+  "Full Name": "contact_name",
+  "Your Email": "email",
+  "Phone": "phone",
+  "Company": "legal_name",
+  "Address": "street_address",
+  "City": "city",
+  "State": "state",
+  "Zip": "zip"
+ },
+ "readback": [
+  {
+   "k": "form_fields[name]",
+   "st": "profile",
+   "key": "contact_name"
+  },
+  {
+   "k": "form_fields[email]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "form_fields[field_b961db6]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "form_fields[field_210ce40]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "form_fields[field_fad8593]",
+   "st": "choice",
+   "opt": "Health &Household",
+   "same": true
+  },
+  {
+   "k": "form_fields[field_3c3eb32]",
+   "st": "choice",
+   "opt": "ACH/Wire Transfer",
+   "same": true
+  },
+  {
+   "k": "form_fields[field_26b6687]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "form_fields[field_257ce7a]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "form_fields[field_f6c5f32]",
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "form_fields[field_5385f10]",
+   "st": "profile",
+   "key": "zip"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_104240.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2700,
+    "out_chars": 12400,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 1300,
+    "out_chars": 400,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2800,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 560,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 560,
+    "out_chars": 600,
+    "image": null
+   }
+  ],
+  "brain_calls": 5,
+  "chars_in": 890,
+  "chars_out": 850,
+  "images": 3,
+  "img_tokens": 4602,
+  "tool_ms": 0,
+  "harness_chars": 21280,
+  "token_est": 5100,
+  "tool_calls": 5,
+  "wall_ms": 46045
+ },
+ "started_at": "2026-09-24T14:42:02.370Z",
+ "ended_at": "2026-09-24T14:42:48.415Z"
+}
