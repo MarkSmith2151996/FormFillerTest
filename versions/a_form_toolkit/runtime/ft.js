@@ -69,12 +69,30 @@
     }
     return '';
   }
+  function byId(root, doc, id) {
+    // Locker disallows getElementById on some shadow roots. Attribute lookup stays in the composed tree.
+    var esc = String(id).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+    try { return root.querySelector('[id="' + esc + '"]') || doc.querySelector('[id="' + esc + '"]'); } catch (_) { return null; }
+  }
+  function above(el) {
+    // Only inspect text physically before a control so a floating label cannot bleed into the previous field.
+    for (var n = el, level = 0; n && level < 4; n = up(n), level++) {
+      for (var s = n.previousElementSibling, seen = 0; s && seen < 5; s = s.previousElementSibling, seen++) {
+        if (/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(s.tagName)) break;
+        var t = txt(s);
+        if (t && t.length < 160 && !s.querySelector('input,select,textarea,button')) return t;
+      }
+    }
+    return '';
+  }
   function rawLabel(el) {
     var root = el.getRootNode(), doc = el.ownerDocument, t = '', ids = el.getAttribute('aria-labelledby');
-    if (ids) t = ids.split(/\s+/).map(function (i) { var n = (root.getElementById && root.getElementById(i)) || doc.getElementById(i); return n && n.querySelector && n.querySelector('select,input,textarea') ? lblText(n) : txt(n); }).join(' ');
+    if (ids) t = ids.split(/\s+/).map(function (i) { var n = byId(root, doc, i); return n && n.querySelector && n.querySelector('select,input,textarea') ? lblText(n) : txt(n); }).join(' ');
     if (!t && el.labels && el.labels.length) t = lblText(el.labels[0]);
+    if (!t && el.id) { var linked = doc.querySelector('label[for="' + String(el.id).replace(/\\/g, '\\\\').replace(/"/g, '\\"') + '"]'); if (linked) t = lblText(linked); }
     if (!t && /^(checkbox|radio)$/i.test(el.type || '')) t = after(el);
-    if (!t) t = el.getAttribute('aria-label') || near(el, 1) || el.getAttribute('placeholder') || near(el, 3) || el.getAttribute('title') || '';
+    if (!t && /^(BUTTON|A)$/.test(el.tagName)) t = txt(el);
+    if (!t) t = el.getAttribute('aria-label') || above(el) || el.getAttribute('placeholder') || near(el, 1) || el.getAttribute('title') || '';
     if (!t && (el.name || el.id)) t = String(el.name || el.id).replace(/[\[\]_\-.]+/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2');
     return t.replace(/\s+/g, ' ').replace(/\s*:\s*$/, '').trim();
   }
@@ -102,7 +120,7 @@
       if (role === 'combobox' || el.getAttribute('aria-autocomplete') === 'list') return 'combo';
       return { email: 'email', tel: 'tel', number: 'num', date: 'date', url: 'url' }[t] || 't';
     }
-    if (role === 'combobox' || role === 'listbox') return 'combo';
+    if (role === 'combobox' || role === 'listbox' || el.hasAttribute('aria-haspopup') || (/^(BUTTON|A)$/.test(tag) && !SUBMITISH.test(txt(el)) && (role === 'button' || /choice|option|select|dropdown|combobox|picker|card/i.test(cls(el))))) return 'combo';
     if (role === 'checkbox' || role === 'switch') return 'cb';
     if (role === 'radio') return 'radio';
     return 't';
@@ -111,7 +129,9 @@
     var tag = el.tagName, t = String(el.type || '').toLowerCase(), role = el.getAttribute('role');
     if (tag === 'INPUT') return !/^(hidden|submit|button|reset|image)$/.test(t);
     if (tag === 'SELECT' || tag === 'TEXTAREA') return true;
-    if (role && /^(combobox|listbox|checkbox|radio|switch|textbox)$/.test(role)) return !el.querySelector('input,select,textarea');
+    if (role && /^(combobox|listbox|checkbox|radio|switch|textbox|option)$/.test(role)) return !el.querySelector('input,select,textarea');
+    if (/^(BUTTON|A)$/.test(tag) && !SUBMITISH.test(txt(el) + ' ' + (el.getAttribute('aria-label') || ''))) return role === 'button' || el.hasAttribute('aria-haspopup') || el.hasAttribute('aria-expanded') || /choice|option|select|dropdown|combobox|picker|card/i.test(cls(el));
+    if (!/^(INPUT|SELECT|TEXTAREA|BUTTON|A)$/.test(tag) && (el.hasAttribute('role') || el.tabIndex >= 0) && !SUBMITISH.test(txt(el) + ' ' + (el.getAttribute('aria-label') || ''))) return /choice|option|select|dropdown|combobox|picker|card/i.test(cls(el)) || el.hasAttribute('aria-selected') || el.hasAttribute('aria-checked');
     return el.isContentEditable && el.getAttribute('contenteditable') != null;
   }
   function honeypot(el, lab) {
@@ -131,7 +151,7 @@
   function optionsOf(el) {
     if (el.tagName === 'SELECT') return [].slice.call(el.options).filter(function (o) { return !isPh(o); }).map(function (o) { return txt(o); });
     var s = assocSelect(el); if (s) return optionsOf(s);
-    var lb = el.getAttribute('aria-controls') || el.getAttribute('aria-owns'), box = lb && el.getRootNode().getElementById && el.getRootNode().getElementById(lb);
+    var lb = el.getAttribute('aria-controls') || el.getAttribute('aria-owns'), box = lb && byId(el.getRootNode(), el.ownerDocument, lb);
     return box ? [].slice.call(box.querySelectorAll('[role=option]')).map(txt).filter(Boolean) : null;
   }
   function assocSelect(el) {
@@ -165,14 +185,14 @@
   // Key sentences from the page body that change what "correct" means (requirements, eligibility, channel).
   var IMPORTANT = /\b(required|only|must|not accept|existing (customer|dealer|account)s?|licen[cs]ed?|diversion|approv(al|ed)|by invitation|restricted|unable to ship|territor|e-?mail (us|a |your)|call us|pdf|download the|minimum order)/i;
   function notes() {
-    var root = document.querySelector('main') || document.body, out = [], seen = {};
+    var root = document.body, out = [], seen = {};
     var tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    while (tw.nextNode() && out.length < 4) {
+    while (tw.nextNode() && out.length < 8) {
       var n = tw.currentNode, p = n.parentElement;
-      if (!p || /^(SCRIPT|STYLE|NOSCRIPT|OPTION|LABEL|BUTTON|SELECT)$/.test(p.tagName) || p.closest('header,footer,nav,label,[role=dialog],[aria-modal=true]') || !p.getClientRects().length) continue;
+      if (!p || /^(SCRIPT|STYLE|NOSCRIPT|OPTION|LABEL|BUTTON|SELECT)$/.test(p.tagName) || !p.getClientRects().length) continue;
       var t = n.textContent.replace(/\s+/g, ' ').trim();
       if (t.length < 20) continue;
-      t.split(/(?<=[.!?])\s+/).forEach(function (x) { if (out.length < 4 && IMPORTANT.test(x) && !seen[x]) { seen[x] = 1; out.push(x.slice(0, 160)); } });
+      t.split(/(?<=[.!?])\s+/).forEach(function (x) { if (out.length < 8 && IMPORTANT.test(x) && !seen[x]) { seen[x] = 1; out.push(x.slice(0, 160)); } });
     }
     return out;
   }
@@ -196,7 +216,7 @@
       if (gname && groups[gname]) { groups[gname].radios.push(el); return; }
       var fid = 'f' + (++id), req = required(el, lab), clean = lab.replace(/\s*\*\s*/g, ' ').replace(/\(required\)/i, '').trim().slice(0, 70);
       var form = el.form || (el.closest && el.closest('form')), sec = section(gname ? (el.closest('fieldset') || el) : el);
-      if (gname) { var fs0 = el.closest('fieldset'), lg0 = fs0 && fs0.querySelector('legend'); if (/\*/.test(lg0 ? txt(lg0) : near(el.parentElement, 2)) || el.required) req = true; }
+      if (gname) { var fs0 = el.closest('fieldset'), lg0 = fs0 && fs0.querySelector('legend'); if (/\*/.test(lg0 ? txt(lg0) : above(el)) || el.required) req = true; }
       if (form && form !== lastForm) { lastForm = form; var fb = buttons(form).map(function (b) { return b.t; }); lines.push('## form' + (form.closest && form.closest('[role=dialog],[aria-modal=true],dialog') ? ' (popup/dialog)' : '') + (form.id ? ' #' + form.id : '') + (form.getAttribute('action') ? ' action=' + form.getAttribute('action').slice(0, 50) : '') + (fb.length ? ' buttons[' + fb.slice(0, 4).join('|') + ']' : '')); }
       if (sec && sec !== lastSec) { lastSec = sec; lines.push('# ' + sec); }
       lines.push({ fid: fid });
@@ -223,12 +243,16 @@
     var head = 'PAGE ' + document.title.slice(0, 70) + ' | ' + location.host + location.pathname.slice(0, 60) + (h1 ? ' | h1: ' + txt(h1).slice(0, 60) : '') +
       '\nFIELDS ' + id + ' (' + nreq + ' required)' + (capt ? ' | captcha' : '') + Object.keys(flags).map(function (f) { return ' | ' + f + ':' + flags[f]; }).join('') + (xo.length ? ' | cross-origin iframes: ' + xo.join(', ') : '');
     var nt = notes();
-    return head + (nt.length ? '\nNOTES "' + nt.join('" | "') + '"' : '') + (lines.length ? '\n' + lines.join('\n') : '\n(no fillable fields; try classify())');
+    var pageButtons = buttons().filter(function (b) { return !SUBMITISH.test(b.t); }).map(function (b) { return b.t; });
+    return head + (nt.length ? '\nNOTES "' + nt.join('" | "') + '"' : '') + (pageButtons.length ? '\nPAGE BUTTONS[' + pageButtons.slice(0, 8).join('|') + ']' : '') + (lines.length ? '\n' + lines.join('\n') : '\n(no fillable fields; try classify())');
   };
   function groupLabel(r) {
     var fs = r.closest('fieldset'), lg = fs && fs.querySelector('legend');
     if (lg) return txt(lg).replace(/\*/g, '').trim().slice(0, 70);
-    var box = r.parentElement; for (var i = 0; i < 3 && box; i++) { var t = near(box, 1, 200); if (t) return t.replace(/\*/g, '').trim().slice(0, 90); box = box.parentElement; }
+    var box = r.closest('[role=radiogroup]') || r.parentElement;
+    var labelled = box && box.getAttribute('aria-labelledby');
+    if (labelled) { var n = byId(r.getRootNode(), r.ownerDocument, labelled.split(/\s+/)[0]); if (n && txt(n)) return txt(n).replace(/\*/g, '').trim().slice(0, 90); }
+    for (var i = 0; i < 3 && box; i++) { var t = above(box); if (t && !/^(yes|no|true|false)$/i.test(t)) return t.replace(/\*/g, '').trim().slice(0, 90); box = up(box); }
     return '';
   }
 
@@ -304,6 +328,10 @@
       setSelect(sel, o); await sleep(60);
       return sel.options[sel.selectedIndex] === o ? 'ok "' + txt(o).slice(0, 40) + '"' : 'UNVERIFIED';
     }
+    if (/^(BUTTON|A)$/.test(el.tagName) && (norm(txt(el)) === norm(want) || norm(txt(el)).indexOf(norm(want)) === 0)) {
+      press(el); await sleep(150);
+      return 'ok selected "' + txt(el).slice(0, 40) + '"';
+    }
     press(el); await sleep(350);
     var inp = el.tagName === 'INPUT' ? el : el.querySelector('input');
     if (inp) { setVal(inp, want); fire(inp, 'input'); await sleep(600); }
@@ -322,15 +350,29 @@
   }
   FT.fill = async function (spec) {
     var out = [];
-    for (var fid in spec) {
+    // Country changes commonly recreate State controls. Apply dependent selects after the triggering country.
+    var ids = Object.keys(spec).sort(function (a, b) {
+      var al = (FT.meta[a] && FT.meta[a].label || '').toLowerCase(), bl = (FT.meta[b] && FT.meta[b].label || '').toLowerCase();
+      var ar = /country/.test(al) ? -1 : /state|province/.test(al) ? 1 : 0;
+      var br = /country/.test(bl) ? -1 : /state|province/.test(bl) ? 1 : 0;
+      return ar - br;
+    });
+    for (var ii = 0; ii < ids.length; ii++) {
+      var fid = ids[ii];
       var el = FT.els[fid], m = FT.meta[fid], raw = spec[fid], res;
       if (!el) { out.push(fid + ' ?unknown id (snapshot again)'); continue; }
+      if (!el.isConnected) {
+        var candidates = walk(document, []).filter(isCtrl).filter(function (x) { return (el.id && x.id === el.id) || (!el.id && el.name && x.name === el.name); });
+        if (candidates[0]) el = FT.els[fid] = candidates[0];
+        else { out.push(fid + ' MISMATCH field re-rendered; snapshot again'); continue; }
+      }
       if (m.block) { out.push(fid + ' REFUSED ' + m.block + ': ' + (sensitive(el, m.label) || [0, ''])[1]); continue; }
       try {
         var v = resolve(raw);
         if (m.k === 'cb') res = await check(fid, v);
         else if (m.radios || m.k === 'sel' || m.k === 'combo') res = v === '' ? 'skipped' : await choose(fid, v);
         else res = await typeText(el, String(v));
+        await sleep(150);
       } catch (e) { res = 'ERR ' + e.message; }
       if (/^ok/.test(res)) FT.done[fid] = { label: m.label, src: typeof raw === 'string' && /\{\{/.test(raw) ? raw.replace(/[{}\s]|profile\./g, '') : (typeof raw === 'boolean' ? 'check' : 'literal') };
       out.push(fid + ' ' + res);
@@ -354,7 +396,7 @@
     var h1t = txt(document.querySelector('h1'));
     var contact = ctrls.some(function (e) { return e.tagName === 'TEXTAREA'; }) && biz === 0 && (/contact/i.test(title + ' ' + h1t) || labs.every(function (l) { return /name|e-?mail|phone|subject|message|comment|question|inquir|how can|zip|company|captcha|topic|reason|department/.test(l); }));
     if (document.contentType === 'application/pdf' || document.querySelector('embed[type="application/pdf"]')) return 'CLASS PDF_APPLICATION | document is a PDF';
-    if (/just a moment|attention required|access denied|verify you are human|are you a robot|request unsuccessful|pardon our interruption|you have been blocked|403 forbidden|bot detection/i.test(title + ' ' + body.slice(0, 600)) || (document.querySelector('#challenge-form,iframe[src*="challenges.cloudflare.com"]') && ctrls.length < 2)) return 'CLASS BLOCKED | challenge/WAF page: "' + title.slice(0, 60) + '"';
+    if (/just a moment|attention required|access denied|verify you are human|are you a robot|request unsuccessful|pardon our interruption|you have been blocked|web page blocked|request blocked|security check|unusual traffic|ray id|perimeterx|imperva|akamai|403 forbidden|bot detection/i.test(title + ' ' + body.slice(0, 1000)) || (document.querySelector('#challenge-form,iframe[src*="challenges.cloudflare.com"]') && ctrls.length < 2)) return 'CLASS BLOCKED | challenge/WAF page: "' + title.slice(0, 60) + '"';
     ev.push(ctrls.length + ' fields, ' + biz + ' business-type fields, ' + pw + ' password');
     var pdfs = [].slice.call(document.querySelectorAll('a[href*=".pdf"]')).filter(function (a) { return /application|credit|account|dealer|wholesale|reseller/i.test(txt(a) + a.href); }).map(function (a) { return txt(a).slice(0, 40); });
     if (pdfs.length) ev.push('PDF links: ' + pdfs.slice(0, 3).join('; '));
