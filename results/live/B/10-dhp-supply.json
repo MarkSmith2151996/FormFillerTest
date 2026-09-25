@@ -1,0 +1,217 @@
+{
+ "version": "B",
+ "form": "10-dhp-supply",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Ship To ZIP Code (required) and the rest of the Ship To block: profile has no ship-to address; 'Use Bill To Address' left unticked",
+  "reCAPTCHA",
+  "billing terms: the page offers a separate PandaDoc application for terms (not opened; net terms are left blank by policy)",
+  "eligibility: DHP is a dental supplier (customer type not asked on this form)"
+ ],
+ "notes": "Landing page is a chooser ('Do you have a DHP account number?'); clicked 'No' which loaded /customer-registration. Filled company, first/last name, phone, email, billing address/city/state/zip. Pre-checked '$25 OFF promo code' email opt-in unticked (first click echoed as still checked, second click showed it unchecked; readback confirms it is off). Buying-group note left blank. The page change dropped the harness, so it was re-injected; that blink invalidated Custodian's refs and forced one extra read_page (booked as harness). One type_text hit a gateway 502 (retry booked as harness). t0 is estimated as 25 s before the registration page's navigation start.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "form[151_0]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "form[1_1]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "form[11_2]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "form[31_3]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "form[21_4]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "form[212_5]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "form[212_7]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "form[226_8]",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "form[212_9]",
+   "st": "profile",
+   "key": "zip"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 16500,
+    "image": null
+   },
+   {
+    "cmd": "click_element",
+    "role": "brain",
+    "args_chars": 10,
+    "out_chars": 21000,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 21000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 30,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 60,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "select_option",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "click_element",
+    "role": "brain",
+    "args_chars": 10,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "click_element",
+    "role": "brain",
+    "args_chars": 10,
+    "out_chars": 7000,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 760,
+    "out_chars": 420,
+    "image": null
+   }
+  ],
+  "brain_calls": 13,
+  "chars_in": 370,
+  "chars_out": 114500,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 28755,
+  "token_est": 32820,
+  "tool_calls": 13,
+  "wall_ms": 128664
+ },
+ "started_at": "2026-09-24T15:04:21.113Z",
+ "ended_at": "2026-09-24T15:06:29.777Z"
+}

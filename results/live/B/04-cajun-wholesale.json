@@ -1,0 +1,72 @@
+{
+ "version": "B",
+ "form": "04-cajun-wholesale",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [
+  "wholesale inquiry by email (no web application)"
+ ],
+ "notes": "Snapshot shows only search + newsletter; page text says to email a wholesale inquiry to the orders@ mailbox; a rep verifies the business and then sends registration steps. Nothing filled.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "radio:newsletter_block",
+   "st": "choice",
+   "opt": "Subscribe",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2600,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 11800,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 620,
+    "out_chars": 120,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 11800,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 3645,
+  "token_est": 3372,
+  "tool_calls": 1,
+  "wall_ms": 10275
+ },
+ "started_at": "2026-09-24T14:38:32.557Z",
+ "ended_at": "2026-09-24T14:38:42.832Z"
+}

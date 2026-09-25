@@ -1,0 +1,14 @@
+{
+ "form": "06-king-zak",
+ "unreviewed": true,
+ "key_source": "live-recon",
+ "trap": false,
+ "expected_outcome": "NOT_A_FORM",
+ "acceptable_outcomes": [
+  "NOT_A_FORM",
+  "NEEDS_HUMAN"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Wholesale info page; only a single email field + reCAPTCHA Enterprise; no application fields."
+}

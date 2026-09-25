@@ -1,0 +1,15 @@
+{
+ "form": "23-dandh",
+ "unreviewed": true,
+ "key_source": "task+live; fields none (no fillable step reached / trap)",
+ "trap": false,
+ "expected_outcome": "BLOCKED",
+ "acceptable_outcomes": [
+  "BLOCKED",
+  "NEEDS_HUMAN"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Known to block automation.",
+ "drafted_after_runs": true
+}

@@ -1,0 +1,221 @@
+{
+ "version": "C",
+ "form": "18-isi",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Resale Tax No. (required): sales-tax licence / resale number is on the CS-588 still-NEEDS_HUMAN list",
+  "Business Founded/Years: CS-588 still-NEEDS_HUMAN (years in business)",
+  "'Are you an existing Kyocera Dealer?' (required Yes/No): not in profile",
+  "Business Type (Individual/Partnership/Corporation): the entity is an LLC, not a listed option",
+  "Owner street address, city, state, ZIP and owner email (required): not in profile (the business address and contact email are not the owner's)",
+  "Billing Title (required): whose title is not stated",
+  "Home State Tax Exempt Certificate (required upload) and optional financial reports: file uploads are human-only",
+  "Trade References x3 and Bank References (required): left blank by policy",
+  "Web Address: CS-588 still-NEEDS_HUMAN (website URL)",
+  "later pages behind 'Next Page' not opened"
+ ],
+ "notes": "IS Docs 'Reseller/Credit Application' (Impression Solutions, Kyocera dealer network). Filled Federal Tax ID (EIN), Firm Name, business street/city/State=MI (the select uses abbreviations; 'Michigan' returned no-option, retried with 'MI')/ZIP/phone, Owner/President/CEO name, Billing address/city/State=MI/ZIP/phone/email from the business profile. Scrolled to the bottom: trade and bank references required, no opt-ins. Next Page not clicked (may post page data).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "input",
+   "st": "profile",
+   "key": "ein"
+  },
+  {
+   "k": "input#4",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input#6",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "input#7",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "select",
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "input#8",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "input#10",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "input#13",
+   "st": "profile",
+   "key": "owner_name"
+  },
+  {
+   "k": "input#17",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "input#18",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "select#3",
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "input#19",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "input#21",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "a@b.com#2",
+   "st": "profile",
+   "key": "email"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_135353.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2900,
+    "out_chars": 110,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 600,
+    "out_chars": 120,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 200,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 200,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 600,
+    "out_chars": 120,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 200,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 900,
+    "image": null
+   }
+  ],
+  "brain_calls": 10,
+  "chars_in": 2350,
+  "chars_out": 1610,
+  "images": 5,
+  "img_tokens": 7670,
+  "tool_ms": 0,
+  "harness_chars": 5110,
+  "token_est": 8802,
+  "tool_calls": 10,
+  "wall_ms": 79613
+ },
+ "started_at": "2026-09-24T17:53:20.860Z",
+ "ended_at": "2026-09-24T17:54:40.473Z"
+}

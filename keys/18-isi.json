@@ -1,0 +1,117 @@
+{
+ "form": "18-isi",
+ "unreviewed": true,
+ "key_source": "live-recon (fields drafted at first live visit); fields drafted",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "PARTIAL",
+  "FILLED"
+ ],
+ "needs_human": [
+  "Resale Tax No. (CS-588: sales-tax/resale number)",
+  "Business Founded / Years (CS-588: years in business)",
+  "Web Address (CS-588: website URL)",
+  "Kyocera-dealer Yes/No",
+  "Business Type (LLC not listed)",
+  "owner home address and email",
+  "tax-exempt certificate upload",
+  "trade and bank references (blank by policy)"
+ ],
+ "fields": [
+  {
+   "k": "input",
+   "req": true,
+   "expect": "profile:ein",
+   "label": "Federal Tax ID"
+  },
+  {
+   "k": "input#4",
+   "req": true,
+   "expect": "profile:legal_name",
+   "label": "Firm Name"
+  },
+  {
+   "k": "input#6",
+   "req": true,
+   "expect": "profile:street_address",
+   "label": "Business street"
+  },
+  {
+   "k": "input#7",
+   "req": true,
+   "expect": "profile:city",
+   "label": "Business city"
+  },
+  {
+   "k": "select",
+   "req": true,
+   "expect": "profile:state",
+   "label": "Business state"
+  },
+  {
+   "k": "input#8",
+   "req": true,
+   "expect": "profile:zip",
+   "label": "Business ZIP"
+  },
+  {
+   "k": "input#10",
+   "req": true,
+   "expect": "profile:phone",
+   "label": "Business phone"
+  },
+  {
+   "k": "input#13",
+   "req": true,
+   "expect": "profile:owner_name",
+   "label": "Owner/President/CEO name"
+  },
+  {
+   "k": "input#17",
+   "req": true,
+   "expect": "profile:street_address",
+   "label": "Billing street (billing stays the business address)"
+  },
+  {
+   "k": "input#18",
+   "req": true,
+   "expect": "profile:city",
+   "label": "Billing city"
+  },
+  {
+   "k": "select#3",
+   "req": true,
+   "expect": "profile:state",
+   "label": "Billing state"
+  },
+  {
+   "k": "input#19",
+   "req": true,
+   "expect": "profile:zip",
+   "label": "Billing ZIP"
+  },
+  {
+   "k": "input#21",
+   "req": true,
+   "expect": "profile:phone",
+   "label": "Billing phone"
+  },
+  {
+   "k": "a@b.com#2",
+   "req": true,
+   "expect": "profile:email",
+   "label": "Billing email"
+  },
+  {
+   "k": "a@b.com",
+   "req": false,
+   "expect": "blank",
+   "label": "Owner email (owner's own email is not in the profile)"
+  }
+ ],
+ "notes": "",
+ "drafted_after_runs": true,
+ "fields_source": "drafted after the live runs (CS-588 asks for keys 17-31 after the runs) from the page structure seen live; field ids come from the harness readback of whichever run reached the field; expectations follow the profile, ship-to and CS-588 rules, not any version's values"
+}

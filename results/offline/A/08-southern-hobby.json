@@ -1,0 +1,480 @@
+{
+ "version": "A",
+ "form": "08-southern-hobby",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Security code (image captcha)",
+  "Product categories to purchase (Q1)",
+  "How did you hear (preset Other - confirm)"
+ ],
+ "notes": "State preset Alabama corrected; resale permit Yes kept; Online Retailer + Amazon retailer checked.",
+ "field_map": {
+  "f1": {
+   "label": "Store Name",
+   "src": "legal_name"
+  },
+  "f2": {
+   "label": "Store Address",
+   "src": "street_address"
+  },
+  "f3": {
+   "label": "City",
+   "src": "city"
+  },
+  "f4": {
+   "label": "State",
+   "src": "state_name"
+  },
+  "f5": {
+   "label": "Zip Code",
+   "src": "zip"
+  },
+  "f7": {
+   "label": "Contact Name",
+   "src": "contact_name"
+  },
+  "f8": {
+   "label": "Phone Number",
+   "src": "phone"
+  },
+  "f9": {
+   "label": "Email Address",
+   "src": "email"
+  },
+  "f18": {
+   "label": "2. Briefly tell us about your business and what you intend to purchase",
+   "src": "business_type"
+  },
+  "f20": {
+   "label": "Online Retailer (Including sports card breakers)",
+   "src": "check"
+  },
+  "f23": {
+   "label": "Amazon retailer",
+   "src": "check"
+  }
+ },
+ "readback": [
+  {
+   "k": "businessname",
+   "label": "Store Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "address",
+   "label": "Store Address",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "city",
+   "label": "City",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "state",
+   "label": "State",
+   "type": "select",
+   "req": false,
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "zipcd",
+   "label": "Zip Code",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "companyname",
+   "label": "Company Name (If different than store name)",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "contactname",
+   "label": "Contact Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_name"
+  },
+  {
+   "k": "phone",
+   "label": "Phone Number",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "email",
+   "label": "Email Address",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "sportscards",
+   "label": "Sports Cards (New customers will not have access to new release sports products,",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "nonsportscards",
+   "label": "Non-Sport trading cards",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "collectiblecardgames",
+   "label": "Collectible Card Games (New customers may not have access to some CCG products, ",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "toys",
+   "label": "Toys and Puzzles",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "supplies",
+   "label": "Supplies",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "bgminirpg",
+   "label": "Board Games, Miniatures, and RPGs",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "othertype",
+   "label": "Other (Please Specify)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "othertypetxt",
+   "label": "",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "aboutbusiness",
+   "label": "2. Briefly tell us about your business and what you intend to purchase.",
+   "type": "textarea",
+   "req": false,
+   "st": "profile",
+   "key": "business_type"
+  },
+  {
+   "k": "brickandmortar",
+   "label": "Brick and Mortar Retail Hobby Store (A permanent, physical location. No mall kio",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "sportscardbreaker",
+   "label": "Online Retailer (Including sports card breakers)",
+   "type": "checkbox",
+   "req": false,
+   "st": "checked"
+  },
+  {
+   "k": "kiosk",
+   "label": "Kiosk at local mall",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "vendor",
+   "label": "Vendor at local events",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "amazon",
+   "label": "Amazon retailer",
+   "type": "checkbox",
+   "req": false,
+   "st": "checked"
+  },
+  {
+   "k": "ebay",
+   "label": "Ebay",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "sellonwebsite",
+   "label": "Sell on your own website - Please provide web address",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "sellonwebsitetxt",
+   "label": "",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "otherbusiness",
+   "label": "Other (Please Specify)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "otherbusinesstxt",
+   "label": "",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ccg_wizards",
+   "label": "WPN (Magic: The Gathering)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_fnb",
+   "label": "GEM (Flesh and Blood)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_yugioh",
+   "label": "Konami OTS (YuGiOh!)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_pokemon",
+   "label": "Play! Pokemon",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_game",
+   "label": "Bandai TCG+ (Gundam Card Game, Union Arena)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_bushinavi",
+   "label": "Bushi-Navi (Cardfight!! Vanguard, Shadowverse: Evolve, Weiss Schwarz)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_lorcana",
+   "label": "Ravensburger Play (Lorcana)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_dealer",
+   "label": "Upper Deck Certified Diamond Dealer (Noepets Battledome, Marvel Legendary)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_ugn",
+   "label": "UGN (UniVersus)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_other",
+   "label": "Other (Please Specify)",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ccg_othertxt",
+   "label": "",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "socialmediaurls",
+   "label": "5. Please provide any URL links to your company's Social Media accounts.",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "servicedbyanother",
+   "label": "",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "radio:howdidyouhear",
+   "label": "7. How did you hear about Southern Hobby? (Select one)",
+   "type": "radio",
+   "req": false,
+   "same": true,
+   "st": "choice",
+   "opt": "Other (Please Specify)"
+  },
+  {
+   "k": "referraltxt",
+   "label": "",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "othertypenewtxt",
+   "label": "",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "contactmethod",
+   "label": "8. What is the best way to contact you? Call, text, email.",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "choice",
+   "opt": "Call"
+  },
+  {
+   "k": "radio:resalecert",
+   "label": "",
+   "type": "radio",
+   "req": false,
+   "same": true,
+   "st": "choice",
+   "opt": "Yes"
+  },
+  {
+   "k": "visual_verify_code",
+   "label": "Security code",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/08-southern-hobby.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 2147,
+    "image": null,
+    "ms": 79
+   },
+   {
+    "cmd": "fill",
+    "args_chars": 280,
+    "out_chars": 85,
+    "image": null,
+    "ms": 197
+   },
+   {
+    "cmd": "report",
+    "args_chars": 264,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 546,
+  "chars_out": 2292,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 276,
+  "harness_chars": 0,
+  "token_est": 811,
+  "wall_ms": 21421
+ },
+ "started_at": "2026-09-24T13:49:42.188Z",
+ "ended_at": "2026-09-24T13:50:03.609Z"
+}

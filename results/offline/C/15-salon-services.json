@@ -1,0 +1,468 @@
+{
+ "version": "C",
+ "form": "15-salon-services",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "State (western states only; Illinois not listed)",
+  "License ID/state/expiry",
+  "Type/Class code",
+  "License + resale cert uploads",
+  "Diversion agreement - non-fit"
+ ],
+ "notes": "SMS/email opt-in switched to No; 7 screenshots.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "label": "Salon / School Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "label": "First Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "label": "Last Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolAddress1",
+   "label": "Salon / School Address Line 1",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolAddress2",
+   "label": "Salon / School Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolCity",
+   "label": "Salon / School City",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlSalonSchoolState",
+   "label": "Salon/School State/Province",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolZip",
+   "label": "Salon / School Zip",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLicense",
+   "label": "License / Student ID",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlLicenseState",
+   "label": "License State",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLicenseExpiration",
+   "label": "License Expiration Date",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlCustomerTypeCode",
+   "label": "Type Code",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlCustomerClassCode",
+   "label": "Class Code",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlBrands",
+   "label": "Brands interested in",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$fuProLicense",
+   "label": "Professional License file",
+   "type": "file",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "label": "Email Address",
+   "type": "email",
+   "req": false,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "label": "Phone",
+   "type": "tel",
+   "req": false,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbMobilePhone",
+   "label": "Mobile Phone (optional)",
+   "type": "tel",
+   "req": false,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlSalesRep",
+   "label": "Account Executive (Optional)",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbTaxExempt",
+   "label": "Resale Tax Number (Optional)",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$fuResaleCert",
+   "label": "Resale Certificate File",
+   "type": "file",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredGiveAway",
+   "label": "Giveaway Entry",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredOnlineSearch",
+   "label": "Online Search",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredSocialMedia",
+   "label": "Social Media",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredAtSchool",
+   "label": "At School",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferralEmail",
+   "label": "Referral",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredIndustryEvent",
+   "label": "Industry Event",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbReferredOther",
+   "label": "Other",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "label": "Billing Address Line 1",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress2",
+   "label": "Billing Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingCity",
+   "label": "City",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlBillingState",
+   "label": "Billing Address State/Province",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingZip",
+   "label": "Postal Code",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbShippingSameAsBilling",
+   "label": "Same as Billing Address",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingAddress",
+   "label": "Shipping Address Line 1",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingAddress2",
+   "label": "Shipping Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingCity",
+   "label": "City",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlShippingState",
+   "label": "Shipping Address State/Province",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbShippingZip",
+   "label": "Postal Code",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$cbDiversionAgreement",
+   "label": "I Agree",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rbOptInText",
+   "label": "",
+   "type": "radio",
+   "req": false,
+   "st": "choice",
+   "opt": "No"
+  },
+  {
+   "k": "cphBody_ctl00_cbOptInInvoice",
+   "label": "Invoices",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "cphBody_ctl00_cbOptInShipment",
+   "label": "Shipment Notices",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  },
+  {
+   "k": "cphBody_ctl00_cbOptInMarketing",
+   "label": "Marketing / New Products & Promotions",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/15-salon-services.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 61,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 152
+   },
+   {
+    "cmd": "act",
+    "args_chars": 334,
+    "out_chars": 115,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 869
+   },
+   {
+    "cmd": "act",
+    "args_chars": 110,
+    "out_chars": 84,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 747
+   },
+   {
+    "cmd": "act",
+    "args_chars": 63,
+    "out_chars": 76,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 685
+   },
+   {
+    "cmd": "act",
+    "args_chars": 193,
+    "out_chars": 103,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 769
+   },
+   {
+    "cmd": "act",
+    "args_chars": 19,
+    "out_chars": 64,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 366
+   },
+   {
+    "cmd": "report",
+    "args_chars": 258,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 7,
+  "brain_calls": 7,
+  "chars_in": 979,
+  "chars_out": 563,
+  "images": 6,
+  "img_tokens": 4608,
+  "tool_ms": 3588,
+  "harness_chars": 0,
+  "token_est": 5049,
+  "wall_ms": 55469
+ },
+ "started_at": "2026-09-24T13:57:16.680Z",
+ "ended_at": "2026-09-24T13:58:12.148Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "State (western states only; Illinois not listed)",
+   "Diversion agreement - non-fit"
+  ]
+ },
+ "restriction": "Salon Services sells to licensed salon professionals and ships only to 10 western states ('unable to ship to states not listed'; no Michigan)"
+}

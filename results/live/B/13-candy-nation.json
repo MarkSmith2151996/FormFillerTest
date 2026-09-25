@@ -1,0 +1,338 @@
+{
+ "version": "B",
+ "form": "13-candy-nation",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Password + Confirm Password: account creation is human-only",
+  "reCAPTCHA"
+ ],
+ "notes": "BigCommerce create-account plus a B2B-Edition 'Account registration' iframe. Second attempt: filled the iframe contact block (first/last/email/phone; echoes ~26K chars because the iframe is outside the echo shim), then the main form: Country United States first so State re-rendered as a select, then State Michigan, email, names, company (legal name), address, city, zip, phone. First attempt: typing State into the old text box timed out after 30 s (the box had been swapped for a select), then Custodian lost the tab; that attempt's calls (read_page + 8 actions) are booked as harness rework. Iframe promotions opt-in left unchecked; did not press Continue or Create Account.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "FormField[1][1]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "FormField[2][4]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "FormField[2][5]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "FormField[2][6]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "FormField[2][8]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "FormField[2][10]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "FormField[2][11]",
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "FormField[2][12]",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "FormField[2][13]",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "FormField[2][7]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "radio:row-radio-buttons-group",
+   "st": "choice",
+   "opt": "Business account",
+   "same": true
+  },
+  {
+   "k": "Zmlyc3RfbmFtZQ==",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "bGFzdF9uYW1l",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "email",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "cGhvbmU=",
+   "st": "profile",
+   "key": "phone"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "write_blocked": 1
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 35,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 26000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 40,
+    "out_chars": 11500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 30,
+    "out_chars": 11500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 30,
+    "out_chars": 11500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 40,
+    "out_chars": 11500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 50,
+    "out_chars": 11500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 30,
+    "out_chars": 11500,
+    "image": null
+   },
+   {
+    "cmd": "select_option",
+    "role": "harness",
+    "args_chars": 30,
+    "out_chars": 11500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 30,
+    "out_chars": 200,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 60,
+    "out_chars": 700,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 280,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 35,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 26000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 26000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 26000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 26000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 26000,
+    "image": null
+   },
+   {
+    "cmd": "select_option",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 11500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "select_option",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 20,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 14000,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 760,
+    "out_chars": 950,
+    "image": null
+   }
+  ],
+  "brain_calls": 15,
+  "chars_in": 470,
+  "chars_out": 267500,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 119395,
+  "token_est": 76563,
+  "tool_calls": 15,
+  "wall_ms": 87855
+ },
+ "started_at": "2026-09-24T15:17:52.026Z",
+ "ended_at": "2026-09-24T15:19:19.881Z"
+}

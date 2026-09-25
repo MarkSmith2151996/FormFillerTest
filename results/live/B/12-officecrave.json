@@ -1,0 +1,44 @@
+{
+ "version": "B",
+ "form": "12-officecrave",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "Cloudflare 'Performing security verification' interstitial in front of create-account; a human has to pass it"
+ ],
+ "notes": "read_page shows only the Cloudflare challenge ('This page is displayed while the website verifies you are not a bot'), no form. B used the tab as A left it (the challenge page, nothing typed); no in-page harness because the interstitial wipes window.name. Nothing typed or clicked.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "note": "no in-page guard (challenge page); B made no clicks or typing"
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 1300,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 1300,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 0,
+  "token_est": 372,
+  "tool_calls": 1,
+  "wall_ms": 5000
+ },
+ "started_at": "2026-09-24T15:13:40Z",
+ "ended_at": "2026-09-24T15:13:45Z",
+ "env_blocked": true
+}

@@ -1,0 +1,171 @@
+{
+ "version": "B",
+ "form": "25-napa-corpbill",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Physical Address line 1, City, State, ZIP: not typeable with B-live tools (labels duplicated by the Billing Address group; type_text strict-mode violation)",
+  "'Physical same as billing' Yes radio: click_element strict-mode violation (the PO Required group also has a 'Yes' radio); preset 'No' left",
+  "Trade Name (required; no DBA in profile)",
+  "PO Required (required yes/no; not in profile)",
+  "later steps (credit request, references, guarantee) not reached; net-terms/credit sections stay blank by policy"
+ ],
+ "notes": "Corporate Billing cbCharge NAPA Commercial Charge Account enrollment (Cognito Forms), step 1. Echo shim trimmed the page to the form (~7K characters per echo). Typed Legal Name, A/P contact name, A/P email, A/P phone and Federal ID. The address fields and the same-as-billing radio failed on Custodian's duplicate-label bug (both address groups use 'Address Line 1'/'City'/...; two radio groups use 'Yes'). Next not pressed.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "cog-2",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "cog-4-country",
+   "st": "profile",
+   "key": "ship_to_country",
+   "same": true
+  },
+  {
+   "k": "radio:No",
+   "st": "choice",
+   "opt": "No",
+   "same": true
+  },
+  {
+   "k": "cog-6-country",
+   "st": "profile",
+   "key": "ship_to_country",
+   "same": true
+  },
+  {
+   "k": "cog-7",
+   "st": "profile",
+   "key": "contact_name"
+  },
+  {
+   "k": "cog-8",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "cog-9",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "cog-10",
+   "st": "profile",
+   "key": "ein"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 4300,
+    "out_chars": 70,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 7400,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 7500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 900,
+    "image": null
+   },
+   {
+    "cmd": "click_element",
+    "role": "brain",
+    "args_chars": 10,
+    "out_chars": 700,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 7500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 7550,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 7550,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 7550,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 700,
+    "out_chars": 330,
+    "image": null
+   }
+  ],
+  "brain_calls": 8,
+  "chars_in": 270,
+  "chars_out": 46650,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 5770,
+  "token_est": 13406,
+  "tool_calls": 8,
+  "wall_ms": 45183
+ },
+ "started_at": "2026-09-24T18:18:02.262Z",
+ "ended_at": "2026-09-24T18:18:47.445Z",
+ "transport_failures": {
+  "cause": "Custodian: duplicate labels -> get_by_role strict-mode violation (type_text and click_element)",
+  "fields": "physical address line 1, city, state, ZIP; same-as-billing radio",
+  "keys": [
+   "cog-4-line1",
+   "cog-4-city",
+   "cog-4-international-state",
+   "cog-4-postal-code",
+   "radio:Yes"
+  ]
+ }
+}

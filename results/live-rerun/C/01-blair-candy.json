@@ -1,0 +1,67 @@
+{
+ "version": "C",
+ "form": "01-blair-candy",
+ "mode": "live-rerun",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "application form not rendered: 'register by completing the form below', but no form appears below the qualification text; only the newsletter box. A person must open the page (or /account/register)"
+ ],
+ "notes": "CS-588 ship-to re-run (also C's first completed run on this form). One screenshot of the wholesale page body: 'How to Qualify for Wholesale' ($150 minimum, approval by email) and 'Important Wholesale Facts', then the footer; no application form. The harness scrolled the page to y=420 while injecting (viewport only). Nothing typed. Guard blocked 4 telemetry beacons.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 4
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_134631.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2900,
+    "out_chars": 110,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 110,
+  "chars_out": 250,
+  "images": 1,
+  "img_tokens": 1534,
+  "tool_ms": 0,
+  "harness_chars": 4300,
+  "token_est": 1637,
+  "tool_calls": 1,
+  "wall_ms": 16080
+ },
+ "started_at": "2026-09-24T17:46:26.477Z",
+ "ended_at": "2026-09-24T17:46:42.557Z"
+}

@@ -1,0 +1,94 @@
+{
+ "version": "C",
+ "form": "14-pet-drop-shipper",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Password (account creation)"
+ ],
+ "notes": "verified visually",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "customer[first_name]",
+   "label": "First Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "label": "Last Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "label": "Email",
+   "type": "email",
+   "req": false,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "customer[password]",
+   "label": "Password",
+   "type": "password",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/14-pet-drop-shipper.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 63,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 144
+   },
+   {
+    "cmd": "act",
+    "args_chars": 167,
+    "out_chars": 86,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 461
+   },
+   {
+    "cmd": "report",
+    "args_chars": 99,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 268,
+  "chars_out": 209,
+  "images": 2,
+  "img_tokens": 1536,
+  "tool_ms": 605,
+  "harness_chars": 0,
+  "token_est": 1673,
+  "wall_ms": 31817
+ },
+ "started_at": "2026-09-24T13:56:21.174Z",
+ "ended_at": "2026-09-24T13:56:52.991Z"
+}

@@ -1,0 +1,71 @@
+{
+ "version": "B",
+ "form": "16-patterson-dental",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "LOGIN_GATED",
+ "needs_human": [
+  "login: /account/register redirects to Patterson's Azure AD B2C sign-in (Email + Password); the only way forward is 'Sign up now' (account creation with a password), which is human-only"
+ ],
+ "notes": "read_page showed the B2C sign-in form (Email Address, Password, Sign in), a 'Patterson Rep Sign In' link and 'Don't have an account? Sign up now'. No application fields; classified LOGIN_GATED without typing. Guard blocked 1 telemetry beacon (not a submit). First nav call hit a gateway 502 and was retried (harness).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 1
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 360,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 45,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 3600,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 760,
+    "out_chars": 60,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 3600,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 4645,
+  "token_est": 1029,
+  "tool_calls": 1,
+  "wall_ms": 10503
+ },
+ "started_at": "2026-09-24T15:31:08.386Z",
+ "ended_at": "2026-09-24T15:31:18.889Z"
+}

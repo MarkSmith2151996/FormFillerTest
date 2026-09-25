@@ -1,0 +1,83 @@
+{
+ "version": "B",
+ "form": "26-weiners",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "LOGIN_GATED",
+ "needs_human": [
+  "login: /account/register redirects to Shopify customer-account sign-in; access needs an emailed verification code (human-only), which also auto-creates the account"
+ ],
+ "notes": "read_page: 'Sign in / Register - enter your email and we'll send you a verification code'. One Email box + Continue; 'Email me with news and offers' preset checked. Nothing typed, nothing toggled (not an application). Harness: the page's CSP (script-src cdn.shopify.com) blocks eval after an await, so the injection now evals before the first await; one gateway 502 retry.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "marketing-consent",
+   "st": "checked",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 360,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3400,
+    "out_chars": 300,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3450,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3450,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 2900,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 800,
+    "out_chars": 120,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 2900,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 11980,
+  "token_est": 829,
+  "tool_calls": 1,
+  "wall_ms": 9507
+ },
+ "started_at": "2026-09-24T17:26:49.451Z",
+ "ended_at": "2026-09-24T17:26:58.958Z"
+}

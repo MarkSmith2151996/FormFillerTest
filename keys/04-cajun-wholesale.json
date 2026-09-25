@@ -1,0 +1,20 @@
+{
+ "form": "04-cajun-wholesale",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NOT_A_FORM",
+ "acceptable_outcomes": [
+  "NOT_A_FORM"
+ ],
+ "needs_human": [],
+ "fields": [
+  {
+   "k": "NewsletterEmail",
+   "req": false,
+   "expect": "blank",
+   "label": "newsletter (distractor)"
+  }
+ ],
+ "notes": "No application form: \"email a wholesale inquiry to orders@...\". Route to the email channel."
+}

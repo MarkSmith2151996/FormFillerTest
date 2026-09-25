@@ -1,0 +1,182 @@
+{
+ "version": "A",
+ "form": "10-dhp-supply",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "FILLED",
+ "needs_human": [],
+ "notes": "Preset Smart Email Deals opt-in unchecked. reCAPTCHA left for the approver at submit.",
+ "field_map": {
+  "f1": {
+   "label": "Company Name",
+   "src": "legal_name"
+  },
+  "f2": {
+   "label": "First Name",
+   "src": "contact_first_name"
+  },
+  "f3": {
+   "label": "Last Name",
+   "src": "contact_last_name"
+  },
+  "f4": {
+   "label": "Company Address",
+   "src": "street_address"
+  },
+  "f5": {
+   "label": "City",
+   "src": "city"
+  },
+  "f6": {
+   "label": "Select state...",
+   "src": "state_name"
+  },
+  "f7": {
+   "label": "Zip Code",
+   "src": "zip"
+  },
+  "f8": {
+   "label": "Phone Number",
+   "src": "phone"
+  },
+  "f9": {
+   "label": "Email Address",
+   "src": "email"
+  },
+  "f10": {
+   "label": "Yes, please sign me up for Smart Email Deals",
+   "src": "check"
+  }
+ },
+ "readback": [
+  {
+   "k": "form[151_0]",
+   "label": "Company Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "form[1_1]",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "form[11_2]",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "form[121_3]",
+   "label": "Company Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "form[101_4]",
+   "label": "City *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "form[221_5]",
+   "label": "Select state... *",
+   "type": "select",
+   "req": true,
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "form[131_6]",
+   "label": "Zip Code *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "form[31_7]",
+   "label": "Phone Number *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "form[21_8]",
+   "label": "Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "form[191_9_0]=Yes",
+   "label": "Yes, please sign me up for Smart Email Deals",
+   "type": "checkbox",
+   "req": false,
+   "st": "unchecked"
+  },
+  {
+   "k": "form[41_10]",
+   "label": "Comments or Questions",
+   "type": "textarea",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/10-dhp-supply.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 479,
+    "image": null,
+    "ms": 87
+   },
+   {
+    "cmd": "fill",
+    "args_chars": 279,
+    "out_chars": 75,
+    "image": null,
+    "ms": 141
+   },
+   {
+    "cmd": "report",
+    "args_chars": 116,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 397,
+  "chars_out": 614,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 228,
+  "harness_chars": 0,
+  "token_est": 289,
+  "wall_ms": 11525
+ },
+ "started_at": "2026-09-24T13:52:28.139Z",
+ "ended_at": "2026-09-24T13:52:39.664Z"
+}

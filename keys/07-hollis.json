@@ -1,0 +1,108 @@
+{
+ "form": "07-hollis",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "ENTERPRISE_ONLY"
+ ],
+ "needs_human": [
+  "Hollis/Huish account number (existing dealers only)"
+ ],
+ "fields": [
+  {
+   "k": "input_1",
+   "req": true,
+   "expect": "profile:legal_name",
+   "label": "Store Name"
+  },
+  {
+   "k": "input_3",
+   "req": true,
+   "expect": "human",
+   "label": "Account Number"
+  },
+  {
+   "k": "input_4",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "input_6",
+   "req": true,
+   "expect": "profile:contact_first_name"
+  },
+  {
+   "k": "input_17",
+   "req": true,
+   "expect": "profile:contact_last_name"
+  },
+  {
+   "k": "input_7",
+   "req": true,
+   "expect": "profile:phone"
+  },
+  {
+   "k": "input_8.1",
+   "req": true,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "input_8.2",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "input_8.3",
+   "req": true,
+   "expect": "profile:city"
+  },
+  {
+   "k": "input_8.4",
+   "req": true,
+   "expect": "profile:state"
+  },
+  {
+   "k": "input_8.5",
+   "req": true,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "input_8.6",
+   "req": true,
+   "expect": "profile:country"
+  },
+  {
+   "k": "input_9",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "first_name_016JB91TTR00000000002MSQ41",
+   "req": false,
+   "expect": "blank",
+   "label": "newsletter popup (distractor)"
+  },
+  {
+   "k": "last_name_016JB91TTR00000000002MSQ42",
+   "req": false,
+   "expect": "blank",
+   "label": "newsletter popup"
+  },
+  {
+   "k": "email",
+   "req": false,
+   "expect": "blank",
+   "label": "newsletter popup"
+  },
+  {
+   "k": "country_016JB91TTR00000000002MSQ44",
+   "req": false,
+   "expect": "blank",
+   "label": "newsletter popup"
+  }
+ ],
+ "notes": "Dealer form for EXISTING Hollis (scuba) accounts: required Account Number is not in the profile. Newsletter popup is a distractor."
+}

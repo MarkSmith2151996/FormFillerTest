@@ -1,0 +1,267 @@
+{
+ "version": "C",
+ "form": "02-specialty-food-source",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "The number of locations",
+  "Items interested in purchasing",
+  "Business receiving hours",
+  "Business Location Type",
+  "Special Delivery Instructions",
+  "Reach out after approval",
+  "Hear about us",
+  "Steps 2-3"
+ ],
+ "notes": "Filled by coordinates over 4 screens; verified visually; ACH selected.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "name",
+   "label": "Owners Legal Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "owner_name"
+  },
+  {
+   "k": "text",
+   "label": "Company name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "text-2",
+   "label": "Street address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "text-3",
+   "label": "Apartment, suite, etc",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "text-4",
+   "label": "City *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "text-5",
+   "label": "Postal/Zip *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "select",
+   "label": "Country",
+   "type": "select",
+   "req": false,
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "phone-2",
+   "label": "Phone *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "email-2",
+   "label": "Email *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "url",
+   "label": "Business website (Start with https://)",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "website_url"
+  },
+  {
+   "k": "text-15",
+   "label": "The number of locations *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-5",
+   "label": "How have you been in business *",
+   "type": "select",
+   "req": true,
+   "st": "choice",
+   "opt": "Less than One year"
+  },
+  {
+   "k": "text-13",
+   "label": "What items are you interested in purchasing with us? *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "text-14",
+   "label": "What type of business are you? *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "business_type"
+  },
+  {
+   "k": "select-3",
+   "label": "Does your location have a loading dock and/or work lift?",
+   "type": "select",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "text-16",
+   "label": "Business receiving hours *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-4",
+   "label": "Business Location Type *",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "text-17",
+   "label": "Do you have any Special Delivery Instructions? *",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-6",
+   "label": "Would you like someone to reach out after your account is approved? *",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-7",
+   "label": "Hear about us? *",
+   "type": "select",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "select-8",
+   "label": "Preferred Payment Method *",
+   "type": "select",
+   "req": true,
+   "st": "choice",
+   "opt": "ACH"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/02-specialty-food-source.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 68,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 195
+   },
+   {
+    "cmd": "act",
+    "args_chars": 302,
+    "out_chars": 118,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 863
+   },
+   {
+    "cmd": "act",
+    "args_chars": 203,
+    "out_chars": 102,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 819
+   },
+   {
+    "cmd": "act",
+    "args_chars": 71,
+    "out_chars": 83,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 809
+   },
+   {
+    "cmd": "act",
+    "args_chars": 43,
+    "out_chars": 76,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 643
+   },
+   {
+    "cmd": "report",
+    "args_chars": 320,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 6,
+  "brain_calls": 6,
+  "chars_in": 941,
+  "chars_out": 507,
+  "images": 5,
+  "img_tokens": 3840,
+  "tool_ms": 3329,
+  "harness_chars": 0,
+  "token_est": 4254,
+  "wall_ms": 75526
+ },
+ "started_at": "2026-09-24T13:44:41.009Z",
+ "ended_at": "2026-09-24T13:45:56.535Z"
+}

@@ -1,0 +1,57 @@
+{
+ "version": "A",
+ "form": "20-us-foods",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "site blocks the Steel browser: CloudFront '403 ERROR - The request could not be satisfied'; a person has to open the form"
+ ],
+ "notes": "Snapshot: h1 '403 ERROR', 0 fields. Nothing typed (env_blocked).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 360,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2400,
+    "out_chars": 190,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 800,
+    "out_chars": 60,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 3200,
+  "chars_out": 250,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 400,
+  "token_est": 986,
+  "tool_calls": 2,
+  "wall_ms": 8327
+ },
+ "started_at": "2026-09-24T18:00:10.443Z",
+ "ended_at": "2026-09-24T18:00:18.770Z",
+ "env_blocked": true
+}

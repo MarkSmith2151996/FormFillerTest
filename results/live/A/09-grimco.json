@@ -1,0 +1,99 @@
+{
+ "version": "A",
+ "form": "09-grimco",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "f7 'Are you an existing Grimco customer?' (required; not in profile)",
+  "steps after Next not opened (registration continues; account creation is human-only)",
+  "new accounts are reviewed and approved by Grimco"
+ ],
+ "notes": "Step 1 of Register New User. Filled email, confirm email, first/last name; Preferred Language preset English - US kept. Did not press Next. A's snapshot NOTES caught 'all new accounts must be reviewed and approved' but not the sign-shop-only sentence before it, so A did not flag eligibility. Nav call hit one gateway 502 (retried, harness).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "userName",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "confirmUserName",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "firstName",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "lastName",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "preferredLocalizationId",
+   "st": "text",
+   "len": 12,
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2950,
+    "out_chars": 540,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 170,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 900,
+    "out_chars": 900,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 4020,
+  "chars_out": 1480,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 675,
+  "token_est": 1572,
+  "tool_calls": 3,
+  "wall_ms": 15541
+ },
+ "started_at": "2026-09-24T15:00:48.372Z",
+ "ended_at": "2026-09-24T15:01:03.913Z"
+}

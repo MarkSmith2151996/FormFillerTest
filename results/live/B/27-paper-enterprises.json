@@ -1,0 +1,64 @@
+{
+ "version": "B",
+ "form": "27-paper-enterprises",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "Cloudflare 'Performing security verification' interstitial; the contact page never loaded. The agent does not click bot checks"
+ ],
+ "notes": "read_page: h1 domain, h2 'Performing security verification', Cloudflare footer; no fields. Nothing typed. Target is a Contact Us page (not an application) per earlier recon.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 420,
+    "out_chars": 30,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3700,
+    "out_chars": 110,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 1100,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 80,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 1100,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 5170,
+  "token_est": 315,
+  "tool_calls": 1,
+  "wall_ms": 8342
+ },
+ "started_at": "2026-09-24T17:34:19.523Z",
+ "ended_at": "2026-09-24T17:34:27.865Z",
+ "env_blocked": true
+}

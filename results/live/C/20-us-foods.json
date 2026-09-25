@@ -1,0 +1,71 @@
+{
+ "version": "C",
+ "form": "20-us-foods",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "site blocks the Steel browser: CloudFront '403 ERROR - The request could not be satisfied. Request blocked.'; a person has to open the form"
+ ],
+ "notes": "One screenshot of the CloudFront 403 block page. Nothing typed (env_blocked). The tab dropped once while navigating here (browse_page example.com recovery, harness).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_135946.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 60,
+    "out_chars": 1100,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 380,
+    "out_chars": 30,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2500,
+    "out_chars": 120,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 110,
+  "chars_out": 250,
+  "images": 1,
+  "img_tokens": 1534,
+  "tool_ms": 0,
+  "harness_chars": 4520,
+  "token_est": 1637,
+  "tool_calls": 1
+ },
+ "env_blocked": true
+}

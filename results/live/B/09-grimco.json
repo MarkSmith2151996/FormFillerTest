@@ -1,0 +1,171 @@
+{
+ "version": "B",
+ "form": "09-grimco",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "'Are you an existing Grimco customer?' (required Yes/No; not in profile)",
+  "steps after Next not opened (registration continues; account creation is human-only)",
+  "eligibility: Grimco sells only to sign and digital print shops or businesses with sign-making capability (profile is an e-commerce reseller)"
+ ],
+ "notes": "Step 1 of Register New User: filled email, confirm email, first and last name by ref (labels unique); Preferred Language preset kept; did not press Next. First attempt lost the tab after one type_text (Custodian asked for re-auth, then 'No active page'); recovered via example.com and re-ran from a fresh load. The aborted attempt's read_page + type_text are booked as harness rework.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "userName",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "confirmUserName",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "firstName",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "lastName",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "preferredLocalizationId",
+   "st": "text",
+   "len": 12,
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 35,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 15800,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 40,
+    "out_chars": 3900,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 40,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 60,
+    "out_chars": 700,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 35,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 15800,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 3900,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 4000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 4000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 4000,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 720,
+    "out_chars": 330,
+    "image": null
+   }
+  ],
+  "brain_calls": 5,
+  "chars_in": 140,
+  "chars_out": 31700,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 28455,
+  "token_est": 9098,
+  "tool_calls": 5,
+  "wall_ms": 29163
+ },
+ "started_at": "2026-09-24T15:02:19.258Z",
+ "ended_at": "2026-09-24T15:02:48.421Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility: Grimco sells only to sign and digital print shops or businesses with sign-making capability (profile is an e-commerce reseller)"
+  ]
+ },
+ "restriction": "Grimco sells only to sign and digital print shops or businesses with sign-making capability"
+}

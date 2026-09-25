@@ -1,0 +1,14 @@
+{
+ "form": "30-canadian-linen",
+ "unreviewed": true,
+ "key_source": "task; fields none (no fillable step reached / trap)",
+ "trap": true,
+ "expected_outcome": "NOT_A_FORM",
+ "acceptable_outcomes": [
+  "NOT_A_FORM"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Contact page, non-fit.",
+ "drafted_after_runs": true
+}

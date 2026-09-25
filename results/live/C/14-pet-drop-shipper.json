@@ -1,0 +1,101 @@
+{
+ "version": "C",
+ "form": "14-pet-drop-shipper",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Password: account creation is human-only",
+  "eligibility / wholesale terms not stated on the form (plain Shopify customer account; dropship program terms elsewhere)"
+ ],
+ "notes": "Shopify 'Create Account'. Closed the 'No Minimums Ever!' popup and filled first name, last name and email in one act; verified by screenshot. Newsletter signup in the footer left alone. Guard counted 12 blocked telemetry beacons (no writes, no submit).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "customer[first_name]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "st": "profile",
+   "key": "email"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 12
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_112205.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3000,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 420,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 720,
+    "out_chars": 250,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 420,
+  "chars_out": 540,
+  "images": 2,
+  "img_tokens": 3068,
+  "tool_ms": 0,
+  "harness_chars": 4355,
+  "token_est": 3343,
+  "tool_calls": 3,
+  "wall_ms": 29033
+ },
+ "started_at": "2026-09-24T15:21:45.261Z",
+ "ended_at": "2026-09-24T15:22:14.294Z"
+}

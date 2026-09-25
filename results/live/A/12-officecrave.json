@@ -1,0 +1,58 @@
+{
+ "version": "A",
+ "form": "12-officecrave",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "Cloudflare bot check ('Just a moment...' interstitial) in front of create-account; a human has to pass it"
+ ],
+ "notes": "HARNESS-LIMITED: the Cloudflare interstitial clears window.name on every load (COOP), so the live harness could not inject A's runtime even after re-seeding the cache from example.com; A's open_form returned only 'NO-CODE' plus the page title 'Just a moment...', and A classified from that. On the PC (toolkit injected by the MCP server's init script) the snapshot would show 0 fields plus the Turnstile iframe. Nothing typed or clicked.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "note": "no in-page guard (challenge page); A made no clicks or typing"
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_111246.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 60,
+    "out_chars": 700,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2950,
+    "out_chars": 30,
+    "image": null
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 2950,
+  "chars_out": 30,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 1030,
+  "token_est": 852,
+  "tool_calls": 1,
+  "wall_ms": 15000
+ },
+ "started_at": "2026-09-24T15:13:10Z",
+ "ended_at": "2026-09-24T15:13:25Z",
+ "env_blocked": true
+}

@@ -1,0 +1,228 @@
+{
+ "version": "B",
+ "form": "15-salon-services",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "eligibility/territory: ships only to 10 western states (Alaska, Arizona, Colorado, Idaho, Montana, New Mexico, Oregon, Utah, Washington, Wyoming); no Michigan in any State list; salon-professional distributor with licence required",
+  "Salon State, Billing State, Shipping State: lists have no Michigan",
+  "License / Student ID, License State, License Expiration Date, Type Code, Class Code: not in profile",
+  "Professional License file and Resale Certificate File: uploads are human-only",
+  "Billing City and Postal Code: not fillable with B-live tools (duplicate 'City'/'Postal Code' labels in billing and shipping -> strict-mode violation)",
+  "Shipping block: profile has no ship-to address; 'Same as Billing' left unticked",
+  "Diversion policy 'I Agree': approver"
+ ],
+ "notes": "iBeAuthentic ASP.NET WebForms page (same platform as Sweis): whole page is one <form>, so the echo shim could not trim Custodian's echo (~40K chars per action, including a 250-option language list). Filled salon name (legal name), first/last name, salon address line 1, city, zip, email, phone, billing address line 1, and set the SMS/email marketing opt-in radio from its preset 'Yes' to 'No'. Billing City/Postal Code skipped (duplicate labels, same Custodian strict-mode bug as Sweis). Infra: one type_text returned a Custodian MCP re-auth error; a harness alive-check then invalidated the ref map, so B re-read the page (booked as harness).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolAddress1",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolCity",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolZip",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rbOptInText",
+   "st": "choice",
+   "opt": "No"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "harness",
+    "args_chars": 30,
+    "out_chars": 120,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 400,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 40000,
+    "image": null
+   },
+   {
+    "cmd": "click_element",
+    "role": "brain",
+    "args_chars": 20,
+    "out_chars": 39500,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 760,
+    "out_chars": 800,
+    "image": null
+   }
+  ],
+  "brain_calls": 11,
+  "chars_in": 370,
+  "chars_out": 439500,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 45605,
+  "token_est": 125678,
+  "tool_calls": 11,
+  "wall_ms": 212099
+ },
+ "started_at": "2026-09-24T15:25:40.450Z",
+ "ended_at": "2026-09-24T15:29:12.549Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility/territory: ships only to 10 western states (Alaska, Arizona, Colorado, Idaho, Montana, New Mexico, Oregon, Utah, Washington, Wyoming); no Michigan in any State list; salon-professional distributor with licence required"
+  ]
+ },
+ "restriction": "Salon Services sells to licensed salon professionals and ships only to 10 western states ('unable to ship to states not listed'; no Michigan)",
+ "transport_failures": {
+  "cause": "Custodian: duplicate labels (billing vs shipping City/Postal Code) -> strict-mode violation",
+  "fields": "billing city, postal code",
+  "keys": [
+   "ctl00$cphBody$ctl00$tbBillingCity",
+   "ctl00$cphBody$ctl00$tbBillingZip"
+  ]
+ }
+}

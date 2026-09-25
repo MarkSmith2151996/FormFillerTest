@@ -1,0 +1,61 @@
+{
+ "version": "C",
+ "form": "12-officecrave",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "Cloudflare 'Performing security verification' / 'Verify you are human' check in front of the create-account page; a human has to pass it (not clicked)"
+ ],
+ "notes": "First screenshot shows the Cloudflare Turnstile interstitial (title 'Just a moment...') instead of the form; it did not clear on its own after the 5 s settle. The challenge page also dropped the window.name code cache, so no in-page harness ran (no readback/guard; nothing was typed or clicked). Times are from the orchestrator clock (screenshot 11:12:46 PC time).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "note": "no in-page guard (challenge page); C made no clicks or typing"
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_111246.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3000,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   }
+  ],
+  "brain_calls": 1,
+  "chars_in": 0,
+  "chars_out": 250,
+  "images": 1,
+  "img_tokens": 1534,
+  "tool_ms": 0,
+  "harness_chars": 3405,
+  "token_est": 1606,
+  "tool_calls": 1,
+  "wall_ms": 11000
+ },
+ "started_at": "2026-09-24T15:12:36Z",
+ "ended_at": "2026-09-24T15:12:47Z",
+ "env_blocked": true
+}

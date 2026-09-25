@@ -1,0 +1,14 @@
+{
+ "form": "31-wholesale-point",
+ "unreviewed": true,
+ "key_source": "task; fields none (no fillable step reached / trap)",
+ "trap": true,
+ "expected_outcome": "LOGIN_GATED",
+ "acceptable_outcomes": [
+  "LOGIN_GATED"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Login page.",
+ "drafted_after_runs": true
+}

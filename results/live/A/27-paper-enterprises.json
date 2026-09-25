@@ -1,0 +1,64 @@
+{
+ "version": "A",
+ "form": "27-paper-enterprises",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "Cloudflare 'Performing security verification' challenge ('Just a moment...'); the contact page never loaded. The agent does not click bot checks"
+ ],
+ "notes": "Snapshot: 0 fields, title 'Just a moment...'; classify_page -> BLOCKED (challenge/WAF page). Nothing typed. Target is a Contact Us page (not an application) per earlier recon.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 420,
+    "out_chars": 30,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2250,
+    "out_chars": 180,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1100,
+    "out_chars": 90,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 3380,
+  "chars_out": 330,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 450,
+  "token_est": 1060,
+  "tool_calls": 3,
+  "wall_ms": 19211
+ },
+ "started_at": "2026-09-24T17:30:00.154Z",
+ "ended_at": "2026-09-24T17:30:19.365Z",
+ "env_blocked": true
+}

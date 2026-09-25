@@ -1,0 +1,145 @@
+{
+ "form": "03-shop-the-king",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN"
+ ],
+ "needs_human": [
+  "password (account creation)",
+  "monthly order volume",
+  "delivery method",
+  "referral source"
+ ],
+ "fields": [
+  {
+   "k": "customer[first_name]",
+   "req": true,
+   "expect": "profile:contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "req": true,
+   "expect": "profile:contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "customer[password]",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "customer[password_confirmation]",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "customer[phone]",
+   "req": true,
+   "expect": "profile:phone"
+  },
+  {
+   "k": "customer[note][Business Name]",
+   "req": true,
+   "expect": "profile:legal_name"
+  },
+  {
+   "k": "customer[note][Website]",
+   "req": false,
+   "expect": "profile:website"
+  },
+  {
+   "k": "customer[note][Business Tax ID]",
+   "req": false,
+   "expect": "profile:ein"
+  },
+  {
+   "k": "customer[note][Address 1]",
+   "req": true,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "customer[note][Address 2]",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "customer[note][City]",
+   "req": true,
+   "expect": "profile:city"
+  },
+  {
+   "k": "customer[note][State]",
+   "req": true,
+   "expect": "profile:state"
+  },
+  {
+   "k": "customer[note][Postal Code]",
+   "req": true,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "customer[note][Country]",
+   "req": true,
+   "expect": "profile:country"
+  },
+  {
+   "k": "customer[note][Type of Business]",
+   "req": true,
+   "expect": "choice:Online Retailer|Online Wholesaler"
+  },
+  {
+   "k": "customer[note][Products Interested]",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "customer[note][Final Destination]",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "customer[note][DUNS]",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "customer[note][Order Volume]",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "customer[note][Delivery Method]",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "customer[note][Referral]",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "customer[note][Resale Confirmation]=Yes",
+   "req": false,
+   "expect": "any"
+  },
+  {
+   "k": "customer[note][VIP Opt-in]=Yes",
+   "req": false,
+   "expect": "unchecked",
+   "label": "paid VIP membership"
+  },
+  {
+   "k": "customer[sms_marketing_consent][state]=subscribed",
+   "req": false,
+   "expect": "unchecked"
+  }
+ ],
+ "notes": ""
+}

@@ -1,0 +1,72 @@
+{
+ "version": "A",
+ "form": "06-king-zak",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NOT_A_FORM",
+ "needs_human": [
+  "no wholesale application: contact the manufacturer's sales team via the Contact page"
+ ],
+ "notes": "Snapshot + classify in one call: only a newsletter email field; CLASS NOT_A_FORM. Custodian dropped the tab while idle before this run; recovered via example.com (harness, before t0).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 60,
+    "out_chars": 900,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 300,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2480,
+    "out_chars": 300,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 560,
+    "out_chars": 420,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 3040,
+  "chars_out": 720,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 1790,
+  "token_est": 1075,
+  "tool_calls": 2,
+  "wall_ms": 8214
+ },
+ "started_at": "2026-09-24T14:46:30.878Z",
+ "ended_at": "2026-09-24T14:46:39.092Z"
+}

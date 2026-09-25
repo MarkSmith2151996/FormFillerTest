@@ -1,0 +1,316 @@
+{
+ "version": "C",
+ "form": "03-shop-the-king",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Set Password / Confirm Password (account creation is human-only)",
+  "Anticipated Monthly Order Volume",
+  "Preferred Delivery Method",
+  "'I confirm I am applying for a resale wholesale account' checkbox (approver)"
+ ],
+ "notes": "Type of Business set to 'Online Retailer' (native select, chosen by prefix 'Online'). VIP ($99/yr) and SMS opt-in left unchecked. Tool bugs hit and fixed live: (1) readback crashed on form.type shadowed by a field named 'type'; (2) C scroll used window.scrollBy, which the site's smooth scrolling made async and the harness blink cancelled; fixed with behavior:'instant'. A Custodian page drop (after a gateway 502) lost the first attempt; its calls are counted as harness overhead and the run restarted from a fresh load.",
+ "field_map": {
+  "first": "contact_first_name",
+  "last": "contact_last_name",
+  "email": "email",
+  "phone": "phone",
+  "business name": "legal_name",
+  "website": "website_url",
+  "tax id": "ein",
+  "address 1": "street_address",
+  "city": "city",
+  "state": "state_name",
+  "postal": "zip",
+  "country": "country",
+  "type of business": "Online Retailer"
+ },
+ "readback": [
+  {
+   "k": "customer[first_name]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "customer[phone]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "customer[note][Business Name]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "customer[note][Website]",
+   "st": "profile",
+   "key": "website_url"
+  },
+  {
+   "k": "customer[note][Business Tax ID]",
+   "st": "profile",
+   "key": "ein"
+  },
+  {
+   "k": "customer[note][Address 1]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "customer[note][City]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "customer[note][State]",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "customer[note][Postal Code]",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "customer[note][Country]",
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "customer[note][Type of Business]",
+   "st": "choice",
+   "opt": "Online Retailer"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 8,
+  "write_blocked": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_103309.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2700,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3300,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 600,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 420,
+    "out_chars": 50,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 60,
+    "out_chars": 900,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 520,
+    "out_chars": 500,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2700,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 720,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 1300,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 420,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 560,
+    "out_chars": 250,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 780,
+    "out_chars": 30,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 700,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 520,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 1600,
+    "out_chars": 900,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   }
+  ],
+  "brain_calls": 10,
+  "chars_in": 3140,
+  "chars_out": 1480,
+  "images": 5,
+  "img_tokens": 7670,
+  "tool_ms": 0,
+  "harness_chars": 17325,
+  "token_est": 8990,
+  "tool_calls": 10,
+  "wall_ms": 135812
+ },
+ "started_at": "2026-09-24T14:30:49.672Z",
+ "ended_at": "2026-09-24T14:33:05.484Z"
+}

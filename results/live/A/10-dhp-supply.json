@@ -1,0 +1,73 @@
+{
+ "version": "A",
+ "form": "10-dhp-supply",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "registration form not rendered: page h1 is 'Register for an online account' but only the site search input exists and a captcha is present"
+ ],
+ "notes": "Snapshot after a 6 s wait: 1 field (search), captcha flag, no registration inputs; classify() = NOT_A_FORM. Treated as a captcha gate in front of the form. WRONG per the harness evidence screenshot (taken after A's report): the page is a Yes/No chooser ('Do you have a DHP account number?' with 'I need a DHP account number'), so the new-customer form sits one click away. A's snapshot lists only form fields and buttons inside forms, so the two choice buttons were invisible to it (toolkit gap).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_110353.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2950,
+    "out_chars": 220,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 900,
+    "out_chars": 620,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 3880,
+  "chars_out": 920,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 595,
+  "token_est": 1372,
+  "tool_calls": 3,
+  "wall_ms": 26672
+ },
+ "started_at": "2026-09-24T15:03:22.183Z",
+ "ended_at": "2026-09-24T15:03:48.855Z"
+}

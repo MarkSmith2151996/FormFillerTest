@@ -1,0 +1,33 @@
+{
+ "form": "24-odp",
+ "unreviewed": true,
+ "key_source": "live-recon (fields drafted at first live visit); fields drafted",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "PARTIAL",
+  "FILLED"
+ ],
+ "needs_human": [
+  "account creation + email verification code (approver)",
+  "steps 2-4 after verification"
+ ],
+ "fields": [
+  {
+   "k": "businessName",
+   "req": true,
+   "expect": "profile:legal_name",
+   "label": "Business name"
+  },
+  {
+   "k": "email",
+   "req": true,
+   "expect": "profile:email",
+   "label": "Email address"
+  }
+ ],
+ "notes": "",
+ "drafted_after_runs": true,
+ "fields_source": "drafted after the live runs (CS-588 asks for keys 17-31 after the runs) from the page structure seen live; field ids come from the harness readback of whichever run reached the field; expectations follow the profile, ship-to and CS-588 rules, not any version's values"
+}

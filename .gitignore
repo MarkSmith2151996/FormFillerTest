@@ -1,0 +1,6 @@
+node_modules/
+.tmp/
+*.log
+# never commit real dealer data
+profile/real*.json
+profile/.real/

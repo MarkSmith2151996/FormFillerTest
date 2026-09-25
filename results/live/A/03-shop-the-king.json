@@ -1,0 +1,159 @@
+{
+ "version": "A",
+ "form": "03-shop-the-king",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Set Password / Confirm Password (account creation is human-only)",
+  "Anticipated Monthly Order Volume",
+  "Preferred Delivery Method",
+  "How did you hear (required)",
+  "'I confirm I am applying for a resale wholesale account' checkbox (approver)"
+ ],
+ "notes": "Type of Business = Online Retailer. VIP ($99/yr) and SMS opt-in left unchecked. Submit Application never pressed.",
+ "field_map": {
+  "f3": "contact_first_name",
+  "f4": "contact_last_name",
+  "f5": "email",
+  "f8": "phone",
+  "f9": "legal_name",
+  "f10": "website_url",
+  "f11": "ein",
+  "f12": "street_address",
+  "f14": "city",
+  "f15": "state_name",
+  "f16": "zip",
+  "f17": "country",
+  "f18": "Online Retailer"
+ },
+ "readback": [
+  {
+   "k": "customer[first_name]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "customer[phone]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "customer[note][Business Name]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "customer[note][Website]",
+   "st": "profile",
+   "key": "website_url"
+  },
+  {
+   "k": "customer[note][Business Tax ID]",
+   "st": "profile",
+   "key": "ein"
+  },
+  {
+   "k": "customer[note][Address 1]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "customer[note][City]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "customer[note][State]",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "customer[note][Postal Code]",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "customer[note][Country]",
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "customer[note][Type of Business]",
+   "st": "choice",
+   "opt": "Online Retailer"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_103425.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2350,
+    "out_chars": 2060,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 520,
+    "out_chars": 150,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1400,
+    "out_chars": 1350,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 4270,
+  "chars_out": 3560,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 515,
+  "token_est": 2238,
+  "tool_calls": 3,
+  "wall_ms": 14808
+ },
+ "started_at": "2026-09-24T14:34:05.944Z",
+ "ended_at": "2026-09-24T14:34:20.752Z"
+}

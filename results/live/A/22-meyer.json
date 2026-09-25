@@ -1,0 +1,78 @@
+{
+ "version": "A",
+ "form": "22-meyer",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "PDF_APPLICATION",
+ "needs_human": [
+  "Customer Application is PDF-only: download, fill offline and email it to Meyer's customer-applications mailbox; nothing to fill on the web",
+  "page notes new accounts pay state sales tax until a resale form is on file (resale cert = NEEDS_HUMAN)"
+ ],
+ "notes": "Meyer 'Customer Application & Terms' page. A's snapshot found one field (the site search) and classify_page returned PDF_APPLICATION: three 'CLICK HERE to Download' PDF links plus a mailto for applications. No terms button, no online form. Nothing typed. Transport: the first call hit a Custodian gateway 502 after it ran (output lost); one harness state check, then A re-read its snapshot.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 3300,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 260,
+    "out_chars": 130,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 130,
+    "out_chars": 260,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 340,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 900,
+    "out_chars": 330,
+    "image": null
+   }
+  ],
+  "brain_calls": 4,
+  "chars_in": 4440,
+  "chars_out": 930,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 760,
+  "token_est": 1535,
+  "tool_calls": 4,
+  "wall_ms": 79140
+ },
+ "started_at": "2026-09-24T18:06:53.420Z",
+ "ended_at": "2026-09-24T18:08:12.560Z"
+}

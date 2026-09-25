@@ -1,0 +1,198 @@
+{
+ "version": "B",
+ "form": "07-hollis",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Account Number (existing Hollis dealer account; profile has none)",
+  "eligibility: existing Hollis dealers only; store email must match the Huish Outdoors account"
+ ],
+ "notes": "All labels unique. Each echo carried the 250-option Country list (~10K chars), so every type_text cost ~3K tokens even with the echo shim. Evidence = readback (no separate screenshot).",
+ "field_map": {
+  "Store Name": "legal_name",
+  "Primary Email": "email",
+  "Contact First Name": "contact_first_name",
+  "Contact Last Name": "contact_last_name",
+  "Store Phone": "phone",
+  "Street Address": "street_address",
+  "City": "city",
+  "State": "state_name",
+  "ZIP": "zip",
+  "Country": "United States"
+ },
+ "readback": [
+  {
+   "k": "input_1",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input_4",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "input_6",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "input_17",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "input_7",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "input_8.1",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "input_8.3",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "input_8.4",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "input_8.5",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "input_8.6",
+   "st": "profile",
+   "key": "country"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 1
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2600,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 21500,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 10200,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 50,
+    "out_chars": 10250,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 10250,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 10250,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 10250,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 45,
+    "out_chars": 10300,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 10300,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 10300,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 30,
+    "out_chars": 10300,
+    "image": null
+   },
+   {
+    "cmd": "select_option",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 10300,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 620,
+    "out_chars": 700,
+    "image": null
+   }
+  ],
+  "brain_calls": 11,
+  "chars_in": 365,
+  "chars_out": 124200,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 4285,
+  "token_est": 35590,
+  "tool_calls": 11,
+  "wall_ms": 73624
+ },
+ "started_at": "2026-09-24T14:48:46.195Z",
+ "ended_at": "2026-09-24T14:49:59.819Z"
+}

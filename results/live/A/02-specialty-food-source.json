@@ -1,0 +1,157 @@
+{
+ "version": "A",
+ "form": "02-specialty-food-source",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "number of locations",
+  "items interested in purchasing",
+  "business receiving hours",
+  "business location type (commercial/residential)",
+  "special delivery instructions",
+  "reach-out preference",
+  "hear about us",
+  "loading dock (optional)",
+  "wizard pages 2-3 (Next requires the answers above)"
+ ],
+ "notes": "Page 1 of 3-page Samita wholesale form. Time in business mapped from established date to 'Less than One year'. Payment ACH (credit card and Net 20 options exist; not chosen). Site asks applicants to read its drop-shipper / freight-forwarder policy. Newsletter popup reappeared over the evidence screenshot (not closed; the toolkit fills through it).",
+ "field_map": {
+  "f3": "owner_name",
+  "f4": "legal_name",
+  "f5": "street_address",
+  "f7": "city",
+  "f8": "zip",
+  "f9": "country",
+  "f10": "phone",
+  "f11": "email",
+  "f12": "website_url",
+  "f14": "Less than One year",
+  "f16": "business_type",
+  "f23": "ACH"
+ },
+ "readback": [
+  {
+   "k": "name",
+   "st": "profile",
+   "key": "owner_name"
+  },
+  {
+   "k": "text",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "text-2",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "text-4",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "text-5",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "select#2",
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "phone-2",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "email-2",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "url",
+   "st": "profile",
+   "key": "website_url"
+  },
+  {
+   "k": "select-5",
+   "st": "choice",
+   "opt": "Less than One year"
+  },
+  {
+   "k": "text-14",
+   "st": "profile",
+   "key": "business_type"
+  },
+  {
+   "k": "select-8",
+   "st": "choice",
+   "opt": "ACH"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 1,
+  "write_blocked": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_102836.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 250,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2350,
+    "out_chars": 2100,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 430,
+    "out_chars": 160,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1450,
+    "out_chars": 1450,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "harness",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 4230,
+  "chars_out": 3710,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 515,
+  "token_est": 2269,
+  "tool_calls": 3,
+  "wall_ms": 22399
+ },
+ "started_at": "2026-09-24T14:28:09.302Z",
+ "ended_at": "2026-09-24T14:28:31.701Z"
+}

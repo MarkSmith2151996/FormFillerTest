@@ -1,0 +1,16 @@
+{
+ "form": "20-us-foods",
+ "unreviewed": true,
+ "key_source": "live-recon (fields drafted at first live visit); fields none (no fillable step reached / trap)",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "PARTIAL",
+  "FILLED"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "",
+ "drafted_after_runs": true
+}

@@ -1,0 +1,89 @@
+{
+ "version": "A",
+ "form": "29-cardinal-health",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "BLOCKED",
+ "needs_human": [
+  "site unreachable from Steel: every navigation to cardinalhealth.com failed with net::ERR_HTTP2_PROTOCOL_ERROR (bot protection at the connection level); a person has to open the page"
+ ],
+ "notes": "The page never loaded, so no version could observe it: two in-page navigations dropped Custodian's tab ('No active page found') and a direct browse_page returned ERR_HTTP2_PROTOCOL_ERROR. Same evidence for all three versions; nothing typed. The target is a Contact Us page (enterprise sales contact) per the key; the live outcome reflects the site block, not the toolkit (env_blocked).",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 360,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3700,
+    "out_chars": 90,
+    "image": null
+   },
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 1100,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 360,
+    "out_chars": 20,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 300,
+    "out_chars": 90,
+    "image": null
+   },
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 200,
+    "out_chars": 1100,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 120,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "browse_page",
+    "role": "harness",
+    "args_chars": 220,
+    "out_chars": 400,
+    "image": null
+   }
+  ],
+  "brain_calls": 0,
+  "chars_in": 0,
+  "chars_out": 0,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 8320,
+  "token_est": 0,
+  "tool_calls": 0
+ },
+ "env_blocked": true
+}

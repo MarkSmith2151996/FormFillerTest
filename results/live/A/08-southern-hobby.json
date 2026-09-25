@@ -1,0 +1,169 @@
+{
+ "version": "A",
+ "form": "08-southern-hobby",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "eligibility: survey accepts brick-and-mortar retail stores only; online-only businesses will not be considered (profile is an online/Amazon reseller)",
+  "Q1 product types and Q2 business description: buyer's answers",
+  "Q4 organized play, Q5 social media, Q6 current distributors, Q7 how-heard detail: not in profile",
+  "Security code (captcha)"
+ ],
+ "notes": "Survey, not an application; the snapshot's NOTES line surfaced the brick-and-mortar-only policy. Filled store/contact block; ticked Online Retailer + Amazon retailer (profile sales channel). Company Name left blank (same as store). Presets kept: contact=Call, reseller permit=Yes (EIN on file), how-heard=Other. The report call hit two gateway 502s (booked as harness retries); wall time includes ~45 s of back-off.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "q",
+   "st": "text",
+   "len": 26,
+   "same": true
+  },
+  {
+   "k": "businessname",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "address",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "city",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "state",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "zipcd",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "contactname",
+   "st": "profile",
+   "key": "contact_name"
+  },
+  {
+   "k": "phone",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "email",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "sportscardbreaker",
+   "st": "checked"
+  },
+  {
+   "k": "amazon",
+   "st": "checked"
+  },
+  {
+   "k": "radio:howdidyouhear",
+   "st": "choice",
+   "opt": "Other (Please Specify)",
+   "same": true
+  },
+  {
+   "k": "contactmethod",
+   "st": "choice",
+   "opt": "Call",
+   "same": true
+  },
+  {
+   "k": "radio:resalecert",
+   "st": "choice",
+   "opt": "Yes",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 2950,
+    "out_chars": 2930,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 330,
+    "out_chars": 90,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 1000,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 1750,
+    "out_chars": 0,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 150,
+    "out_chars": 15000,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 1750,
+    "out_chars": 1550,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 5030,
+  "chars_out": 4570,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 18245,
+  "token_est": 2743,
+  "tool_calls": 3,
+  "wall_ms": 74914
+ },
+ "started_at": "2026-09-24T14:57:53.035Z",
+ "ended_at": "2026-09-24T14:59:07.949Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility: survey accepts brick-and-mortar retail stores only; online-only businesses will not be considered (profile is an online/Amazon reseller)"
+  ]
+ },
+ "restriction": "Southern Hobby's dealer survey accepts brick-and-mortar retail hobby stores only; online-only businesses will not be considered"
+}

@@ -1,0 +1,144 @@
+{
+ "form": "01-blair-candy",
+ "unreviewed": true,
+ "key_source": "live-recon (frozen); see proposed",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN",
+  "BLOCKED"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Page says \"complete the form below\" but the Shopify Forms inline widget (forms-root-335495) stays empty in Steel: config GET 200, nothing rendered. A person must check the page or use /account/register.",
+ "proposed": {
+  "source": "fields drafted from the A/B live readbacks after the runs (commit 32a24d0); non-scoring under the CS-588 frozen-key rule",
+  "fields": [
+   {
+    "k": "company_name",
+    "req": true,
+    "expect": "profile:legal_name"
+   },
+   {
+    "k": "first_name",
+    "req": true,
+    "expect": "profile:contact_first_name"
+   },
+   {
+    "k": "last_name",
+    "req": true,
+    "expect": "profile:contact_last_name"
+   },
+   {
+    "k": "email",
+    "req": true,
+    "expect": "profile:email"
+   },
+   {
+    "k": "phone_number",
+    "req": true,
+    "expect": "profile:phone"
+   },
+   {
+    "k": "company_tax_id",
+    "req": false,
+    "expect": "profile:ein OR blank"
+   },
+   {
+    "k": "billing_address_first_name",
+    "req": true,
+    "expect": "profile:contact_first_name"
+   },
+   {
+    "k": "billing_address_last_name",
+    "req": true,
+    "expect": "profile:contact_last_name"
+   },
+   {
+    "k": "billing_address_recipient",
+    "req": false,
+    "expect": "profile:legal_name OR blank"
+   },
+   {
+    "k": "billing_address_address1",
+    "req": true,
+    "expect": "profile:street_address"
+   },
+   {
+    "k": "billing_address_city",
+    "req": true,
+    "expect": "profile:city"
+   },
+   {
+    "k": "billing_address_zip",
+    "req": true,
+    "expect": "profile:zip"
+   },
+   {
+    "k": "billing_address_phone",
+    "req": false,
+    "expect": "profile:phone OR blank"
+   },
+   {
+    "k": "shipping_address_first_name",
+    "req": false,
+    "expect": "profile_or_blank:contact_first_name",
+    "label": "site copies billing into shipping when same-as-billing is toggled"
+   },
+   {
+    "k": "shipping_address_last_name",
+    "req": false,
+    "expect": "profile_or_blank:contact_last_name"
+   },
+   {
+    "k": "shipping_address_recipient",
+    "req": false,
+    "expect": "profile_or_blank:legal_name"
+   },
+   {
+    "k": "shipping_address_address1",
+    "req": false,
+    "expect": "profile_or_blank:street_address"
+   },
+   {
+    "k": "shipping_address_city",
+    "req": false,
+    "expect": "profile_or_blank:city"
+   },
+   {
+    "k": "shipping_address_zip",
+    "req": false,
+    "expect": "profile_or_blank:zip"
+   },
+   {
+    "k": "shipping_address_phone",
+    "req": false,
+    "expect": "any",
+    "label": "phone widget copies a +1 prefix"
+   }
+  ],
+  "ship_to": "ship_to_rule: the shipping_* expectations for runs made with the CS-588 ship-to profile",
+  "ship_to_rule": [
+   {
+    "k": "shipping_address_recipient",
+    "req": false,
+    "expect": "profile:ship_to_name OR blank"
+   },
+   {
+    "k": "shipping_address_address1",
+    "req": true,
+    "expect": "profile:ship_to_street"
+   },
+   {
+    "k": "shipping_address_city",
+    "req": true,
+    "expect": "profile:ship_to_city"
+   },
+   {
+    "k": "shipping_address_zip",
+    "req": true,
+    "expect": "profile:ship_to_zip"
+   }
+  ]
+ }
+}

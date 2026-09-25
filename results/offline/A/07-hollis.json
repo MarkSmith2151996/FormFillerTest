@@ -1,0 +1,233 @@
+{
+ "version": "A",
+ "form": "07-hollis",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Account Number (existing Hollis/Huish dealer account; not in profile)"
+ ],
+ "notes": "Form is for existing Hollis dealers (CRIB ordering). Newsletter popup form ignored.",
+ "field_map": {
+  "f1": {
+   "label": "Store Name",
+   "src": "legal_name"
+  },
+  "f3": {
+   "label": "Primary Email Address On Retail Account",
+   "src": "email"
+  },
+  "f4": {
+   "label": "Contact First Name",
+   "src": "contact_first_name"
+  },
+  "f5": {
+   "label": "Contact Last Name",
+   "src": "contact_last_name"
+  },
+  "f6": {
+   "label": "Store Phone Number",
+   "src": "phone"
+  },
+  "f7": {
+   "label": "Street Address",
+   "src": "street_address"
+  },
+  "f9": {
+   "label": "City",
+   "src": "city"
+  },
+  "f10": {
+   "label": "State / Province / Region",
+   "src": "state"
+  },
+  "f11": {
+   "label": "ZIP / Postal Code",
+   "src": "zip"
+  },
+  "f12": {
+   "label": "Country",
+   "src": "literal"
+  }
+ },
+ "readback": [
+  {
+   "k": "input_1",
+   "label": "Store Name(Required)",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input_3",
+   "label": "Account Number(Required)",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "input_4",
+   "label": "Primary Email Address On Retail Account(Required)",
+   "type": "email",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "input_6",
+   "label": "Contact First Name(Required)",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "input_17",
+   "label": "Contact Last Name(Required)",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "input_7",
+   "label": "Store Phone Number(Required)",
+   "type": "tel",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "input_8.1",
+   "label": "Street Address",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "input_8.2",
+   "label": "Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "input_8.3",
+   "label": "City",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "input_8.4",
+   "label": "State / Province / Region",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "input_8.5",
+   "label": "ZIP / Postal Code",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "input_8.6",
+   "label": "Country",
+   "type": "select",
+   "req": true,
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "input_9",
+   "label": "Optional Comments or Special Requests",
+   "type": "textarea",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "first_name_016JB91TTR00000000002MSQ41",
+   "label": "First Name",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "last_name_016JB91TTR00000000002MSQ42",
+   "label": "Last Name",
+   "type": "text",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "email",
+   "label": "Email",
+   "type": "email",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "country_016JB91TTR00000000002MSQ44",
+   "label": "Country",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/07-hollis.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 719,
+    "image": null,
+    "ms": 88
+   },
+   {
+    "cmd": "fill",
+    "args_chars": 286,
+    "out_chars": 78,
+    "image": null,
+    "ms": 89
+   },
+   {
+    "cmd": "report",
+    "args_chars": 207,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 495,
+  "chars_out": 857,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 177,
+  "harness_chars": 0,
+  "token_est": 387,
+  "wall_ms": 16108
+ },
+ "started_at": "2026-09-24T13:48:44.768Z",
+ "ended_at": "2026-09-24T13:49:00.876Z"
+}

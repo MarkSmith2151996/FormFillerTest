@@ -1,0 +1,160 @@
+{
+ "version": "C",
+ "form": "25-napa-corpbill",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Trade Name (required; the profile has no DBA/trade name)",
+  "PO Required (required yes/no; not in the profile)",
+  "Address Line 2 is marked required (the profile has no second address line)",
+  "later steps (credit request, references, guarantee) not reached; net-terms/credit sections stay blank by policy"
+ ],
+ "notes": "Corporate Billing cbCharge NAPA Commercial Charge Account enrollment (Cognito Forms), step 1. Two act batches: Legal Name and physical address (street, city, state, ZIP), then A/P contact name, email, phone, Federal ID, and 'physical same as billing' = Yes (the billing block collapsed). Screenshots confirmed every value in its box; the last one reached the footer (no opt-ins on the step). Cookie banner left alone. Next not pressed. The page also offers a 'Print Hard Copy Application'.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "cog-2",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "cog-4-line1",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "cog-4-city",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "cog-4-international-state",
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "cog-4-postal-code",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "cog-4-country",
+   "st": "profile",
+   "key": "ship_to_country",
+   "same": true
+  },
+  {
+   "k": "radio:Yes",
+   "st": "choice",
+   "opt": "Yes"
+  },
+  {
+   "k": "cog-7",
+   "st": "profile",
+   "key": "contact_name"
+  },
+  {
+   "k": "cog-8",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "cog-9",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "cog-10",
+   "st": "profile",
+   "key": "ein"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_141946.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2900,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 600,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 550,
+    "out_chars": 70,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 700,
+    "out_chars": 450,
+    "image": null
+   }
+  ],
+  "brain_calls": 5,
+  "chars_in": 1480,
+  "chars_out": 900,
+  "images": 3,
+  "img_tokens": 4602,
+  "tool_ms": 0,
+  "harness_chars": 4480,
+  "token_est": 5282,
+  "tool_calls": 5,
+  "wall_ms": 33664
+ },
+ "started_at": "2026-09-24T18:19:19.234Z",
+ "ended_at": "2026-09-24T18:19:52.898Z"
+}

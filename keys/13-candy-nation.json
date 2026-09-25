@@ -1,0 +1,112 @@
+{
+ "form": "13-candy-nation",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN"
+ ],
+ "needs_human": [
+  "password (account creation)"
+ ],
+ "fields": [
+  {
+   "k": "FormField[1][1]",
+   "req": true,
+   "expect": "profile:email"
+  },
+  {
+   "k": "FormField[1][2]",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "FormField[1][3]",
+   "req": true,
+   "expect": "human"
+  },
+  {
+   "k": "FormField[2][4]",
+   "req": true,
+   "expect": "profile:contact_first_name"
+  },
+  {
+   "k": "FormField[2][5]",
+   "req": true,
+   "expect": "profile:contact_last_name"
+  },
+  {
+   "k": "FormField[2][6]",
+   "req": false,
+   "expect": "profile:legal_name"
+  },
+  {
+   "k": "FormField[2][8]",
+   "req": true,
+   "expect": "profile:street_address"
+  },
+  {
+   "k": "FormField[2][9]",
+   "req": false,
+   "expect": "blank"
+  },
+  {
+   "k": "FormField[2][10]",
+   "req": true,
+   "expect": "profile:city"
+  },
+  {
+   "k": "FormField[2][11]",
+   "req": true,
+   "expect": "profile:country"
+  },
+  {
+   "k": "FormField[2][12]",
+   "req": true,
+   "expect": "profile:state"
+  },
+  {
+   "k": "FormField[2][13]",
+   "req": true,
+   "expect": "profile:zip"
+  },
+  {
+   "k": "FormField[2][7]",
+   "req": true,
+   "expect": "profile:phone"
+  },
+  {
+   "k": "radio:row-radio-buttons-group",
+   "req": false,
+   "expect": "any",
+   "label": "B2B app: account type"
+  },
+  {
+   "k": "Zmlyc3RfbmFtZQ==",
+   "req": false,
+   "expect": "profile_or_blank:contact_first_name"
+  },
+  {
+   "k": "bGFzdF9uYW1l",
+   "req": false,
+   "expect": "profile_or_blank:contact_last_name"
+  },
+  {
+   "k": "email",
+   "req": false,
+   "expect": "profile_or_blank:email"
+  },
+  {
+   "k": "cGhvbmU=",
+   "req": false,
+   "expect": "profile_or_blank:phone"
+  },
+  {
+   "k": "Email me special promotions and updates",
+   "req": false,
+   "expect": "unchecked"
+  }
+ ],
+ "notes": "BigCommerce native register form plus the BundleB2B wizard in a same-origin iframe (either path is fine)."
+}

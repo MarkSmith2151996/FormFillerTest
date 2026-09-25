@@ -1,0 +1,235 @@
+{
+ "version": "C",
+ "form": "13-candy-nation",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Password (account creation)",
+  "B2B steps 2-3"
+ ],
+ "notes": "native form + iframe step 1 verified visually",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "FormField[1][1]",
+   "label": "Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "FormField[1][2]",
+   "label": "Password *",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "FormField[1][3]",
+   "label": "Confirm Password *",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "FormField[2][4]",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "FormField[2][5]",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "FormField[2][6]",
+   "label": "Company Name",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "FormField[2][8]",
+   "label": "Address Line 1 *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "FormField[2][9]",
+   "label": "Address Line 2",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "FormField[2][10]",
+   "label": "City *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "FormField[2][11]",
+   "label": "Country *",
+   "type": "select",
+   "req": true,
+   "st": "profile",
+   "key": "country"
+  },
+  {
+   "k": "FormField[2][12]",
+   "label": "State/Province *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "state"
+  },
+  {
+   "k": "FormField[2][13]",
+   "label": "Zip/Postcode *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "FormField[2][7]",
+   "label": "Phone Number *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "radio:row-radio-buttons-group",
+   "label": "Account type",
+   "type": "radio",
+   "req": false,
+   "st": "choice",
+   "opt": "Business account"
+  },
+  {
+   "k": "Zmlyc3RfbmFtZQ==",
+   "label": "First Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "bGFzdF9uYW1l",
+   "label": "Last Name *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "email",
+   "label": "Email Address *",
+   "type": "text",
+   "req": true,
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "cGhvbmU=",
+   "label": "Phone Number",
+   "type": "text",
+   "req": false,
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "Email me special promotions and updates",
+   "label": "Email me special promotions and updates",
+   "type": "checkbox",
+   "req": false,
+   "same": true,
+   "st": "unchecked"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/C/13-candy-nation.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 59,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 210
+   },
+   {
+    "cmd": "act",
+    "args_chars": 336,
+    "out_chars": 113,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 890
+   },
+   {
+    "cmd": "act",
+    "args_chars": 208,
+    "out_chars": 97,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 702
+   },
+   {
+    "cmd": "act",
+    "args_chars": 214,
+    "out_chars": 90,
+    "image": [
+     960,
+     600
+    ],
+    "ms": 499
+   },
+   {
+    "cmd": "report",
+    "args_chars": 143,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 5,
+  "brain_calls": 5,
+  "chars_in": 903,
+  "chars_out": 419,
+  "images": 4,
+  "img_tokens": 3072,
+  "tool_ms": 2301,
+  "harness_chars": 0,
+  "token_est": 3450,
+  "wall_ms": 58051
+ },
+ "started_at": "2026-09-24T13:55:21.380Z",
+ "ended_at": "2026-09-24T13:56:19.430Z"
+}

@@ -1,0 +1,122 @@
+{
+ "version": "C",
+ "form": "19-gfs",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "City, State, ZIP: the boxes do not take focus until an address suggestion is chosen (site autocomplete); left for the approver",
+  "Terms: 'I agree to the Privacy Policy and Terms of Use' (required) is the approver's consent; Next not pressed",
+  "reCAPTCHA (approver)",
+  "later steps not reached"
+ ],
+ "notes": "Gordon Food Service 'Become a Customer' step 1. Filled Business Name and the delivery street (ship-to per CS-588). First batch: the city/state/ZIP clicks did not move focus, so the city, state and ZIP were appended to the street box; the verification screenshot caught it and C cleared and retyped the street only (final readback clean). Guard blocked 3 telemetry beacons and 2 background writes.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "input_18",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "input_12.1",
+   "st": "profile",
+   "key": "ship_to_street_full"
+  },
+  {
+   "k": "input_12.6",
+   "st": "profile",
+   "key": "ship_to_country",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 3,
+  "write_blocked": 2
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/a2071829-c3ce-4da5-a9a9-a495db46d5b1_20260924_135832.png",
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2900,
+    "out_chars": 110,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 600,
+    "out_chars": 120,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 300,
+    "out_chars": 60,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 110,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 300,
+    "image": null
+   }
+  ],
+  "brain_calls": 5,
+  "chars_in": 1230,
+  "chars_out": 930,
+  "images": 3,
+  "img_tokens": 4602,
+  "tool_ms": 0,
+  "harness_chars": 4510,
+  "token_est": 5220,
+  "tool_calls": 5,
+  "wall_ms": 32381
+ },
+ "started_at": "2026-09-24T17:58:07.022Z",
+ "ended_at": "2026-09-24T17:58:39.403Z"
+}

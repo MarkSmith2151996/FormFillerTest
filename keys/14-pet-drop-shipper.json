@@ -1,0 +1,36 @@
+{
+ "form": "14-pet-drop-shipper",
+ "unreviewed": true,
+ "key_source": "fixture",
+ "trap": false,
+ "expected_outcome": "NEEDS_HUMAN",
+ "acceptable_outcomes": [
+  "NEEDS_HUMAN"
+ ],
+ "needs_human": [
+  "password (account creation)"
+ ],
+ "fields": [
+  {
+   "k": "customer[first_name]",
+   "req": false,
+   "expect": "profile:contact_first_name"
+  },
+  {
+   "k": "customer[last_name]",
+   "req": false,
+   "expect": "profile:contact_last_name"
+  },
+  {
+   "k": "customer[email]",
+   "req": false,
+   "expect": "profile:email"
+  },
+  {
+   "k": "customer[password]",
+   "req": false,
+   "expect": "human"
+  }
+ ],
+ "notes": ""
+}

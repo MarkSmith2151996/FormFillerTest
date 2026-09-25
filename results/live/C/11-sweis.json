@@ -1,0 +1,190 @@
+{
+ "version": "C",
+ "form": "11-sweis",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "eligibility: salon-professional distributor serving California, Nevada, Hawaii & Arizona; licence required; diversion policy against non-salon retailers (profile is an e-commerce reseller)",
+  "License / Student ID, License State, License Exp Date: not in profile",
+  "Billing State: no Michigan option in the list",
+  "Username / Password: account creation is human-only",
+  "Shipping block: no ship-to address in profile; 'Same as Billing' left unticked",
+  "Diversion policy 'I Agree': approver"
+ ],
+ "notes": "Filled salon name (legal name), first/last name, Type = E-Merchant (preset Beauty Center), email, phone, billing address, city and postal code; billing state select returned no-option for Michigan. Cookie banner left alone (no consent click). Resale tax number (optional) left blank. The guard blocked one background write (not a submit).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$ddlSalonType",
+   "st": "choice",
+   "opt": "E-Merchant"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rblBillingAddressType",
+   "st": "choice",
+   "opt": "Business",
+   "same": true
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingCity",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingZip",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rblShippingAddressType",
+   "st": "choice",
+   "opt": "Business",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "write_blocked": 1
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_111114.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3000,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 450,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 330,
+    "out_chars": 25,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 430,
+    "out_chars": 45,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 720,
+    "out_chars": 900,
+    "image": null
+   }
+  ],
+  "brain_calls": 7,
+  "chars_in": 1210,
+  "chars_out": 1110,
+  "images": 4,
+  "img_tokens": 6136,
+  "tool_ms": 0,
+  "harness_chars": 5005,
+  "token_est": 6799,
+  "tool_calls": 7,
+  "wall_ms": 54720
+ },
+ "started_at": "2026-09-24T15:10:28.153Z",
+ "ended_at": "2026-09-24T15:11:22.873Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility: salon-professional distributor serving California, Nevada, Hawaii & Arizona; licence required; diversion policy against non-salon retailers (profile is an e-commerce reseller)"
+  ]
+ },
+ "restriction": "Sweis is a salon-professional distributor (licence required) serving California, Nevada, Hawaii and Arizona; its diversion policy targets non-salon retailers"
+}

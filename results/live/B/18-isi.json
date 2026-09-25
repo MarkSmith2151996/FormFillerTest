@@ -1,0 +1,81 @@
+{
+ "version": "B",
+ "form": "18-isi",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "all fields: not fillable with B-live tools (every textbox and select is unnamed; type_text on Firm Name hit a strict-mode violation, 47 matches)",
+  "Resale Tax No., Business Founded/Years, Web Address: CS-588 still-NEEDS_HUMAN",
+  "Kyocera-dealer Yes/No and Business Type (LLC not listed): not in profile",
+  "owner home address/email: not in profile",
+  "tax-exempt certificate and Uniform Resale Certificate uploads: human-only",
+  "Credit Limit Request: 'all first orders for new resellers must be credit card' - payment/credit choice is the approver's (never credit card by the agent)",
+  "trade and bank references: left blank by policy"
+ ],
+ "notes": "read_page showed the whole Reseller/Credit Application (labels as sibling text, inputs unnamed). One type_text attempt confirmed Custodian's strict-mode bug on unnamed inputs; nothing could be filled. Transport failure, not a paradigm limit: @playwright/mcp targets its own refs directly.",
+ "field_map": {},
+ "readback": [],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": null,
+ "steel_session": "a2071829-c3ce-4da5-a9a9-a495db46d5b1 (shared tab, new session after outage)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3700,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "read_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 21000,
+    "image": null
+   },
+   {
+    "cmd": "type_text",
+    "role": "brain",
+    "args_chars": 40,
+    "out_chars": 2600,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 830,
+    "out_chars": 80,
+    "image": null
+   }
+  ],
+  "brain_calls": 2,
+  "chars_in": 40,
+  "chars_out": 23600,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 0,
+  "harness_chars": 5060,
+  "token_est": 6755,
+  "tool_calls": 2,
+  "wall_ms": 29566
+ },
+ "started_at": "2026-09-24T17:55:48.722Z",
+ "ended_at": "2026-09-24T17:56:18.288Z",
+ "transport_failures": {
+  "cause": "Custodian: unnamed inputs -> get_by_role strict-mode violation",
+  "fields": "all",
+  "keys": "all"
+ }
+}

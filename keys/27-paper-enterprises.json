@@ -1,0 +1,14 @@
+{
+ "form": "27-paper-enterprises",
+ "unreviewed": true,
+ "key_source": "task; fields none (no fillable step reached / trap)",
+ "trap": true,
+ "expected_outcome": "NOT_A_FORM",
+ "acceptable_outcomes": [
+  "NOT_A_FORM"
+ ],
+ "needs_human": [],
+ "fields": [],
+ "notes": "Contact page.",
+ "drafted_after_runs": true
+}

@@ -1,0 +1,70 @@
+{
+ "version": "A",
+ "form": "16-patterson-dental",
+ "mode": "offline",
+ "profile": "synthetic",
+ "outcome": "LOGIN_GATED",
+ "needs_human": [],
+ "notes": "Register URL lands on Azure AD B2C sign-in; sign-up needs an emailed verification code (human).",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "Email Address",
+   "label": "Email Address",
+   "type": "text",
+   "req": false,
+   "same": true,
+   "st": "empty"
+  },
+  {
+   "k": "Password",
+   "label": "Password",
+   "type": "password",
+   "req": true,
+   "same": true,
+   "st": "empty"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "telemetry": 0,
+  "write_blocked": 0,
+  "log": []
+ },
+ "screenshot": "results/offline/A/16-patterson-dental.jpg",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "open",
+    "args_chars": 2,
+    "out_chars": 253,
+    "image": null,
+    "ms": 123
+   },
+   {
+    "cmd": "classify",
+    "args_chars": 2,
+    "out_chars": 76,
+    "image": null,
+    "ms": 8
+   },
+   {
+    "cmd": "report",
+    "args_chars": 131,
+    "out_chars": 60
+   }
+  ],
+  "tool_calls": 3,
+  "brain_calls": 3,
+  "chars_in": 135,
+  "chars_out": 389,
+  "images": 0,
+  "img_tokens": 0,
+  "tool_ms": 131,
+  "harness_chars": 0,
+  "token_est": 150,
+  "wall_ms": 13521
+ },
+ "started_at": "2026-09-24T13:56:19.863Z",
+ "ended_at": "2026-09-24T13:56:33.384Z"
+}

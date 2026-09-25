@@ -1,0 +1,121 @@
+{
+ "version": "C",
+ "form": "09-grimco",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "'Are you an existing Grimco customer?' (required Yes/No; not in profile)",
+  "later registration steps behind Next (not opened: may create the account / set a password)",
+  "eligibility: Grimco sells only to sign and digital print shops or businesses with sign-making capability (profile is an e-commerce reseller)"
+ ],
+ "notes": "Step 1 of a multi-step 'Register New User' form. Filled email, confirm email, first and last name; Preferred Language preset English - US kept. Order-notification popup and chat bubble did not overlap the form. Did not press Next.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "userName",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "confirmUserName",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "firstName",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "lastName",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "preferredLocalizationId",
+   "st": "text",
+   "len": 12,
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_110007.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 2950,
+    "out_chars": 50,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 420,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 720,
+    "out_chars": 330,
+    "image": null
+   }
+  ],
+  "brain_calls": 3,
+  "chars_in": 420,
+  "chars_out": 540,
+  "images": 2,
+  "img_tokens": 3068,
+  "tool_ms": 0,
+  "harness_chars": 4395,
+  "token_est": 3343,
+  "tool_calls": 3,
+  "wall_ms": 35221
+ },
+ "started_at": "2026-09-24T14:59:40.751Z",
+ "ended_at": "2026-09-24T15:00:15.972Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility: Grimco sells only to sign and digital print shops or businesses with sign-making capability (profile is an e-commerce reseller)"
+  ]
+ },
+ "restriction": "Grimco sells only to sign and digital print shops or businesses with sign-making capability"
+}

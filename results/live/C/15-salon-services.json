@@ -1,0 +1,183 @@
+{
+ "version": "C",
+ "form": "15-salon-services",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "eligibility: salon-professional application; 'Due to manufacturer territory restrictions we are unable to ship to states not listed' and the state lists have no Michigan",
+  "License / Student ID, License State, License Expiration Date, Type Code, Class Code, Brands interested in: not in profile",
+  "Professional License file and Resale Certificate File uploads: human-only",
+  "Who referred you: buyer's answer",
+  "username/password and diversion agreement (further down): human/approver"
+ ],
+ "notes": "Filled salon name (legal name), names, salon address/city/zip, email, phone, and the billing address/city/postal code. Both state selects answered no-option for Michigan. Cookie banner left alone. C did not scroll to the end, so it missed that the 'text me' opt-in radio is preset to Yes (readback shows it unchanged): an opt-in that should have been set to No.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonName",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbFirstName",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbLastName",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolAddress1",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolCity",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbSalonSchoolZip",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbEmailAddress",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbPhone",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingAddress",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingCity",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "ctl00$cphBody$ctl00$tbBillingZip",
+   "st": "profile",
+   "key": "zip"
+  },
+  {
+   "k": "radio:ctl00$cphBody$ctl00$rbOptInText",
+   "st": "choice",
+   "opt": "Yes",
+   "same": true
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0,
+  "write_blocked": 1
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_112339.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3000,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 760,
+    "out_chars": 120,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 260,
+    "out_chars": 10,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 420,
+    "out_chars": 45,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 720,
+    "out_chars": 1000,
+    "image": null
+   }
+  ],
+  "brain_calls": 6,
+  "chars_in": 1440,
+  "chars_out": 925,
+  "images": 3,
+  "img_tokens": 4602,
+  "tool_ms": 0,
+  "harness_chars": 5105,
+  "token_est": 5278,
+  "tool_calls": 6,
+  "wall_ms": 49400
+ },
+ "started_at": "2026-09-24T15:23:19.520Z",
+ "ended_at": "2026-09-24T15:24:08.920Z",
+ "outcome_cs588": "NOT_A_FIT",
+ "reclassified": {
+  "rule": "CS-588 3a NOT_A_FIT (ranks above NEEDS_HUMAN)",
+  "from": "NEEDS_HUMAN",
+  "evidence": [
+   "eligibility: salon-professional application; 'Due to manufacturer territory restrictions we are unable to ship to states not listed' and the state lists have no Michigan"
+  ]
+ },
+ "restriction": "Salon Services sells to licensed salon professionals and ships only to 10 western states ('unable to ship to states not listed'; no Michigan)"
+}

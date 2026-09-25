@@ -1,0 +1,173 @@
+{
+ "version": "C",
+ "form": "10-dhp-supply",
+ "mode": "live",
+ "profile": "real (injected at runtime, never stored)",
+ "transport": "Custodian MCP -> Steel (wsl-steel)",
+ "outcome": "NEEDS_HUMAN",
+ "needs_human": [
+  "Ship To ZIP Code (required) and the Ship To block: profile has no ship-to address; 'Use Bill To Address' left unticked",
+  "reCAPTCHA",
+  "billing terms: separate 'register and apply for billing terms' link (not opened; terms left blank by policy)",
+  "eligibility: DHP is a dental supplier (customer type not asked on this form)"
+ ],
+ "notes": "Chooser page first ('Do you have a DHP account number?'); clicked No, which navigated to New Customer Registration (C's click call ended with Custodian's 'execution context destroyed' because the page navigated; harness re-injected with t0 carried in sessionStorage). Filled company, names, phone, email, billing address/city/state/zip in one act; verified by screenshot; unticked the pre-checked $25 promo email opt-in and verified it is off. Buying-group note left blank.",
+ "field_map": {},
+ "readback": [
+  {
+   "k": "form[151_0]",
+   "st": "profile",
+   "key": "legal_name"
+  },
+  {
+   "k": "form[1_1]",
+   "st": "profile",
+   "key": "contact_first_name"
+  },
+  {
+   "k": "form[11_2]",
+   "st": "profile",
+   "key": "contact_last_name"
+  },
+  {
+   "k": "form[31_3]",
+   "st": "profile",
+   "key": "phone"
+  },
+  {
+   "k": "form[21_4]",
+   "st": "profile",
+   "key": "email"
+  },
+  {
+   "k": "form[212_5]",
+   "st": "profile",
+   "key": "street_address"
+  },
+  {
+   "k": "form[212_7]",
+   "st": "profile",
+   "key": "city"
+  },
+  {
+   "k": "form[226_8]",
+   "st": "profile",
+   "key": "state_name"
+  },
+  {
+   "k": "form[212_9]",
+   "st": "profile",
+   "key": "zip"
+  }
+ ],
+ "guard": {
+  "submit_attempt": 0
+ },
+ "screenshot": "C:/Users/Big A/custodian-shared/fba-command-center/screenshots/4179a6da-b1ed-42f8-8cf9-6f04a6538bbb_20260924_110801.png",
+ "steel_session": "4179a6da-b1ed-42f8-8cf9-6f04a6538bbb (shared tab)",
+ "ledger": {
+  "calls": [
+   {
+    "cmd": "evaluate_js(navigate)",
+    "role": "harness",
+    "args_chars": 330,
+    "out_chars": 15,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3000,
+    "out_chars": 40,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 90,
+    "out_chars": 120,
+    "image": null
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 3050,
+    "out_chars": 80,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 700,
+    "out_chars": 90,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "brain",
+    "args_chars": 260,
+    "out_chars": 5,
+    "image": null
+   },
+   {
+    "cmd": "screenshot_page",
+    "role": "brain",
+    "args_chars": 0,
+    "out_chars": 250,
+    "image": [
+     1920,
+     993
+    ]
+   },
+   {
+    "cmd": "evaluate_js",
+    "role": "harness",
+    "args_chars": 720,
+    "out_chars": 420,
+    "image": null
+   }
+  ],
+  "brain_calls": 7,
+  "chars_in": 1050,
+  "chars_out": 1215,
+  "images": 4,
+  "img_tokens": 6136,
+  "tool_ms": 0,
+  "harness_chars": 7655,
+  "token_est": 6784,
+  "tool_calls": 7,
+  "wall_ms": 63722
+ },
+ "started_at": "2026-09-24T15:07:06.653Z",
+ "ended_at": "2026-09-24T15:08:10.375Z"
+}
