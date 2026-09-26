@@ -117,6 +117,7 @@
     if (tag === 'TEXTAREA') return 'ta';
     if (tag === 'INPUT') {
       if (t === 'checkbox') return 'cb'; if (t === 'radio') return 'radio'; if (t === 'file') return 'file'; if (t === 'password') return 'pw';
+      if (el.readOnly && el.value && norm(el.value) === norm(rawLabel(el))) return 'choice';
       if (role === 'combobox' || el.getAttribute('aria-autocomplete') === 'list') return 'combo';
       return { email: 'email', tel: 'tel', number: 'num', date: 'date', url: 'url' }[t] || 't';
     }
@@ -163,7 +164,7 @@
   function currentValue(el, k) {
     if (k === 'sel') { var o = el.options[el.selectedIndex]; return isPh(o) ? '' : txt(o); }
     if (k === 'cb') return (el.checked || el.getAttribute('aria-checked') === 'true') ? 'on' : '';
-    if (k === 'combo') { if (el.tagName === 'INPUT') return el.value || ''; var s = assocSelect(el); if (s) return currentValue(s, 'sel'); var t = txt(el); return /^(select|choose|please|-)/i.test(t) ? '' : t; }
+    if (k === 'combo' || k === 'choice') { if (el.tagName === 'INPUT') return el.value || ''; var s = assocSelect(el); if (s) return currentValue(s, 'sel'); var t = txt(el); return /^(select|choose|please|-)/i.test(t) ? '' : t; }
     if (k === 'file') return el.files && el.files.length ? 'file' : '';
     return el.value != null ? String(el.value) : txt(el);
   }
@@ -315,6 +316,7 @@
   function optionEls() { return walk(document, []).filter(function (e) { return (e.getAttribute('role') === 'option' || /select2-results__option|chosen-results li|ss-option|choices__item--choice|dropdown-item|react-select__option|MuiMenuItem/.test(cls(e) + (e.parentElement && /chosen-results/.test(cls(e.parentElement)) ? ' chosen-results li' : ''))) && vis(e); }); }
   async function choose(fid, want) {
     var el = FT.els[fid], m = FT.meta[fid];
+    if (m.k === 'choice') { press(el); await sleep(150); return 'ok selected "' + String(el.value || rawLabel(el)).slice(0, 40) + '"'; }
     if (m.radios) {
       var rs = m.radios.radios, W = norm(want), r = rs.filter(function (x) { return norm(rawLabel(x)) === W || norm(x.value) === W; })[0] || rs.filter(function (x) { return norm(rawLabel(x)).indexOf(W) === 0; })[0] || rs.filter(function (x) { return W.length >= 3 && norm(rawLabel(x)).indexOf(W) >= 0; })[0];
       if (!r) return 'NO-OPTION "' + want + '"';
@@ -370,7 +372,7 @@
       try {
         var v = resolve(raw);
         if (m.k === 'cb') res = await check(fid, v);
-        else if (m.radios || m.k === 'sel' || m.k === 'combo') res = v === '' ? 'skipped' : await choose(fid, v);
+        else if (m.radios || m.k === 'sel' || m.k === 'combo' || m.k === 'choice') res = v === '' ? 'skipped' : await choose(fid, v);
         else res = await typeText(el, String(v));
         await sleep(150);
       } catch (e) { res = 'ERR ' + e.message; }
