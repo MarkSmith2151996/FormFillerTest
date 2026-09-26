@@ -30,8 +30,10 @@ A typical form takes **3 calls**: `open_form`, `fill`, `report`.
 - Bill-to is the profile business address. Ship-to (delivery / "where will we ship") comes only from the profile's ship-to keys
   (`ship_to_name`, `ship_to_street`, `ship_to_street2`, `ship_to_city`, `ship_to_state`, `ship_to_state_name`, `ship_to_zip`, `ship_to_address`),
   which hold the prep-center address (CS-588). Never tick "same as billing": the addresses differ.
-- Still `NEEDS_HUMAN` until the dealer decides (CS-588, do not guess): years in business, employee count, annual sales or
-  purchase volume, "how did you hear about us", website URL, sales-tax licence / resale account numbers, file uploads, captchas.
+- Website, "how did you hear about us", employee count, and annual purchase volume come from `website`, `referral_source`,
+  `employee_count`, and `annual_purchase_volume`.
+- Still `NEEDS_HUMAN`: file uploads, captchas, account creation, terms/consent, account numbers at other suppliers, and
+  trade or bank references. Leave trade and bank references blank.
 - Business type: e-commerce reseller (Amazon and other online marketplaces). Payment: wire transfer or ACH, **never credit card**.
 - Leave net-terms requests, trade references, bank references, and personal-guarantee sections blank.
 - File uploads (resale certificate MI Form 3372, EIN letter, licences) are NEEDS_HUMAN. Passwords and account creation are human-only.
@@ -40,7 +42,7 @@ A typical form takes **3 calls**: `open_form`, `fill`, `report`.
 - Signature fields may take `{{profile.signature_name}}` (the owner) and `{{profile.today}}`.
 
 ## Profile keys
-`legal_name entity_type entity_short entity_state michigan_entity_number street_address city state state_name zip zip5 country country_code full_address contact_name contact_first_name contact_last_name contact_title email email_confirm phone phone_digits phone_dashed phone_area phone_prefix phone_line phone_e164 owner_name owner_first_name owner_last_name owner_title signature_name signature_title ein ein_digits amazon_seller_id website website_url sales_channel business_type payment_method ownership established_date established_year established_iso years_in_business years_in_business_text today today_iso`
+`legal_name entity_type entity_short entity_state michigan_entity_number street_address city state state_name zip zip5 country country_code full_address contact_name contact_first_name contact_last_name contact_title email email_confirm phone phone_digits phone_dashed phone_area phone_prefix phone_line phone_e164 owner_name owner_first_name owner_last_name owner_title signature_name signature_title ein ein_digits mi_sales_tax_account amazon_seller_id website website_url sales_channel business_type payment_method ownership established_date established_year established_iso years_in_business years_in_business_text employee_count annual_purchase_volume referral_source today today_iso`
 plus the ship-to keys above (CS-588). `fax` exists but is empty; a template for an empty key returns an error instead of a value.
 
 ## Live mode (Steel via Custodian, as in this bake-off)

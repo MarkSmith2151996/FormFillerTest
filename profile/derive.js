@@ -23,12 +23,14 @@ function ffDeriveProfile(base) {
     if (d.length === 10) { p.phone_dashed = d.slice(0,3) + '-' + d.slice(3,6) + '-' + d.slice(6); p.phone_area = d.slice(0,3); p.phone_prefix = d.slice(3,6); p.phone_line = d.slice(6); p.phone_e164 = '+1' + d; }
   }
   if (p.ein) p.ein_digits = p.ein.replace(/[^0-9]/g, '');
+  if (p.ein) p.mi_sales_tax_account = p.ein;
   if (p.website) p.website_url = /^https?:\/\//i.test(p.website) ? p.website : 'https://' + p.website;
   if (p.entity_type || p.legal_name) {
     var et = (p.entity_type || '') + ' ' + (p.legal_name || '');
     p.entity_short = /\bL\.?L\.?C\.?\b/i.test(et) ? 'LLC' : /\bcorp|\binc\b/i.test(et) ? 'Corporation' : '';
     var m = (p.entity_type || '').match(/^([A-Za-z ]+?)\s+(LLC|Corporation|Corp|Inc)/i); if (m) p.entity_state = m[1].trim();
   }
+  if (p.ship_to_state) p.ship_to_state_name = STATES[p.ship_to_state.trim().toUpperCase()] || p.ship_to_state;
   if (p.established_date) {
     var e = p.established_date.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/) || [];
     var iso = p.established_date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
